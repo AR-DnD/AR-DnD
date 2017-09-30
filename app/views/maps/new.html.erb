@@ -1,5 +1,27 @@
 <h1>New Map</h1>
 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> <button type="button" class="btn btn-secondary btn-lg">Tree</button></th>
+      <th> <button type="button" class="btn btn-secondary btn-lg">Orc</button></th>
+      <th> <button type="button" class="btn btn-secondary btn-lg">Remove</button></th>
+    </tr>
+  </thead>
+</table>
+<table class="table">
+  <tbody>
+      <% (1..8).each do |i| %>
+        <tr>
+          <% (1..8).each do |j| %>
+            <td><button type="button" class="btn btn-secondary btn-lg">Nil</button></td>
+          <% end %>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
 <%= render 'form', map: @map %>
 
 <%= link_to 'Back', maps_path %>
