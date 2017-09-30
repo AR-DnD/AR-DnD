@@ -1,15 +1,8 @@
 <h1>New Map</h1>
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th> <button type="button" class="btn btn-secondary btn-lg">Tree</button></th>
-      <th> <button type="button" class="btn btn-secondary btn-lg">Orc</button></th>
-      <th> <button type="button" class="btn btn-secondary btn-lg">Remove</button></th>
-    </tr>
-  </thead>
-</table>
+
+
 <table class="table">
   <tbody>
       <% (1..8).each do |i| %>
@@ -22,6 +15,27 @@
   </tbody>
 </table>
 
+
+
+
 <%= render 'form', map: @map %>
 
 <%= link_to 'Back', maps_path %>
+
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" value = "Tree" id="option1" autocomplete="off" checked> Tree
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" value = "Orc"id="option2" autocomplete="off"> Orc
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" value= "Remove" id="option3" autocomplete="off"> Remove
+  </label>
+</div>
+
+<script>
+$( "input" ).on( "click", function() {
+  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+});
+</script>
