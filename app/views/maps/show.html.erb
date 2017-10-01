@@ -5,10 +5,83 @@
   <%= @map.name %>
 </p>
 
-<p>
+<p> 
   <strong>Data:</strong>
+  <div id="map_data">
   <%= @map.data %>
+  </div>
 </p>
+
+
+
+<table class="table">
+  <tbody>
+        <tr>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="00">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="01">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="02">Nil</button></td>
+        </tr>
+        <tr>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="10">Nil</button></td>         
+          <td><button type="button" class="btn btn-secondary btn-lg" id="11">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="12">Nil</button></td>
+        </tr>
+        <tr>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="20">Nil</button></td>         
+          <td><button type="button" class="btn btn-secondary btn-lg" id="21">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="22">Nil</button></td>
+        </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>
+
+
+<script>
+var currElement = "Tree"
+var grid = [[null, null, null], [null, null, null], [null, null, null]]
+var savedState = JSON.parse($("#map_data").html())
+console.log(savedState)
+for (var i = 0; i < savedState.length; i++) {
+  for (var j = 0; j < savedState[i].length; j++) {
+    var stringID = String(i) + String(j)
+    var currGridCoord = $("#" + stringID)
+    var currGridElement = savedState[i][j]
+    if (currGridElement) {
+      currGridCoord.html(currGridElement)
+    } else {
+      currGridCoord.html("Nil")
+    }
+  }
+}
+grid = savedState
+
+$( "input" ).on( "click", function() {
+  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+  console.log("here")
+});
+
+$( ".mapElement" ).on("click", function() {
+  currElement = $(this).attr("id")
+  console.log("currElement", currElement)
+})
+
+$( ".btn-lg" ).on("click", function() {
+  var coord = $(this)
+  var rowNum = coord.attr("id")[0]
+  var colNum = coord.attr("id")[1]
+  console.log("rownum", rowNum)
+  console.log("colNum", colNum)
+  rowNum = parseInt(rowNum)
+  colNum = parseInt(colNum)
+  if (currElement == "Nil") {
+    grid[rowNum][colNum] = null
+  } else {
+    grid[rowNum][colNum] = currElement
+  }
+  console.log("Grid", grid)
+  $(this).html(currElement)
+  $("#map_data").val(JSON.stringify(grid))
+})
+</script>
