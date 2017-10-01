@@ -1,3 +1,3 @@
-class Post < ApplicationRecord
+class Post < ActiveRecord::Base
   belongs_to :topic
 end
