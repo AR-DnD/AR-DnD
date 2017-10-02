@@ -19,8 +19,12 @@
 
         <td><h4><%= link_to h(forum.title), forum_path(forum.id) %></h4>
           <small><%= forum.topics.count %> topics</small><br />
-          <%=h forum.description %></td>
-
+          <%=h forum.description %><br />
+          <div class="forum-details"
+            <small>Created by: <%= forum.user.username if forum.user %>,
+              <%= time_ago_in_words(forum.created_at) %> ago,
+              Last updated: <%= time_ago_in_words(forum.updated_at) %> ago</small></td>
+          </div>
         <td class="right"></td>
         <td><%= link_to 'Show', forum %></td>
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
