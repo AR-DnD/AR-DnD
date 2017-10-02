@@ -11,4 +11,11 @@ Rails.application.routes.draw do
   get 'about', to: 'welcome#about'
   #get 'forums', to: 'forums#index'
   root :to => 'forums#index'
+
+  resources :forums
+
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
+  #post 'users', to: 'users#create'
 end
