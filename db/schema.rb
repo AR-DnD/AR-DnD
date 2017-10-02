@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002011058) do
+ActiveRecord::Schema.define(version: 20171002021515) do
 
   create_table "forums", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171002011058) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "topic_id"
+    t.integer "user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 20171002011058) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "forum_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

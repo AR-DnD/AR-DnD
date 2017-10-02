@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :forums
+  has_many :topics
+  has_many :posts
+  has_many :maps
+
+  before_save { self.email = email.downcase }
+
   validates :username, presence: true,
   uniqueness: { case_sensitive: false },
   length: { minimum: 3, maximum: 15 }

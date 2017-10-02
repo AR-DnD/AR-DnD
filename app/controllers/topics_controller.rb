@@ -23,19 +23,37 @@ class TopicsController < ApplicationController
 
   # POST /topics
   # POST /topics.json
-  def create
-    @topic = Topic.new(topic_params)
 
-    respond_to do |format|
-      if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
+  def create
+    @topic = Topic.new(:name => params[:topic][:name], :last_poster_id => current_user.id, :last_post_at => Time.now, :forum_id => params[:topic][:forum_id], :user_id => current_user.id)
+
+    if @topic.save
+      @post = Post.new(:content => params[:post][:content], :topic_id => @topic.id, :user_id => current_user.id)
+
+      if @post.save
+        flash[:notice] = "Successfully created topic."
+        redirect_to "/forums/#{@topic.forum_id}"
       else
-        format.html { render :new }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
+        redirect :action => 'new'
       end
+    else
+      render :action => 'new'
     end
   end
+
+  #def create
+  #  @topic = Topic.new(topic_params)
+
+  #  respond_to do |format|
+  #    if @topic.save
+  #      format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+  #      format.json { render :show, status: :created, location: @topic }
+  #    else
+  #      format.html { render :new }
+  #      format.json { render json: @topic.errors, status: :unprocessable_entity }
+  #    end
+  #  end
+  #end
 
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
