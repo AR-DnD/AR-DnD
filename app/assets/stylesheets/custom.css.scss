@@ -1,3 +1,5 @@
+$navbar-default-bg: red;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
@@ -11,4 +13,48 @@
 
 .center {
   text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('dungeons-dragons-dice-roller-6275');
+  background-size: cover;
+  height: 550px;
+}
+
+.jumbotron h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: black;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }
