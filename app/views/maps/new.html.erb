@@ -1,20 +1,25 @@
 <h1>New Map</h1>
-
-
-
-
+<div class="coordinate" style="background-image:url(<%= "/assets/images/Tree.png" %>); background-size:cover;"> </div>
 <table class="table">
   <tbody>
-      <% (1..8).each do |i| %>
         <tr>
-          <% (1..8).each do |j| %>
-            <td><button type="button" class="btn btn-secondary btn-lg">Nil</button></td>
-          <% end %>
+
+          <td><button type="button"  class="btn btn-secondary btn-lg" id="00">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="01">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="02">Nil</button></td>
         </tr>
-      <% end %>
+        <tr>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="10">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="11">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="12">Nil</button></td>
+        </tr>
+        <tr>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="20">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="21">Nil</button></td>
+          <td><button type="button" class="btn btn-secondary btn-lg" id="22">Nil</button></td>
+        </tr>
   </tbody>
 </table>
-
 
 
 
@@ -23,19 +28,49 @@
 <%= link_to 'Back', maps_path %>
 
 <div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="radio" name="options" value = "Tree" id="option1" autocomplete="off" checked> Tree
+  <label class="btn btn-primary active mapElement" id="Tree">
+    <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
   </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" value = "Orc"id="option2" autocomplete="off"> Orc
+  <label class="btn btn-primary mapElement" id="Orc">
+    <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
   </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" value= "Remove" id="option3" autocomplete="off"> Remove
+  <label class="btn btn-primary mapElement" id="Nil">
+    <input type="radio" class="mapElement" name="options" value="Remove" id="option3" autocomplete="off"> Remove
   </label>
 </div>
 
 <script>
+var currElement = "Tree"
+var grid = [[null, null, null], [null, null, null], [null, null, null]]
+
 $( "input" ).on( "click", function() {
   $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+  console.log("here")
 });
+
+$( ".mapElement" ).on("click", function() {
+  currElement = $(this).attr("id")
+  console.log("currElement", currElement)
+})
+
+$( ".btn-lg" ).on("click", function() {
+  var coord = $(this)
+  var rowNum = coord.attr("id")[0]
+  var colNum = coord.attr("id")[1]
+  console.log("rownum", rowNum)
+  console.log("colNum", colNum)
+  rowNum = parseInt(rowNum)
+  colNum = parseInt(colNum)
+  if (currElement == "Nil") {
+    grid[rowNum][colNum] = null
+  } else {
+    grid[rowNum][colNum] = currElement
+  }
+  console.log("Grid", grid)
+  var imageUrlString = "/assets/" + currElement + ".png"
+  $(this).css("background-image", "url(" + imageUrlString + ")")
+  //$(this).html(currElement)
+  $("#map_data").val(JSON.stringify(grid))
+})
+
 </script>
