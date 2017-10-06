@@ -1,27 +1,7 @@
 <h1>New Map</h1>
 <div class="coordinate" style="background-image:url(<%= "/assets/images/Tree.png" %>); background-size:cover;"> </div>
-<table class="table">
-  <tbody>
-        <tr>
 
-          <td><button type="button"  class="btn btn-secondary btn-lg" id="00">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="01">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="02">Nil</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="10">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="11">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="12">Nil</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="20">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="21">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="22">Nil</button></td>
-        </tr>
-  </tbody>
-</table>
-
-
+<%= render "mapgrid" %>
 
 <%= render 'form', map: @map %>
 
