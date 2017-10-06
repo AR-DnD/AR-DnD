@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20171002040041) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "topic_id"
     t.integer "user_id"
   end
 
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20171002040041) do
     t.string "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "forum_id"
     t.integer "user_id"
   end
 

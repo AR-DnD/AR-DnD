@@ -79,10 +79,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :email, :password)
     end
 
-    def set_user
-      @user = User.find(params[:id])
-    end
-
     def require_same_user
       if current_user != @user && !current_user.admin?
         flash[:danger] = "You can only edit your own post."
