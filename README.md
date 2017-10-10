@@ -1,24 +1,23 @@
-# README
+# AR-DnD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is dedicated to the AR-DnD project
 
-Things you may want to cover:
+## Background information
 
-* Ruby version
+[Dungeon&Dragons](http://dnd.wizards.com/) - game background
 
-* System dependencies
+[AR - Augmented Reality](https://en.wikipedia.org/wiki/Augmented_reality) - wiki of Augmented Reality technology
 
-* Configuration
+[Unity 3D](https://www.youtube.com/watch?v=2cjnzFEBBiA) - Unity 3D Xcode plug-in to make an iOS application
 
-* Database creation
+## The basic picture
 
-* Database initialization
+### web front-end
 
-* How to run the test suite
+The web application build by Ruby on Rails is to serve as a front-end interface. Players can use the map generator to configure on the map layout, which contains the info where to place different game objects including goblins, trees and walls.
 
-* Services (job queues, cache servers, search engines, etc.)
+Sample - [Now let's experience DnD in AR!](https://augmented-dnd-immersion.herokuapp.com/)
 
-* Deployment instructions
+### mobile-end iOS application
 
-* ...
+An iOS application serving as the platform to display the AR-featured map and allow players to have basic interaction with the characters on the map
