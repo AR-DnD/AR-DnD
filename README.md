@@ -1,26 +1,20 @@
+:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 # AR-DnD :fire:
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 This repo is dedicated to the AR-DnD project and used Ruby on Rails and Unity 3D
 
+:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 ## Background information :book:
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 [Ruby on Rails](https://www.railstutorial.org/book) :blue_book: - rails tutorial for references
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 [Dungeon&Dragons](http://dnd.wizards.com/) - game background
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 [AR - Augmented Reality](https://en.wikipedia.org/wiki/Augmented_reality) - wiki of Augmented Reality technology
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 [Unity 3D](https://www.youtube.com/watch?v=2cjnzFEBBiA) - Unity 3D Xcode plug-in to make an iOS application
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 
+:flag: :flag:
 ## The basic picture :bulb:
 
 ### web front-end :computer:
@@ -33,4 +27,10 @@ Sample - [Now let's experience DnD in AR!](https://augmented-dnd-immersion.herok
 
 An iOS application serving as the platform to display the AR-featured map and allow players to have basic interaction with the characters on the map
 
-## To-Do List
+## To-Do List :pencil:
+
+- [X] Create a functional web front-end interface for players to put in login info and configure on maps
+- [ ] Working on Unity 3D models using ARKit to create AR models for maps
+- [ ] Start to build the iOS application that will be able to display the maps
+- [ ] Network connection between web and mobile end; mobile end pulls data from the database
+- [ ] Deploy!
