@@ -14,7 +14,7 @@ This repo is dedicated to the AR-DnD project and used Ruby on Rails and Unity 3D
 
 [Unity 3D](https://www.youtube.com/watch?v=2cjnzFEBBiA) - Unity 3D Xcode plug-in to make an iOS application
 
-:flag: :flag:
+:dog: :cat: :fish: :bear: :rabbit: :snake: :rat: :bird:
 ## The basic picture :bulb:
 
 ### web front-end :computer:
@@ -23,7 +23,7 @@ The web application build by Ruby on Rails is to serve as a front-end interface.
 
 Sample - [Now let's experience DnD in AR!](https://augmented-dnd-immersion.herokuapp.com/)
 
-### mobile-end iOS application :phone:
+### mobile-end iOS application :iphone:
 
 An iOS application serving as the platform to display the AR-featured map and allow players to have basic interaction with the characters on the map
 
