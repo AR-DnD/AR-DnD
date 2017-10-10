@@ -1,20 +1,19 @@
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
-# AR-DnD :dragon:
+:gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem: :gem:
+
+# AR-DnD :dragon: :fire:
 
 This repo is dedicated to the AR-DnD project and used Ruby on Rails and Unity 3D
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 ## Background information :book:
 
 [Ruby on Rails](https://www.railstutorial.org/book) :blue_book: - rails tutorial for references
 
-[Dungeon&Dragons](http://dnd.wizards.com/) :dragon: - game background
+[Dungeon&Dragons](http://dnd.wizards.com/) :dragon: :fire: - game background
 
-[AR - Augmented Reality](https://en.wikipedia.org/wiki/Augmented_reality) :cool: - wiki of Augmented Reality technology
+[AR - Augmented Reality](https://en.wikipedia.org/wiki/Augmented_reality) :rainbow: - wiki of Augmented Reality technology
 
-[Unity 3D](https://www.youtube.com/watch?v=2cjnzFEBBiA) :car: - Unity 3D Xcode plug-in to make an iOS application
+[Unity 3D](https://www.youtube.com/watch?v=2cjnzFEBBiA) :rocket: - Unity 3D Xcode plug-in to make an iOS application
 
-:fire: :gem: :fire: :fire: :gem: :fire: :gem: :fire: :gem: :fire: :gem:
 ## The basic picture :bulb:
 
 ### web front-end :computer:
