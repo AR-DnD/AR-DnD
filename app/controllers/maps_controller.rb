@@ -62,7 +62,7 @@ class MapsController < ApplicationController
   end
 
     def jsondata
-
+      render :layout => false
     end
 
   private
