@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  before_action :set_map, only: [:show, :edit, :update, :destroy]
+  before_action :set_map, only: [:show, :edit, :update, :destroy, :jsondata]
 
   # GET /maps
   # GET /maps.json
@@ -61,6 +61,10 @@ class MapsController < ApplicationController
     end
   end
 
+    def jsondata
+
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_map
@@ -71,4 +75,7 @@ class MapsController < ApplicationController
     def map_params
       params.require(:map).permit(:name, :data)
     end
+
+
+
 end

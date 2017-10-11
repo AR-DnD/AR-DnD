@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  get '/maps/:id/jsondata', to: 'maps#jsondata', as: 'set_map'
+
   #post 'users', to: 'users#create'
 end

@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20171002040041) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "topic_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -41,7 +40,6 @@ ActiveRecord::Schema.define(version: 20171002040041) do
     t.string "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "forum_id"
   end
 
   create_table "users", force: :cascade do |t|
