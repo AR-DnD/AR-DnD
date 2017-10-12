@@ -6,12 +6,12 @@ $(document).on('turbolinks:load', function(){
     console.log(savedState)
     for (var i = 0; i < savedState.length; i++) {
       for (var j = 0; j < savedState[i].length; j++) {
-        var stringID = String(i) + String(j)
+        var stringID = String(i) + "-" + String(j)
         var currGridCoord = $("#" + stringID)
         var currGridElement = savedState[i][j]
         if (currGridElement) {
           //currGridCoord.html(currGridElement)
-          currGridCoord.css("background-image", "url(/assets/" + currElement + ".png)")
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
         }
       }
     }
@@ -29,9 +29,13 @@ $(document).on('turbolinks:load', function(){
   })
 
   $( ".btn-lg" ).on("click", function() {
-    var coord = $(this)
-    var rowNum = coord.attr("id")[0]
-    var colNum = coord.attr("id")[1]
+
+    var coords = $(this).attr("id").split("-")
+    var rowNum = coords[0]
+    var colNum = coords[1]
+    //var coords = $(this)
+    //var rowNum = coord.attr("id")[0]
+    //var colNum = coord.attr("id")[1]
     //console.log("rownum", rowNum)
     //console.log("colNum", colNum)
     rowNum = parseInt(rowNum)
