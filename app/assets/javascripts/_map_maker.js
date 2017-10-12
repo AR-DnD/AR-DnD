@@ -10,11 +10,11 @@ $(document).on('turbolinks:load', function(){
         var currGridCoord = $("#" + stringID)
         var currGridElement = savedState[i][j]
         if (currGridElement) {
-          currGridCoord.html(currGridElement)
+          //currGridCoord.html(currGridElement)
           currGridCoord.css("background-image", "url(/assets/" + currElement + ".png)")
-        } else {
-          currGridCoord.html("Nil")
-        }
+        } //else {
+          //currGridCoord.html("Nil")
+        //}
       }
     }
     grid = savedState
@@ -34,8 +34,8 @@ $(document).on('turbolinks:load', function(){
     var coord = $(this)
     var rowNum = coord.attr("id")[0]
     var colNum = coord.attr("id")[1]
-    console.log("rownum", rowNum)
-    console.log("colNum", colNum)
+    //console.log("rownum", rowNum)
+    //console.log("colNum", colNum)
     rowNum = parseInt(rowNum)
     colNum = parseInt(colNum)
     if (currElement == "Nil") {

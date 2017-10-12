@@ -1,10 +1,17 @@
+
+.btn-oldstyle {
+  background-color: #08c;
+  border-color: #08c;
+  color: #fff;
+}
+
 <table class="table">
   <tbody>
     <% (0..2).each do |i| %>
       <tr>
         <% (0..2).each do |j| %>
           <% id_string = i.to_s + j.to_s %>
-          <td><button type="button"  class="btn btn-secondary btn-lg" id="<%= id_string %>" >Nil</button></td>
+          <td><button type="button"  class="btn-mapgrid btn-secondary btn-lg" id="<%= id_string %>" ></button></td>
         <% end %>
       </tr>
     <% end %>
