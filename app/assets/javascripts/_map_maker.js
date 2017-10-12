@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function(){
         var currGridElement = savedState[i][j]
         if (currGridElement) {
           currGridCoord.html(currGridElement)
+          currGridCoord.css("background-image", "url(/assets/" + currElement + ".png)")
         } else {
           currGridCoord.html("Nil")
         }
