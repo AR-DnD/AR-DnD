@@ -2,9 +2,22 @@ $(document).on('turbolinks:load', function(){
   var currElement = "Tree"
   var grid = [[null, null, null], [null, null, null], [null, null, null]]
   if($("#edit_map-flag").length > 0) {
-    alert("You are now on the editor. We will try to load up a map");
+    var savedState = JSON.parse($("#map_data").val())
+    console.log(savedState)
+    for (var i = 0; i < savedState.length; i++) {
+      for (var j = 0; j < savedState[i].length; j++) {
+        var stringID = String(i) + String(j)
+        var currGridCoord = $("#" + stringID)
+        var currGridElement = savedState[i][j]
+        if (currGridElement) {
+          currGridCoord.html(currGridElement)
+        } else {
+          currGridCoord.html("Nil")
+        }
+      }
+    }
+    grid = savedState
   }
-
 
   $( "input" ).on( "click", function() {
     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
