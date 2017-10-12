@@ -12,9 +12,7 @@ $(document).on('turbolinks:load', function(){
         if (currGridElement) {
           //currGridCoord.html(currGridElement)
           currGridCoord.css("background-image", "url(/assets/" + currElement + ".png)")
-        } //else {
-          //currGridCoord.html("Nil")
-        //}
+        }
       }
     }
     grid = savedState

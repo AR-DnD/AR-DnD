@@ -2,16 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-button{
-  background-size: 100%;
+.table-mapgrid{
+  width: 700px;
+  border: 10px solid black;
+}
+
+td {
+  width: 200px;
+}
+
+tr {
+  height: 200px;
+  width: 700px;
 }
 
 .btn-mapgrid {
+  background-size: 100%;
   background-color: #08c;
   border-color: #08c;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   border-radius: 0px;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
