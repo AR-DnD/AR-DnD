@@ -1,6 +1,10 @@
 $(document).on('turbolinks:load', function(){
   var currElement = "Tree"
   var grid = [[null, null, null], [null, null, null], [null, null, null]]
+  if($("#edit_map-flag").length > 0) {
+    alert("You are now on the editor. We will try to load up a map");
+  }
+
 
   $( "input" ).on( "click", function() {
     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
