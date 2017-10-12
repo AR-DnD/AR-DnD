@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   var currElement = "Tree"
   var grid = [[null, null, null], [null, null, null], [null, null, null]]
-  if($("#edit_map-flag").length > 0) {
+  if($("#edit_map-flag").length > 0 || $("#show_map-flag").length > 0) {
     var savedState = JSON.parse($("#map_data").val())
     console.log(savedState)
     for (var i = 0; i < savedState.length; i++) {

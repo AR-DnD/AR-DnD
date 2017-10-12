@@ -1,3 +1,5 @@
+<span id="show_map-flag" style="display: none"></span>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,7 +19,8 @@
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>
 
-
+<%= javascript_include_tag "_map_maker" %>
+<!--
 <script>
 var savedState = JSON.parse($("#map_data").html())
 console.log(savedState)
@@ -34,3 +37,4 @@ for (var i = 0; i < savedState.length; i++) {
   }
 }
 </script>
+-->
