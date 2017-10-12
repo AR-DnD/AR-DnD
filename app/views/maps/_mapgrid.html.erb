@@ -1,19 +1,12 @@
 <table class="table">
   <tbody>
+    <% (0..2).each do |i| %>
       <tr>
-          <td><button type="button"  class="btn btn-secondary btn-lg" id="00">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="01">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="02">Nil</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="10">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="11">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="12">Nil</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="20">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="21">Nil</button></td>
-          <td><button type="button" class="btn btn-secondary btn-lg" id="22">Nil</button></td>
-        </tr>
+        <% (0..2).each do |j| %>
+          <% id_string = i.to_s + j.to_s %>
+          <td><button type="button"  class="btn btn-secondary btn-lg" id="<%= id_string %>" >Nil</button></td>
+        <% end %>
+      </tr>
+    <% end %>
   </tbody>
 </table>

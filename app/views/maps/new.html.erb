@@ -3,10 +3,14 @@
 
 <%= render "mapgrid" %>
 
+<%= render "element_chooser" %>
+
 <%= render 'form', map: @map %>
 
 <%= link_to 'Back', maps_path %>
 
+
+<!--
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active mapElement" id="Tree">
     <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
@@ -18,6 +22,7 @@
     <input type="radio" class="mapElement" name="options" value="Remove" id="option3" autocomplete="off"> Remove
   </label>
 </div>
+-->
 
 <script>
 var currElement = "Tree"
