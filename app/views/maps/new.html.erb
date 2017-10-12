@@ -9,21 +9,7 @@
 
 <%= link_to 'Back', maps_path %>
 
-
 <!--
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active mapElement" id="Tree">
-    <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
-  </label>
-  <label class="btn btn-primary mapElement" id="Orc">
-    <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
-  </label>
-  <label class="btn btn-primary mapElement" id="Nil">
-    <input type="radio" class="mapElement" name="options" value="Remove" id="option3" autocomplete="off"> Remove
-  </label>
-</div>
--->
-
 <script>
 var currElement = "Tree"
 var grid = [[null, null, null], [null, null, null], [null, null, null]]
@@ -59,3 +45,7 @@ $( ".btn-lg" ).on("click", function() {
 })
 
 </script>
+
+Make sure to precompile
+-->
+<%= javascript_include_tag "_map_maker" %>
