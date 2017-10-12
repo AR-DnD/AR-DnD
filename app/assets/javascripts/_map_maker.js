@@ -17,6 +17,21 @@ $(document).on('turbolinks:load', function(){
     }
     grid = savedState
   }
+  if ($("#show_map-flag").length > 0) {
+    var savedState = JSON.parse($("#map_data").html())
+    console.log(savedState)
+    for (var i = 0; i < savedState.length; i++) {
+      for (var j = 0; j < savedState[i].length; j++) {
+        var stringID = String(i) + "-" + String(j)
+        var currGridCoord = $("#" + stringID)
+        var currGridElement = savedState[i][j]
+        if (currGridElement) {
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
+        }
+      }
+    }
+
+  }
 
   $( "input" ).on( "click", function() {
     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
@@ -29,6 +44,9 @@ $(document).on('turbolinks:load', function(){
   })
 
   $( ".btn-lg" ).on("click", function() {
+    if ($("#show_map-flag").length > 0){
+      return
+    }
     var coords = $(this).attr("id").split("-")
     var rowNum = coords[0]
     var colNum = coords[1]
