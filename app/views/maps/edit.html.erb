@@ -1,68 +1,14 @@
+<span id="edit_map-flag" style="display: none"></span>
+
 <h1>Editing Map</h1>
 
 <%= render "mapgrid" %>
+
+<%= render "element_chooser" %>
 
 <%= render 'form', map: @map %>
 
 <%= link_to 'Show', @map %> |
 <%= link_to 'Back', maps_path %>
 
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active mapElement" id="Tree">
-    <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
-  </label>
-  <label class="btn btn-primary mapElement" id="Orc">
-    <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
-  </label>
-  <label class="btn btn-primary mapElement" id="Nil">
-    <input type="radio" class="mapElement" name="options" value="Remove" id="option3" autocomplete="off"> Remove
-  </label>
-</div>
-
-<script>
-var currElement = "Tree"
-var grid = [[null, null, null], [null, null, null], [null, null, null]]
-var savedState = JSON.parse($("#map_data").val())
-console.log(savedState)
-for (var i = 0; i < savedState.length; i++) {
-  for (var j = 0; j < savedState[i].length; j++) {
-    var stringID = String(i) + String(j)
-    var currGridCoord = $("#" + stringID)
-    var currGridElement = savedState[i][j]
-    if (currGridElement) {
-      currGridCoord.html(currGridElement)
-    } else {
-      currGridCoord.html("Nil")
-    }
-  }
-}
-grid = savedState
-
-$( "input" ).on( "click", function() {
-  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-  console.log("here")
-});
-
-$( ".mapElement" ).on("click", function() {
-  currElement = $(this).attr("id")
-  console.log("currElement", currElement)
-})
-
-$( ".btn-lg" ).on("click", function() {
-  var coord = $(this)
-  var rowNum = coord.attr("id")[0]
-  var colNum = coord.attr("id")[1]
-  console.log("rownum", rowNum)
-  console.log("colNum", colNum)
-  rowNum = parseInt(rowNum)
-  colNum = parseInt(colNum)
-  if (currElement == "Nil") {
-    grid[rowNum][colNum] = null
-  } else {
-    grid[rowNum][colNum] = currElement
-  }
-  console.log("Grid", grid)
-  $(this).html(currElement)
-  $("#map_data").val(JSON.stringify(grid))
-})
-</script>
+<%= javascript_include_tag "_map_maker" %>
