@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function(){
     console.log("currElement", currElement)
   })
 
-  $( ".btn-lg" ).on("click", function() {
+  $( ".btn-mapgrid" ).on("click", function() {
     if ($("#show_map-flag").length > 0){
       return
     }
