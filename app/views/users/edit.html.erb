@@ -2,4 +2,6 @@
 
 <h1 align="center">Edit your account</h1>
 
-<%= render 'form' %>
+<% if logged_in? %>
+  <%= render 'form' %>
+<% end %>
