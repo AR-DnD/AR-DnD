@@ -1,58 +1,32 @@
-
-<h1>New Map</h1>
-<div class="coordinate" style="background-image:url(<%= "/assets/images/Tree.png" %>); background-size:cover;"> </div>
-
-<%= render "mapgrid" %>
-
-<%= render "element_chooser" %>
-
-
-<%= render 'form', map: @map %>
 <!--
-<div class = "field">
-  <label for="map_story">story</label>
-  <input id = "map_story" type= "text" name =map[story]>
-</div>
+<h1>New Map</h1>
 -->
+<!--
+<div class="coordinate" style="background-image:url(<%= "/assets/images/Tree.png" %>); background-size:cover;"> </div>
+-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2">
+            <%= render "element_chooser" %>
+        </div>
+        <div class="col-xs-6">
+            <%= render "mapgrid" %>
+        </div>
+        <div class="col-xs-12">
+            <%= render 'form', map: @map %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <%= link_to 'Back', maps_path %>
 
-<!--
-<script>
-var currElement = "Tree"
-var grid = [[null, null, null], [null, null, null], [null, null, null]]
 
-$( "input" ).on( "click", function() {
-  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-  console.log("here")
-});
-
-$( ".mapElement" ).on("click", function() {
-  currElement = $(this).attr("id")
-  console.log("currElement", currElement)
-})
-
-$( ".btn-lg" ).on("click", function() {
-  var coord = $(this)
-  var rowNum = coord.attr("id")[0]
-  var colNum = coord.attr("id")[1]
-  console.log("rownum", rowNum)
-  console.log("colNum", colNum)
-  rowNum = parseInt(rowNum)
-  colNum = parseInt(colNum)
-  if (currElement == "Nil") {
-    grid[rowNum][colNum] = null
-  } else {
-    grid[rowNum][colNum] = currElement
-  }
-  console.log("Grid", grid)
-  var imageUrlString = "/assets/" + currElement + ".png"
-  $(this).css("background-image", "url(" + imageUrlString + ")")
-  //$(this).html(currElement)
-  $("#map_data").val(JSON.stringify(grid))
-})
-
-</script>
-
-Make sure to precompile
--->
 <%= javascript_include_tag "_map_maker" %>
+<!--make sure to precompile! -->

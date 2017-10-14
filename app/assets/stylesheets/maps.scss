@@ -3,17 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .table-mapgrid{
-  width: 600px;
-  border: 10px solid black;
+  background-color: #08c;
+  border-spacing: 0px 0px;
+  //was 600px
+  width: 50%;
+  //border: 10px solid black;
+  padding: 0px;
 }
 
 td {
+  padding: 0px;
   width: 200px;
+  border: none;
+
 }
 
 tr {
+  padding: 0px;
   height: 200px;
-  width: 700px;
+  width: 200px;
+  border: none;
+
 }
 
 .btn-mapgrid {
@@ -21,8 +31,10 @@ tr {
   background-color: #08c;
   border-color: #08c;
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  //text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   border-radius: 0px;
+  //width:100%;
+  //height:100%;
   width:200px;
   height:200px;
 
