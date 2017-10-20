@@ -1,7 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :forums
-  has_many :topics
-  has_many :posts
   has_many :maps
 
   before_save { self.email = email.downcase }
