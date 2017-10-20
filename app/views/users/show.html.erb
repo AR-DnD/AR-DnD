@@ -61,28 +61,39 @@
 <div class="center">
 </div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
 <% if current_user == @user %>
   <p> <%= link_to 'Create New Adventure', new_adventure_path(:user => @user) %> </p>
+<% else %>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+<% end %>
+
+<% if current_user == @user %>
+  <td> Work on your Adventures: </td>
+<% else %>
+  <td> View <%=  %> 's Adventures: </td>
 <% end %>
 
 <table>
   <tr>
-   <th>Adventure Name:</th>
-   <th>Adventure Title:</th>
+   <th>Title</th>
+   <th>Story</th>
  </tr>
  <% @user.adventures.each do |adventure|%>
   <tr>
-    <td> <%= adventure.title %></td>
+
+    <% if current_user == @user %>
+      <td> <%= link_to adventure.title, edit_adventure_path(adventure) %></td>
+    <% else %>
+      <td> <%= link_to adventure.title, show_adventure_path(adventure) %></td>
+    <% end %>
     <td> <%= adventure.story %></td>
   </tr>
  <% end %>
