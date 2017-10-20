@@ -72,16 +72,18 @@
 </p>
 
 <% if current_user == @user %>
-  <p> <%= link_to 'Create New Adventure', new_adventure_path %> </p>
+  <p> <%= link_to 'Create New Adventure', new_adventure_path(:user => @user) %> </p>
 <% end %>
 
 <table>
   <tr>
    <th>Adventure Name:</th>
+   <th>Adventure Title:</th>
  </tr>
  <% @user.adventures.each do |adventure|%>
   <tr>
     <td> <%= adventure.title %></td>
+    <td> <%= adventure.story %></td>
   </tr>
  <% end %>
 </table>

@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :adventure_user_id %>
+    <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
   </div>
 
   <div class="actions">
