@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @adventure.title %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @adventure.story %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @adventure.user %>
+</p>
+
+<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+<%= link_to 'Back', adventures_path %>
