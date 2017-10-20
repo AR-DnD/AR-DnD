@@ -71,5 +71,21 @@
   <%= @user.email %>
 </p>
 
+<% if current_user == @user %>
+  <p> <%= link_to 'Create New Adventure', new_adventure_path %> </p>
+<% end %>
+
+<table>
+  <tr>
+   <th>Adventure Name:</th>
+ </tr>
+ <% @user.adventures.each do |adventure|%>
+  <tr>
+    <td> <%= adventure.title %></td>
+  </tr>
+ <% end %>
+</table>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
