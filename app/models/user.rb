@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :maps
+  has_many :adventures
 
   before_save { self.email = email.downcase }
 
