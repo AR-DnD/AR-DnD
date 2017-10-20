@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(version: 20171020173852) do
     t.index ["user_id"], name: "index_adventures_on_user_id"
   end
 
-  create_table "forums", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "maps", force: :cascade do |t|
     t.string "name"
     t.string "data"
@@ -36,22 +29,6 @@ ActiveRecord::Schema.define(version: 20171020173852) do
     t.string "story"
     t.integer "adventure_id"
     t.index ["adventure_id"], name: "index_maps_on_adventure_id"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "topics", force: :cascade do |t|
-    t.string "name"
-    t.string "last_poster_id"
-    t.string "integer"
-    t.string "last_past_at"
-    t.string "datetime"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
