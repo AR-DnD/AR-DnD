@@ -1,5 +1,7 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1>
+<font color="Tomato">Sign up</font>
+</h1>
 
 
 <div class="container-fluid">
@@ -8,18 +10,22 @@
     <%= form_for(@user) do |f| %>
       <%= f.label :username, "Create a username" %>
       <%= f.text_field :username , class:"form-control", placeholder:"Please create your username", autofocus: true%>
-
+      <h2> </h2>
       <%= f.label :email, "Provide your email address" %>
       <%= f.email_field :email, class:"form-control", placeholder:"Here is for your email address", autofocus: true %>
-
+      <h2> </h2>
       <%= f.label :password, "Create your password" %>
       <%= f.password_field :password, class:"form-control", placeholder:"Think of a dope password only you would know...", autofocus: true %>
-
-      <%= f.label :password_confirmation, "Confirm your password" %>
-      <%= f.password_field :password_confirmation, class:"form_control", placeholder: "Shhh...Let's confirm your password...", autofocus: true %>
-
+      <h2> </h2>
+      <%= f.label :password, "Confirm your password" %>
+      <%= f.password_field :password_confirmation, class:"form-control", placeholder:"lol",
+      autofocus: true%>
+      <h2>        </h2>
       <%= f.submit "Click me and create your account", class: "btn btn-success btn-lg btn-block" %>
     <% end %>
   </div>
+  <div class="col-md-6">
+      <%= image_tag("dungendragon.jpg") %>
+    </div>
 </div>
 </div>
