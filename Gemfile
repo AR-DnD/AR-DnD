@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails_admin', '~>1.2'
+
 gem 'izimodal'
 
 gem 'jquery-ui-rails'
