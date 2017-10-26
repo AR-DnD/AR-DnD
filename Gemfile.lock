@@ -78,6 +78,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.6)
+    izimodal (1.4.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -204,6 +205,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  izimodal
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
