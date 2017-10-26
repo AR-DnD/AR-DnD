@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :adventures
   get 'users/new'
 
   resources :users

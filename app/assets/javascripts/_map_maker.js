@@ -40,10 +40,11 @@ $(document).on('turbolinks:load', function(){
 
   $( ".mapElement" ).on("click", function() {
     currElement = $(this).attr("id")
+    $(".selected").html("You have selected: "+currElement)
     console.log("currElement", currElement)
   })
 
-  $( ".btn-lg" ).on("click", function() {
+  $( ".btn-mapgrid" ).on("click", function() {
     if ($("#show_map-flag").length > 0){
       return
     }

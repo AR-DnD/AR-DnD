@@ -1,0 +1,32 @@
+<%= form_with(model: adventure, local: true) do |form| %>
+  <% if adventure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
+
+      <ul>
+      <% adventure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :adventure_title %>
+  </div>
+
+  <div class="field hide">
+    <%= form.label :story %>
+    <%= form.text_field :story, id: :adventure_story %>
+  </div>
+
+  <div class="field hide">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

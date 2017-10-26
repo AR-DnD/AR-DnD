@@ -20,21 +20,3 @@
 <%= link_to 'Back', maps_path %>
 
 <%= javascript_include_tag "_map_maker" %>
-<!--
-<script>
-var savedState = JSON.parse($("#map_data").html())
-console.log(savedState)
-for (var i = 0; i < savedState.length; i++) {
-  for (var j = 0; j < savedState[i].length; j++) {
-    var stringID = String(i) + String(j)
-    var currGridCoord = $("#" + stringID)
-    var currGridElement = savedState[i][j]
-    if (currGridElement) {
-      currGridCoord.html(currGridElement)
-    } else {
-      currGridCoord.html("Nil")
-    }
-  }
-}
-</script>
--->
