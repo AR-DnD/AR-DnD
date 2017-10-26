@@ -1,6 +1,12 @@
 
 
-<button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button>
+<!-- <div id="modal-iFrame" class="iziModal"></div>
+
+<button class="waves-effect waves-light btn-large red darken-2 trigger-iFrame">Modal iFrame</button> -->
+
+
+<a class="waves-effect waves-light btn-large red darken-2 trigger-iFrame" data-izimodal-open="#modal-custom">Login/Sign Up</a>
+<!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
 
 <%= javascript_include_tag "_login" %>
 
@@ -10,7 +16,7 @@
         <a href="" class="active">Login</a>
         <a href="" id="signin">Sign Up</a>
     </header>
-    <section>
+    <section class>
       <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
           <%= f.label :email %>
           <%= f.email_field :email, class: "form-control", placeholder: "Enter your email.", autofocus: true %>

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :forums
 
   get 'signup', to: 'users#new'
-  post 'signup', to: 'sessions#create'
+  # post 'signup', to: 'sessions#create'
 
   resources :users, except: [:new]
 
