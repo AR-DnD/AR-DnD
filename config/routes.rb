@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :maps
-  resources :posts
-  resources :topics
   resources :forums
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#home'
@@ -13,7 +11,6 @@ Rails.application.routes.draw do
   #get 'forums', to: 'forums#index'
   root :to => 'forums#index'
 
-  resources :forums
 
   get 'signup', to: 'users#new'
   # post 'signup', to: 'sessions#create'
