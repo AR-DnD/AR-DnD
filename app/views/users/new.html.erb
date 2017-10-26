@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 <% provide(:title, 'Sign up') %>
 <h1>
 Sign up
 </h1>
 
+=======
+<!-- <% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class=" col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+>>>>>>> 9376bd499fab0069179c898a14236c847881cfba
 
 <div class="container-fluid">
   <div class="row">
@@ -23,8 +40,72 @@ Sign up
       <%= f.submit "Create Account", class: "btn btn-success btn-lg btn-block" %>
     <% end %>
   </div>
+<<<<<<< HEAD
   <div class="col-md-6">
       <%= image_tag("dungendragon.jpg") %>
     </div>
 </div>
+=======
+</div> -->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="path_to/jquery.leanModal.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Sign Up</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <div id="modal_trigger" title="Sign Up">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <%= form_for(@user) do |f| %>
+
+                  <%= f.label :username %>
+                  <%= f.text_field :username %>
+
+                  <%= f.label :email %>
+                  <%= f.email_field :email %>
+
+                  <%= f.label :password %>
+                  <%= f.password_field :password %>
+
+                  <%= f.label :password_confirmation, "Confirmation" %>
+                  <%= f.password_field :password_confirmation %>
+
+                  <%= f.submit "Create my account", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+>>>>>>> 9376bd499fab0069179c898a14236c847881cfba
 </div>
+
+</body>
+</html>
