@@ -1,0 +1,67 @@
+$(document).on('turbolinks:load', function(){
+  var currElement = "Tree"
+  var grid = [[null, null, null], [null, null, null], [null, null, null]]
+  if($("#edit_map-flag").length > 0) {
+    var savedState = JSON.parse($("#map_data").val())
+    console.log(savedState)
+    for (var i = 0; i < savedState.length; i++) {
+      for (var j = 0; j < savedState[i].length; j++) {
+        var stringID = String(i) + "-" + String(j)
+        var currGridCoord = $("#" + stringID)
+        var currGridElement = savedState[i][j]
+        if (currGridElement) {
+          //currGridCoord.html(currGridElement)
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
+        }
+      }
+    }
+    grid = savedState
+  }
+  if ($("#show_map-flag").length > 0) {
+    var savedState = JSON.parse($("#map_data").html())
+    console.log(savedState)
+    for (var i = 0; i < savedState.length; i++) {
+      for (var j = 0; j < savedState[i].length; j++) {
+        var stringID = String(i) + "-" + String(j)
+        var currGridCoord = $("#" + stringID)
+        var currGridElement = savedState[i][j]
+        if (currGridElement) {
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
+        }
+      }
+    }
+
+  }
+
+  $( "input" ).on( "click", function() {
+    $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+    console.log("here")
+  });
+
+  $( ".mapElement" ).on("click", function() {
+    currElement = $(this).attr("id")
+    $(".selected").html("You have selected: "+currElement)
+    console.log("currElement", currElement)
+  })
+
+  $( ".btn-mapgrid" ).on("click", function() {
+    if ($("#show_map-flag").length > 0){
+      return
+    }
+    var coords = $(this).attr("id").split("-")
+    var rowNum = coords[0]
+    var colNum = coords[1]
+    rowNum = parseInt(rowNum)
+    colNum = parseInt(colNum)
+    if (currElement == "Nil") {
+      grid[rowNum][colNum] = null
+    } else {
+      grid[rowNum][colNum] = currElement
+    }
+    console.log("Grid", grid)
+    var imageUrlString = "/assets/" + currElement + ".png"
+    $(this).css("background-image", "url(" + imageUrlString + ")")
+    //$(this).html(currElement)
+    $("#map_data").val(JSON.stringify(grid))
+  })
+});
