@@ -24,7 +24,12 @@ class MapsController < ApplicationController
   # POST /maps
   # POST /maps.json
   def create
-    @map = Map.new(map_params)
+    puts "Map params: #{map_params}"
+    params = map_params
+    params[:adventure] = Adventure.find(params[:adventure].to_i)
+    @map = Map.new(params)
+    # @map.adventure = Adventure.find(map_params[:adventure].to_i)
+    puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
         format.html { redirect_to @map, notice: 'Map was successfully created.' }
@@ -72,7 +77,7 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:name, :data)
+      params.require(:map).permit(:name, :data, :story, :adventure)
     end
 
 

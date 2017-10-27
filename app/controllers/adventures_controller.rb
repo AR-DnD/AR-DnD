@@ -25,6 +25,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
+    @adventure.user = current_user
 
     respond_to do |format|
       if @adventure.save
