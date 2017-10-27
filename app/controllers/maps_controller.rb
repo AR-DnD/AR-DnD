@@ -24,7 +24,6 @@ class MapsController < ApplicationController
   # POST /maps
   # POST /maps.json
   def create
-    puts "Map params: #{map_params}"
     params = map_params
     params[:adventure] = Adventure.find(params[:adventure].to_i)
     @map = Map.new(params)
@@ -32,7 +31,7 @@ class MapsController < ApplicationController
     puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
-        format.html { redirect_to @map, notice: 'Map was successfully created.' }
+        format.html { redirect_to @map.adventure, notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
