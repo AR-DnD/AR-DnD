@@ -5,31 +5,26 @@
 <div class="coordinate" style="background-image:url(<%= "/assets/images/Tree.png" %>); background-size:cover;"> </div>
 -->
 
-<div class="container-fluid">
-  <ul>
+<div class="container">
     <div class="row">
-        <div class="col-xs-2">
-            <%= render "element_chooser" %>
-        </div>
-        <div class="col-xs-6">
+        <%= render "element_chooser" %>
+    </div>
+    <div class="row">
+        <h1><font color="white">Here is your map configuration:</font></h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
             <%= render "mapgrid" %>
         </div>
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <%= render 'form', map: @map %>
+            <%= link_to 'Back', maps_path %>
+        </div>
     </div>
-    <div class="col-9">
-        <%= render 'form', map: @map %>
-    </div>
-  </ul>
 </div>
-
-
-
-
-
-
-
-
-
-<%= link_to 'Back', maps_path %>
 
 
 <%= javascript_include_tag "_map_maker" %>

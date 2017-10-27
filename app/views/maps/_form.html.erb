@@ -1,4 +1,3 @@
-
 <%= form_with(model: map, local: true) do |form| %>
   <% if map.errors.any? %>
     <div id="error_explanation">
@@ -13,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :map_name %>
+    <font color="white"><%= form.label :name, "Map Name" %></font>
+    <%= form.text_field :name, class:"form-control", id: :map_name %>
   </div>
 
   <div class="field hide">
-    <%= form.label :data %>
-    <%= form.text_field :data, id: :map_data %>
+    <font color="white"><%= form.label :data %></font>
+    <%= form.text_field :data, class:"form-control", id: :map_data %>
   </div>
 
   <div class="field">
-    <%= form.label :story %>
-    <%= form.text_field :story, id: :map_story %>
+    <font color="white"><%= form.label :story, "Story Name" %></font>
+    <%= form.text_field :story, class:"form-control", id: :map_story %>
   </div>
 
   <div class="field">
-    <%= form.label :adventure %>
-    <%= form.text_field :adventure, id: :map_adventure %>
+    <font color="white"><%= form.label :adventure, "Adventure Category" %></font>
+    <%= form.text_field :adventure, class:"form-control", id: :map_adventure %>
   </div>
 
 
