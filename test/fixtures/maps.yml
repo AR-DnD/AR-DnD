@@ -3,7 +3,9 @@
 one:
   name: MyString
   data: MyString
+  adventure: one
 
 two:
   name: MyString
   data: MyString
+  adventure: two

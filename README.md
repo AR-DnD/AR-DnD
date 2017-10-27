@@ -20,6 +20,8 @@ This repo is dedicated to the AR-DnD project and used Ruby on Rails and Unity 3D
 
 The web application build by Ruby on Rails is to serve as a front-end interface. Players can use the map generator to configure on the map layout, which contains the info where to place different game objects including goblins, trees and walls.
 
+Heroku: http://ar-dnd.herokuapp.com/
+
 Sample - [Under development...]
 
 ### mobile-end iOS application :iphone:
