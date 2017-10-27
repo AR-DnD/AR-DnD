@@ -6,7 +6,7 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get user_url
+    get users_url
     assert_response :success
   end
 
@@ -26,7 +26,7 @@ class UserControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to user_url(assigns(:user))
+    assert_redirected_to user_url(User.last)
   end
 
   test "should show user" do

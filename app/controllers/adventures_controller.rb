@@ -26,6 +26,7 @@ class AdventuresController < ApplicationController
   def create
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
+    puts "Adventure: #{@adventure.inspect}"
 
     respond_to do |format|
       if @adventure.save

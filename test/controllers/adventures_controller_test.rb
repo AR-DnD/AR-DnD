@@ -17,7 +17,7 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
 
   test "should create adventure" do
     assert_difference('Adventure.count') do
-      post adventures_url, params: { adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
+      post adventures_url, params: { adventure: { story: "cool", title: "stuff", user: 1 } }
     end
 
     assert_redirected_to adventure_url(Adventure.last)
