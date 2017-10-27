@@ -1,0 +1,11 @@
+
+
+one:
+  username: MyString
+  email: MyString
+  adventure: one
+
+two:
+  username: MyString
+  email: MyString
+  adventure: two
