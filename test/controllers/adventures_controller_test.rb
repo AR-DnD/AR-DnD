@@ -33,7 +33,7 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update adventure" do
+  test "should update adventure with correct redirect" do
     patch adventure_url(@adventure), params: { adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
     assert_redirected_to user_url(@adventure.user_id)
   end
@@ -45,4 +45,7 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to adventures_url
   end
+
+
+
 end

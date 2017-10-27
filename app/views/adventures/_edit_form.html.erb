@@ -26,6 +26,10 @@
     <%= form.text_field :user_id, id: :adventure_user_id%>
   </div>
 
+  <% if @adventure.user == current_user%>
+   <p><%= link_to 'Add Map', new_map_path(:adventure => @adventure) %></p>
+ <% end %>
+
   <table>
     <thead>
       <tr>
