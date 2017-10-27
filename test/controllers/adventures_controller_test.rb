@@ -37,13 +37,20 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
     patch adventure_url(@adventure), params: { adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
     #assert_redirected_to user_url(@adventure.user_id)
     assert_redirected_to adventure_url(@adventure)
+
+  test "should update adventure with correct redirect" do
+    patch adventure_url(@adventure), params: { adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
+    assert_redirected_to user_url(@adventure.user_id)
   end
 
   test "should destroy adventure" do
     assert_difference('Adventure.count', -1) do
       delete adventure_url(@adventure)
     end
-
     assert_redirected_to adventures_url
   end
+
+
+
+
 end
