@@ -30,7 +30,7 @@ class AdventuresController < ApplicationController
 
     respond_to do |format|
       if @adventure.save
-        format.html { redirect_to current_user, notice: 'Adventure was successfully created.' }
+        format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
         # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         # format.json { render :show, status: :created, location: @adventure }

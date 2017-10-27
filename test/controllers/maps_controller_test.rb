@@ -11,6 +11,16 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "name should be present" do
+    @map.name = ""
+    assert_not @map.valid?
+  end
+
+  test "story should be present" do
+    @map.story = ""
+    assert_not @map.valid?
+  end
+
   test "should get new" do
     get new_map_url
     assert_response :success
@@ -18,7 +28,7 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create map" do
     assert_difference('Map.count') do
-      post maps_url, params: { map: { data: @map.data, name: @map.name, adventure: @adventure.id} }
+      post maps_url, params: { map: { data: @map.data, name: @map.name, story: @map.story, adventure: @adventure.id} }
     end
 
     assert_redirected_to map_url(Map.last)
