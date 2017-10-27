@@ -17,7 +17,7 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create map" do
     assert_difference('Map.count') do
-      post maps_url, params: { map: { data: @map.data, name: @map.name } }
+      post maps_url, params: { map: { data: @map.data, name: @map.name, adventure: Adventure.find(1) } }
     end
 
     assert_redirected_to map_url(Map.last)
