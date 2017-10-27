@@ -26,11 +26,9 @@
     <%= form.text_field :story, class:"form-control", id: :map_story %>
   </div>
 
-  <div class="field">
+  <div class="field hide">
     <%= form.label :adventure %>
     <%= form.text_field :adventure, id: :adventure_map_id, :value => params[:adventure] %>
-    <font color="white"><%= form.label :adventure, "Adventure Category" %></font>
-    <%= form.text_field :adventure, class:"form-control", id: :map_adventure %>
   </div>
 
 
