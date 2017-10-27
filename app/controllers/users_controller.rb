@@ -29,15 +29,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    puts "Creating new user: #{user_params.inspect}"
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        # session[:user_id] = @user.id
+        session[:user_id] = @user.id
         format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        flash[:danger] = 'Failed to create user'
+        format.html { redirect_to root_path }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

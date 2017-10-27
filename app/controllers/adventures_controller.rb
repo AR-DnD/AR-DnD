@@ -26,10 +26,11 @@ class AdventuresController < ApplicationController
   def create
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
+    puts "Adventure: #{@adventure.inspect}"
 
     respond_to do |format|
       if @adventure.save
-        format.html { redirect_to current_user, notice: 'Adventure was successfully created.' }
+        format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
         # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         # format.json { render :show, status: :created, location: @adventure }

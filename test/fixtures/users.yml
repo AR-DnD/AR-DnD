@@ -1,11 +1,13 @@
-
-
 one:
-  username: MyString
-  email: MyString
-  adventure: one
+  username: bob
+  email: bob@bob.com
+  password_digest: unsafe
+  admin: false
+  id: 1
 
 two:
-  username: MyString
-  email: MyString
-  adventure: two
+  username: joe
+  email: joe@joe.com
+  password_digest: unsafe
+  admin: false
+  id: 2
