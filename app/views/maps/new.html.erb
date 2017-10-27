@@ -6,6 +6,7 @@
 -->
 
 <div class="container-fluid">
+  <ul>
     <div class="row">
         <div class="col-xs-2">
             <%= render "element_chooser" %>
@@ -13,10 +14,11 @@
         <div class="col-xs-6">
             <%= render "mapgrid" %>
         </div>
-        <div class="col-9">
-            <%= render 'form', map: @map %>
-        </div>
     </div>
+    <div class="col-9">
+        <%= render 'form', map: @map %>
+    </div>
+  </ul>
 </div>
 
 

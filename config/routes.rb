@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'about', to: 'welcome#about'
   #get 'forums', to: 'forums#index'
-  root :to => 'forums#index'
+  #root :to => 'forums#index'
 
   resources :forums
 

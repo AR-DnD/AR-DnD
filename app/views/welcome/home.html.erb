@@ -1,10 +1,11 @@
 <div class="center jumbotron">
 
-  <h1><font color="white">AR DnD MAP GENERATOR</font></h1>
+  <h1>AR DnD MAP GENERATOR</h1>
 
-  <div class="text-center">
-    <a class="waves-effect waves-light btn-large red darken-2 trigger-iFrame" data-izimodal-open="#modal-custom">Login/Sign Up</a>
-    <%= javascript_include_tag "_login" %>
+  <% if !logged_in? %>
+    <div class="text-center">
+      <a class="waves-effect waves-light btn-large red darken-2 trigger-iFrame" data-izimodal-open="#modal-custom">Login/Sign Up</a>
+      <%= javascript_include_tag "_login" %>
       <div id="modal-custom" data-iziModal-group="group1">
         <button data-iziModal-close class="icon-close, hide">x</button>
         <header class="hide">
@@ -39,7 +40,7 @@
             <%= f.submit "Create my account", class: "btn btn-primary btn-lg" %>
           <% end %>
         </section>
+      </div>
     </div>
-  </ul>
-
+  <% end %>
 </div>

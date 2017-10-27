@@ -19,11 +19,12 @@ $navbar-default-bg: red;
   background-color: transparent;
   background-size: cover;
   height: 550px;
+  width: auto;
 }
 
 .jumbotron h1 {
-  color: black;
-  text-align: center;
+  color: red;
+  text-align: right;
   margin-bottom: 30px;
   letter-spacing: -1px;
   font-weight: bold;
