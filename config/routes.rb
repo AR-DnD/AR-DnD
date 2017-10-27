@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #root :to => 'forums#index'
 
 
-  get 'signup', to: 'users#new'
+  post 'register', to: 'users#create'
   # post 'signup', to: 'sessions#create'
 
   resources :users, except: [:new]

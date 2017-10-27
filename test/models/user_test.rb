@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
 	end
 
 	test "email should accept a valid email format" do
-		valid_addresses = %w[whatever@whatever.com WHATEVER@whatever.COM W_HAT-EVER@whatever.org 
+		valid_addresses = %w[whatever@whatever.com WHATEVER@whatever.COM W_HAT-EVER@whatever.org
 			                 what.ever@whatever.com what+ever@whatever.ca]
 	    valid_addresses do |valid_address|
 	    	@user.email = valid_address
@@ -46,4 +46,16 @@ class UserTest < ActiveSupport::TestCase
     	#after use itself gets saved, then its duplicate will not be allowed
     	assert_not possible_duplicate.valid?
     end
+
+  # test "the truth" do
+  #   assert true
+  # end
+  def setup
+    @user = User.new(name: "Example User", email: "user@example.com",
+                     password: "foobar", password_confirmation: "foobar")
+  end
+    test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
+
 end
