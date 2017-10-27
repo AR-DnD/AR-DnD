@@ -2,7 +2,7 @@
   
   <% if !logged_in? %>
     <div class="center">
-     <a class="waves-effect waves-light btn-large red darken-2 trigger-iFrame" data-izimodal-open="#modal-custom">Login/Sign Up</a>
+     <button class="btn btn-secondary btn-lg" data-izimodal-open="#modal-custom">Login/Sign Up</button>
       <%= javascript_include_tag "_login" %>
       <div id="modal-custom" data-iziModal-group="group1">
         <button data-iziModal-close class="icon-close, hide">x</button>
@@ -10,7 +10,7 @@
             <a href="" class="active">Login</a>
             <a href="" id="signin">Sign Up</a>
         </header>
-        <section class="hide">
+        <section class="hide" style="background-color: black;">
           <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
               <%= f.label :email %>
               <%= f.email_field :email, class: "form-control", placeholder: "Enter your email.", autofocus: true %>
