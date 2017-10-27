@@ -26,7 +26,7 @@ class MapsController < ApplicationController
   def create
     puts "Map params: #{map_params}"
     params = map_params
-    params[:adventure] = Adventure.find(params[:adventure].to_i)
+    #params[:adventure] = Adventure.find(params[:adventure].to_i)
     @map = Map.new(params)
     # @map.adventure = Adventure.find(map_params[:adventure].to_i)
     puts "Map: #{@map.inspect}"
