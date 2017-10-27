@@ -27,7 +27,7 @@
       <% end %>
     </section>
     <section class="hide">
-      <%= form_for(User.new) do |f| %>
+      <%= form_for User.new, url: register_path do |f| %>
 
         <%= f.label :username %>
         <%= f.text_field :username %>
