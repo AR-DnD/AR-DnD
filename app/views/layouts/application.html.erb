@@ -10,16 +10,13 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-      <% if logged_in? %>
-        <div class="col-xs-3">
-          <%= render 'layouts/logged_in_sidebar' %>
-        </div>
-      <% end %>
-    <div class="col-xs-9">
-
-
-      <%= yield %>
+    <% if logged_in? %>
+    <div class="col-xs-3">
+      <%= render 'layouts/logged_in_sidebar' %>
     </div>
-    <%= %>
-  </body>
+  </div>
+  <% end %>
+ <%= yield %>
+  <%= %>
+</body>
 </html>

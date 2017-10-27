@@ -41,29 +41,29 @@
     background-color: #3e8e41;
 }*/
 </style>
-
+  <div class="col-md-1">
   <div class="dropdown" >
-    <button class="dropbtn">Terrain</button>
+    <button class="btn btn-success">Terrain</button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn btn-primary active mapElement" id="Tree">
         <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
       </label>
     </div>
   </div>
-
+</div>
+ <div class="col-md-1">
   <div class="dropdown" display = "block">
-    <button class="dropbtn">Creatures</button>
+    <button class="btn btn-warning">Objects</button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn btn-primary mapElement" id="Orc">
         <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
       </label>
     </div>
   </div>
-
-  <label class="btn btn-primary mapElement" id="Nil">
+</div>
+<div class="col-md-2">
+  <label class="btn btn-danger" id="Nil">
     <input type="radio" class="mapElement" name="options" value="Remove" id="option3" autocomplete="off"> Remove
   </label>
-
- <label class = "selected">
-   You have selected:
-</label>
+</div>
+</div>
