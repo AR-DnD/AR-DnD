@@ -32,8 +32,9 @@ $(document).on('turbolinks:load', function(){
         }
       }
     }
-
   }
+  
+  $("#map_data").val(JSON.stringify(grid))
 
   $( "input" ).on( "click", function() {
     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :adventures
   #get 'users/new'
 
-  resources :users
+  #resources :users
   resources :maps
   #resources :forums
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
