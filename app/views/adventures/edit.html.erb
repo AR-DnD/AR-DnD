@@ -3,7 +3,7 @@
 <%= render 'edit_form', adventure: @adventure %>
 
 
-<%= link_to 'Show', @adventure %> |
-<%= link_to 'Back', adventures_path %>
+<!--<%= link_to 'Show', @adventure %> | -->
+<%= link_to 'Back', user_path(@adventure.user.id) %>
 
 <%= javascript_include_tag "_adventure_editor" %>
