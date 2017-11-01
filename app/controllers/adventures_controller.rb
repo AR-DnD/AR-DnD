@@ -28,15 +28,19 @@ class AdventuresController < ApplicationController
     @adventure.user = current_user
     puts "Adventure: #{@adventure.inspect}"
 
-    respond_to do |format|
-      if @adventure.save
-        format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
-        format.json { render :show, status: :created, location: @adventure }
-        # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
-        # format.json { render :show, status: :created, location: @adventure }
-      else
-        format.html { render :new }
-        format.json { render json: @adventure.errors, status: :unprocessable_entity }
+    if @adventure.save
+      redirect_to new_map_path(:adventure => @adventure)
+    else 
+      respond_to do |format|
+        if @adventure.save
+          format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
+          format.json { render :show, status: :created, location: @adventure }
+          # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
+          # format.json { render :show, status: :created, location: @adventure }
+        else
+          format.html { render :new }
+          format.json { render json: @adventure.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

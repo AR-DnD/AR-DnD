@@ -26,11 +26,6 @@
     <%= form.text_field :story, class:"form-control", id: :map_story %>
   </div>
 
-  <div class="field">
-    <font color="white"><%= form.label :size, "Map Size" %></font>
-    <%= form.text_field :size, class:"form-control", id: :map_size %>
-  </div>
-
   <div class="field hide">
     <%= form.label :adventure %>
     <%= form.text_field :adventure, id: :adventure_map_id, :value => params[:adventure] %>
