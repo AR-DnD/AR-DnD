@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
 
   $( ".mapElement" ).on("click", function() {
     currElement = $(this).attr("id")
-    $(".selected").html("You have selected: "+currElement)
+    $(".selected").html("You have selected: " + currElement)
     console.log("currElement", currElement)
   })
 
