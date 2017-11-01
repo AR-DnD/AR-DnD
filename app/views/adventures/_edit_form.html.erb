@@ -44,10 +44,12 @@
         <tr>
           <td><%= map.name %></td>
           <td><%= map.data %></td>
-          <td><%= link_to 'Show', map %></td>
+
           <% if @adventure.user == current_user%>
             <td><%= link_to 'Edit', edit_map_path(map) %></td>
             <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else  %>
+            <td><%= link_to 'Show', map %></td>
           <% end %>
         </tr>
       <% end %>
