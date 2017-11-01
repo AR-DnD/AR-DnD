@@ -59,6 +59,11 @@ class AdventuresController < ApplicationController
   # DELETE /adventures/1.json
   def destroy
     user = @adventure.user
+
+    @adventure.maps.each do |map|
+      map.destroy
+    end
+
     @adventure.destroy
     respond_to do |format|
       format.html { redirect_to user_url(user), notice: 'Adventure was successfully destroyed.' }
