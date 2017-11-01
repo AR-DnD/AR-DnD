@@ -30,7 +30,7 @@ class AdventuresController < ApplicationController
 
     respond_to do |format|
       if @adventure.save
-        format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
+        format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
         # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         # format.json { render :show, status: :created, location: @adventure }
@@ -58,9 +58,10 @@ class AdventuresController < ApplicationController
   # DELETE /adventures/1
   # DELETE /adventures/1.json
   def destroy
+    user = @adventure.user
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to adventures_url, notice: 'Adventure was successfully destroyed.' }
+      format.html { redirect_to user_url(user), notice: 'Adventure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -88,9 +88,12 @@
  </tr>
  <% @user.adventures.each do |adventure|%>
   <tr>
+    <td> <%= adventure.title %></td>
+    <td> <%= adventure.story %></td>
 
     <% if current_user == @user %>
       <td> <%= link_to adventure.title, edit_adventure_path(adventure) %></td>
+      <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% else %>
       <td> <%= link_to adventure.title, show_adventure_path(adventure) %></td>
     <% end %>
@@ -101,6 +104,6 @@
 
 
 <% if @user == current_user %>
-  <%= link_to 'Edit', edit_user_path(@user)%> | 
+  <%= link_to 'Edit', edit_user_path(@user)%> |
   <% end %>
 <%= link_to 'Back', users_path %>

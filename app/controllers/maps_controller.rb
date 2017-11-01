@@ -57,9 +57,11 @@ class MapsController < ApplicationController
   # DELETE /maps/1
   # DELETE /maps/1.json
   def destroy
+    adventure = @map.adventure
     @map.destroy
+
     respond_to do |format|
-      format.html { redirect_to maps_url, notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to edit_adventure_path(adventure.id), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
