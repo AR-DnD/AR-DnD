@@ -7,25 +7,24 @@
 
 <div class="container">
     <div class="row">
-        <%= render "element_chooser" %>
+        <div class="jumbotron2"><%= render "element_chooser" %></div>
     </div>
     <div class="row">
-        <h1><font color="white">Here is your map configuration:</font></h1>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <%= render "mapgrid" %>
+        <div class="col-md-1">
         </div>
-        <div class="col-md-2">
-            
+        <div class="col-md-7">
+            <div class="jumbotron"><%= render "mapgrid" %></div>
         </div>
-        <div class="col-md-4" style="text-align: center;">
-            <%= render 'form', map: @map %>
-            <%= link_to 'Back', maps_path %>
+        <div class="jumbotron">
+            <div class="col-md-3" style="text-align: center;">
+              <%= render 'form', map: @map %>
+              <%= link_to 'Back', maps_path, class:"btn btn-danger btn-lg" %>
+            </div>
+        </div>
+         <div class="col-md-1">
         </div>
     </div>
 </div>
-
 
 <%= javascript_include_tag "_map_maker" %>
 <!--make sure to precompile! -->

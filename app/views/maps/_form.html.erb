@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <font color="white"><%= form.label :story, "Story Name" %></font>
-    <%= form.text_field :story, class:"form-control", id: :map_story %>
+    <font color="white"><%= form.label :story, "Story" %></font>
+    <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10 %>
   </div>
 
   <div class="field hide">
@@ -33,7 +33,7 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-success btn-lg"%>
   </div>
 
 <% end %>

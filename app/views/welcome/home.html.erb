@@ -2,7 +2,7 @@
   
   <% if !logged_in? %>
     <div class="center">
-     <button class="btn btn-secondary btn-lg" data-izimodal-open="#modal-custom">Login/Sign Up</button>
+     <a href="http://dnd.wizards.com/dungeons-and-dragons/what-is-dd"><button class="btn btn-info btn-lg" >Tutorial</button></a>
       <%= javascript_include_tag "_login" %>
       <div id="modal-custom" data-iziModal-group="group1">
         <button data-iziModal-close class="icon-close, hide">x</button>
