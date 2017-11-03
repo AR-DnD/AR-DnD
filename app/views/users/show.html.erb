@@ -11,7 +11,12 @@
 <div class="center">
 </div>
 
+<%= javascript_include_tag "_users" %>
+
 <% if current_user == @user %>
+  <div id= "new-adventure">
+    <button onclick="adventure_form()">Click Me!</button>
+  </div>
   <p> <%= link_to 'Create New Adventure', new_adventure_path(:user => @user) %> </p>
 <% else %>
   <p>
