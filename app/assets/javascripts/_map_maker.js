@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function(){
+  var grid = Array(3).fill().map(x => Array(3).fill(null))
+  console.log(grid)
   var currElement = "Tree"
-  var grid = [[null, null, null], [null, null, null], [null, null, null]]
+  //var grid = [[null, null, null], [null, null, null], [null, null, null]]
   if($("#edit_map-flag").length > 0) {
     var savedState = JSON.parse($("#map_data").val())
     console.log(savedState)
@@ -30,8 +32,9 @@ $(document).on('turbolinks:load', function(){
         }
       }
     }
-
   }
+  
+  $("#map_data").val(JSON.stringify(grid))
 
   $( "input" ).on( "click", function() {
     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
@@ -40,7 +43,7 @@ $(document).on('turbolinks:load', function(){
 
   $( ".mapElement" ).on("click", function() {
     currElement = $(this).attr("id")
-    $(".selected").html("You have selected: "+currElement)
+    $(".selected").html("You have selected: " + currElement)
     console.log("currElement", currElement)
   })
 
