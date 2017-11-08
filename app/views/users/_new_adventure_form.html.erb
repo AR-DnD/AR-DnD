@@ -1,24 +1,23 @@
+<%= javascript_include_tag "_new_adventure_form"%>
+
 <%= form_with(model: @adventure, local: true) do |form|%>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :adventure_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :story %>
+    <%= form.text_field :story, id: :adventure_story %>
+  </div>
 
 
-<div class="field">
-  <%= form.label :title %>
-  <%= form.text_field :title, id: :adventure_title %>
-</div>
+  <div class="field hide">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
+  </div>
 
-<div class="field">
-  <%= form.label :story %>
-  <%= form.text_field :story, id: :adventure_story %>
-</div>
-
-
-<div class="field hide">
-  <%= form.label :user_id %>
-  <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
-
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

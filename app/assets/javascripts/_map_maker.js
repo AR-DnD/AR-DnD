@@ -1,4 +1,6 @@
 $(document).on('turbolinks:load', function(){
+  $(".actions").hide();
+  
   var grid = Array(3).fill().map(x => Array(3).fill(null))
   console.log(grid)
   var currElement = "Tree"
@@ -33,7 +35,7 @@ $(document).on('turbolinks:load', function(){
       }
     }
   }
-  
+
   $("#map_data").val(JSON.stringify(grid))
 
   $( "input" ).on( "click", function() {
@@ -66,5 +68,25 @@ $(document).on('turbolinks:load', function(){
     $(this).css("background-image", "url(" + imageUrlString + ")")
     //$(this).html(currElement)
     $("#map_data").val(JSON.stringify(grid))
+  })
+
+  $("#map_name").on("keyup", function(){
+    if(!$(this).val() || !$("#map_story").val()){
+      console.log("Do NOT Submit");
+      $(".actions").hide();
+    } else {
+      $(".actions").show();
+
+    }
+  })
+
+  $("#map_story").on("keyup", function(){
+    if(!$("#map_name").val() || !$(this).val()){
+      console.log("Do NOT Submit");
+      $(".actions").hide();
+    } else {
+      $(".actions").show();
+    }
+    console.log($(this).val());
   })
 });
