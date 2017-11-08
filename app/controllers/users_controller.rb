@@ -3,6 +3,14 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
 
+
+
+  def new_adventure
+    @adventure = Adventure.new
+    respond_to do |format|
+      format.js
+    end
+  end
   # GET /users
   # GET /users.json
   def index
