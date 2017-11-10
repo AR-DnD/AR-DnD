@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  //$(".actions").hide();
-  //$(":input").prop("disabled",true);
-  $("input[type='submit'][name='commit']").prop("disabled",true);
+  $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",true);
 
   var grid = Array(3).fill().map(x => Array(3).fill(null))
   console.log(grid)
@@ -88,6 +86,6 @@ $(document).on('turbolinks:load', function(){
       $("input[type='submit'][name='commit']").prop("disabled",true);
     } else {
       $("input[type='submit'][name='commit']").prop("disabled",false);
-    }
+    }of
   })
 });
