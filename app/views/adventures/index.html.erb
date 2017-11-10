@@ -17,7 +17,7 @@
       <tr>
         <td><%= adventure.title %></td>
         <td><%= adventure.story %></td>
-        <td><%= adventure.user %></td>
+        <td><%= adventure.user.username %></td>
         <td><%= link_to 'Show', adventure %></td>
         <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
         <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
