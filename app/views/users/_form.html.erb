@@ -11,24 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
-  </div>
-  <div class="form-group">
-    <div class= col-sm-10">
-      <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: 'btn btn-primary btn-lg') %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="field">
+        <font color="white"><%= f.label :username, "New Username" %></font>
+        <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+      </div>
+      <div class="field">
+        <font color="white"><%= f.label :email, "New Email Address" %></font>
+        <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+      </div>
+      <div class="field">
+        <font color="white"><%= f.label :password, "New Password" %></font>
+        <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6">
+          <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: 'btn btn-info btn-md') %>
+        </div>
+        <div class="col-md-5">
+          <%=link_to "Back to users listing", users_path, class: "btn btn-info btn-md" %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-xs-5 col-xs-offset-5">
-      [ <%=link_to "Back to users listing", users_path %> ]
-    </div>
 <% end %>

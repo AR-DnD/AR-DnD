@@ -11,23 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :adventure_title %>
-  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="field">
+        <font color="white"><%= form.label :title, "Adventure Name" %></font>
+        <%= form.text_field :title, id: :adventure_title, class:"form-control" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :story %>
-    <%= form.text_field :story, id: :adventure_story %>
-  </div>
+      <div class="field">
+        <font color="white"><%= form.label :story %></font>
+        <%= form.text_area :story, id: :adventure_story, class:"form-control", rows: 10 %>
+      </div>
 
+      <div class="field hide">
+        <font color="white"><%= form.label :user_id %></font>
+        <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
+      </div>
 
-  <div class="field hide">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
-  </div>
+      <div class="actions">
+        <%= form.submit "Create Your Adventure", class:"btn btn-success btn-md" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <%= link_to 'Cancel And Back', adventures_path, class:"btn btn-warning btn-md" %>
+    </div>
   </div>
-<% end %>
+  <% end %>

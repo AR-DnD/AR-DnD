@@ -1,8 +1,8 @@
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
+
+$navbar-default-bg: #F8C471;
 
 #logo {
   float: left;
@@ -19,6 +19,13 @@
   background-color: transparent;
   background-size: cover;
   height: 550px;
+  width: auto;
+}
+
+.jumbotron2 {
+  background-color: transparent;
+  background-size: cover;
+  height: 20px;
   width: auto;
 }
 
