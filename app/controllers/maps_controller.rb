@@ -31,7 +31,7 @@ class MapsController < ApplicationController
     puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
-        format.html { redirect_to edit_adventure_path(@map.adventure.id), notice: 'Map was successfully created.' }
+        format.html { redirect_to adventure_path(@map.adventure.id), notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
@@ -43,6 +43,7 @@ class MapsController < ApplicationController
   # PATCH/PUT /maps/1
   # PATCH/PUT /maps/1.json
   def update
+    byebug
     respond_to do |format|
       if @map.update(map_params)
         format.html { redirect_to @map, notice: 'Map was successfully updated.' }
