@@ -41,12 +41,6 @@ class MapsController < ApplicationController
   # PATCH/PUT /maps/1
   # PATCH/PUT /maps/1.json
   def update
-    byebug
-<<<<<<< HEAD
-    params = map_params
-
-=======
->>>>>>> d11057eff9360cf9c6158250429af3324e21a2fc
     respond_to do |format|
       if @map.update(map_params)
         format.html { redirect_to @map, notice: 'Map was successfully updated.' }
