@@ -28,15 +28,19 @@ class AdventuresController < ApplicationController
     @adventure.user = current_user
     puts "Adventure: #{@adventure.inspect}"
 
-    respond_to do |format|
-      if @adventure.save
-        format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
-        format.json { render :show, status: :created, location: @adventure }
-        # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
-        # format.json { render :show, status: :created, location: @adventure }
-      else
-        format.html { render :new }
-        format.json { render json: @adventure.errors, status: :unprocessable_entity }
+    if @adventure.save
+      redirect_to new_map_path(:adventure => @adventure), notice: 'Adventure was successfully created.'
+    else
+      respond_to do |format|
+        if @adventure.save
+          format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
+          format.json { render :show, status: :created, location: @adventure }
+          # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
+          # format.json { render :show, status: :created, location: @adventure }
+        else
+          format.html { render :new }
+          format.json { render json: @adventure.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -58,9 +62,15 @@ class AdventuresController < ApplicationController
   # DELETE /adventures/1
   # DELETE /adventures/1.json
   def destroy
+    user = @adventure.user
+
+    @adventure.maps.each do |map|
+      map.destroy
+    end
+
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to adventures_url, notice: 'Adventure was successfully destroyed.' }
+      format.html { redirect_to user_url(user), notice: 'Adventure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

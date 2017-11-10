@@ -31,7 +31,7 @@ class MapsController < ApplicationController
     puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
-        format.html { redirect_to @map.adventure, notice: 'Map was successfully created.' }
+        format.html { redirect_to edit_adventure_path(@map.adventure.id), notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
@@ -57,9 +57,11 @@ class MapsController < ApplicationController
   # DELETE /maps/1
   # DELETE /maps/1.json
   def destroy
+    adventure = @map.adventure
     @map.destroy
+
     respond_to do |format|
-      format.html { redirect_to maps_url, notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to edit_adventure_path(adventure.id), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -76,7 +78,7 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:name, :data, :story, :adventure)
+      params.require(:map).permit(:name, :data, :story, :adventure, :size)
     end
 
 
