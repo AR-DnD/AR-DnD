@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @adventure.title %>
-</p>
+<%= render 'edit_form', adventure: @adventure %>
 
-<p>
-  <strong>Story:</strong>
-  <%= @adventure.story %>
-</p>
 
-<p>
-  <font color="white"><strong>User:</strong></font>
-  <%= @adventure.user %>
-</p>
-
-<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-<%= link_to 'Back', adventures_path %>
+<!--<%= link_to 'Show', @adventure %> | -->
+<%= link_to 'Back', user_path(@adventure.user.id) %>
