@@ -14,6 +14,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.precompile += %w( _map_maker.js )
-Rails.application.config.assets.precompile += %w( _adventure_editor.js )
+Rails.application.config.assets.precompile += %w( _new_adventure_form.js )
 Rails.application.config.assets.precompile += %w( _login.js )
 Rails.application.config.assets.precompile += %w( _users.js )
