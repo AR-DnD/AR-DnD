@@ -1,4 +1,7 @@
 $(function(){
+  // $("input[type='submit'][name='commit'][value='Login']").prop("disabled",true);
+  // $("input[type='submit'][name='commit'][value='Create my account']").prop("disabled",true);
+
 
   /* Instantiating iziModal */
   $("#modal-custom").iziModal({
@@ -24,6 +27,20 @@ $(function(){
       } else {
           $("#modal-custom .iziModal-content .icon-close").attr('style', '');
       }
+
+      // if(!$(this).val() || !$("#email").val()){
+      //   console.log("Do NOT Submit");
+      //   $("input[type='submit'][name='commit']").prop("disabled",true);
+      // } else {
+      //   $("input[type='submit'][name='commit']").prop("disabled",false);
+      //
+      // }
+      // if(!$(this).val()) || !$("#password").val()) {
+      //   console.log("Do NOT Submit");
+      //   $("input[type='submit'][name='commit']").prop("disabled",true);
+      // } else {
+      //   $("input[type='submit'][name='commit']").prop("disabled",false);
+      // }
   });
 
   $("#modal-custom").on('click', '.submit', function(event) {
@@ -39,6 +56,9 @@ $(function(){
           }, 1500);
       }
   });
+
+
+
 
 })
 

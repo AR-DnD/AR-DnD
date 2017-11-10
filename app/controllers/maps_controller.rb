@@ -24,8 +24,6 @@ class MapsController < ApplicationController
   # POST /maps
   # POST /maps.json
   def create
-    params = map_params
-    params[:adventure] = Adventure.find(params[:adventure].to_i)
     @map = Map.new(params)
     #@map.adventure = Adventure.find(map_params[:adventure].to_i)
     puts "Map: #{@map.inspect}"
@@ -43,6 +41,9 @@ class MapsController < ApplicationController
   # PATCH/PUT /maps/1
   # PATCH/PUT /maps/1.json
   def update
+    byebug
+    params = map_params
+
     respond_to do |format|
       if @map.update(map_params)
         format.html { redirect_to @map, notice: 'Map was successfully updated.' }
