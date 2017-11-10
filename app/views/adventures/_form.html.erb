@@ -27,12 +27,11 @@
         <font color="white"><%= form.label :user_id %></font>
         <%= form.text_field :user_id, id: :adventure_user_id, :value => params[:user] %>
       </div>
-
+      <br>
       <div class="actions">
-        <%= form.submit "Create Your Adventure", class:"btn btn-success btn-md" %>
+        <%= form.submit "Create Your Adventure", class:"btn btn-info btn-lg btn-block active" %>
       </div>
-
-      <%= link_to 'Cancel And Back', adventures_path, class:"btn btn-warning btn-md" %>
+      <%= link_to 'Cancel And Back', adventures_path, class:"btn btn-danger btn-lg btn-block active" %>
     </div>
   </div>
   <% end %>
