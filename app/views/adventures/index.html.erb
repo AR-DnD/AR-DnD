@@ -1,31 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Adventures</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table>
+      <thead>
+        <tr>
+          <th>Adventure Title</th>
+          <th>Adventure Story</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Story</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @adventures.each do |adventure| %>
+        <tr>
+          <td><%= adventure.title %></td>
+          <td><%= adventure.story %></td>
+          <td><%= link_to 'Edit/Add Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sm active"%></td>
+          <td><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @adventures.each do |adventure| %>
-      <tr>
-        <td><%= adventure.title %></td>
-        <td><%= adventure.story %></td>
-        <td><%= adventure.user.username %></td>
-        <td><%= link_to 'Show', adventure %></td>
-        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
-        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Adventure', new_adventure_path %>
+    <br>
+    <%= link_to 'Create New Adventures', new_adventure_path, class:"btn btn-success btn-lg btn-block active" %>
+</div>
+</div>

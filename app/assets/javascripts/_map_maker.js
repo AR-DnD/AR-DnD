@@ -73,9 +73,9 @@ $(document).on('turbolinks:load', function(){
   $("#map_name").on("keyup", function(){
     if(!$(this).val() || !$("#map_story").val()){
       console.log("Do NOT Submit");
-      $("input[type='submit'][name='commit']").prop("disabled",true);
+      $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",true);
     } else {
-      $("input[type='submit'][name='commit']").prop("disabled",false);
+      $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",false);
 
     }
   })
@@ -83,9 +83,9 @@ $(document).on('turbolinks:load', function(){
   $("#map_story").on("keyup", function(){
     if(!$("#map_name").val() || !$(this).val()){
       console.log("Do NOT Submit");
-      $("input[type='submit'][name='commit']").prop("disabled",true);
+      $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",true);
     } else {
-      $("input[type='submit'][name='commit']").prop("disabled",false);
+      $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",false);
     }of
   })
 });
