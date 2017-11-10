@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function(){
-  $(".actions").hide();
-  
+  //$(".actions").hide();
+  //$(":input").prop("disabled",true);
+  $("input[type='submit'][name='commit']").prop("disabled",true);
+
   var grid = Array(3).fill().map(x => Array(3).fill(null))
   console.log(grid)
   var currElement = "Tree"
@@ -73,9 +75,9 @@ $(document).on('turbolinks:load', function(){
   $("#map_name").on("keyup", function(){
     if(!$(this).val() || !$("#map_story").val()){
       console.log("Do NOT Submit");
-      $(".actions").hide();
+      $("input[type='submit'][name='commit']").prop("disabled",true);
     } else {
-      $(".actions").show();
+      $("input[type='submit'][name='commit']").prop("disabled",false);
 
     }
   })
@@ -83,10 +85,9 @@ $(document).on('turbolinks:load', function(){
   $("#map_story").on("keyup", function(){
     if(!$("#map_name").val() || !$(this).val()){
       console.log("Do NOT Submit");
-      $(".actions").hide();
+      $("input[type='submit'][name='commit']").prop("disabled",true);
     } else {
-      $(".actions").show();
+      $("input[type='submit'][name='commit']").prop("disabled",false);
     }
-    console.log($(this).val());
   })
 });
