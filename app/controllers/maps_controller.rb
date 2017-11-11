@@ -1,24 +1,19 @@
 class MapsController < ApplicationController
   before_action :set_map, only: [:show, :edit, :update, :destroy, :jsondata]
 
-  # GET /maps
-  # GET /maps.json
   def index
     @maps = Map.all
   end
 
-  # GET /maps/1
-  # GET /maps/1.json
   def show
   end
 
-  # GET /maps/new
   def new
     @map = Map.new
   end
 
-  # GET /maps/1/edit
   def edit
+    @map = Map.find(params[:id].to_i)
   end
 
   # POST /maps

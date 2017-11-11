@@ -1,7 +1,10 @@
 $(document).on('turbolinks:load', function(){
   $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",true);
 
-  var grid = Array(3).fill().map(x >> Array(3).fill(null))
+  var grid = Array(3).fill().map(function (x) {
+    Array(3).fill(null)
+  })
+
   console.log(grid)
   var currElement = "Tree"
   //var grid = [[null, null, null], [null, null, null], [null, null, null]]
