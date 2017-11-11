@@ -6,17 +6,16 @@
     <%= gravatar_for @user, size: 150 %>
   </div>
 </div>
-<h4 align="center"><%= @user.username %>'s articles</h4>
 <div class="center">
 </div>
 <div class="center">
 </div>
 
 <% if current_user == @user %>
-
-
-
-
+  <div class="tutorial">
+    <p>You haven't created any adventures yet!</p>
+    <p>Select the "Create Adventure" button to get started</p>
+  </div>
   <div id= "new-adventure">
     <%= form_with url: new_adventure_path do |form|%>
       <p>

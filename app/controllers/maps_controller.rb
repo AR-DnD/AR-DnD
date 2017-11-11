@@ -16,7 +16,10 @@ class MapsController < ApplicationController
   end
 
   def create
-    @map = Map.new(map_params)
+    params = map_params
+    params[:adventure] = Adventure.find(params[:adventure].to_i)
+    @map = Map.new(params)
+    puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
         format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully created.' }
