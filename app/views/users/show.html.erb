@@ -14,7 +14,7 @@
 <% if current_user == @user %>
   <div class="tutorial">
     <p>You haven't created any adventures yet!</p>
-    <p>Select the "Create Adventure" button to get started</p>
+    <p>Select the "New Adventure" button to get started</p>
   </div>
   <div id= "new-adventure">
     <%= form_with url: new_adventure_path do |form|%>
@@ -24,7 +24,6 @@
     <% end %>
   </div>
 
-  <p> <%= link_to 'Create New Adventure', new_adventure_path(:user => @user) %> </p>
 <% else %>
   <p>
     <strong>Username:</strong>
