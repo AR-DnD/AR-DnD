@@ -1,3 +1,5 @@
+<span id="new_map-flag" style="display: none"></span>
+
 <div class="container">
     <div class="row">
         <div class="jumbotron2"><%= render "element_chooser" %></div>
@@ -10,8 +12,8 @@
         </div>
         <div class="jumbotron">
             <div class="col-md-3" style="text-align: center;">
-              <%= render 'form', map: @map %>
-              <%= link_to 'Cancel And Back', maps_path, class:"btn btn-warning btn-md active" %>
+              <%= render 'new_map_form', map: @map %>
+              <%= link_to 'Cancel And Back', adventure_maps_path, class:"btn btn-warning btn-md active" %>
             </div>
         </div>
          <div class="col-md-1">
