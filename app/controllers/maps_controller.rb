@@ -16,8 +16,6 @@ class MapsController < ApplicationController
     @map = Map.find(params[:id].to_i)
   end
 
-  # POST /maps
-  # POST /maps.json
   def create
     @map = Map.new(params)
     #@map.adventure = Adventure.find(map_params[:adventure].to_i)
@@ -33,8 +31,6 @@ class MapsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /maps/1
-  # PATCH/PUT /maps/1.json
   def update
     respond_to do |format|
       if @map.update(map_params)
@@ -47,8 +43,6 @@ class MapsController < ApplicationController
     end
   end
 
-  # DELETE /maps/1
-  # DELETE /maps/1.json
   def destroy
     adventure = @map.adventure
     @map.destroy
