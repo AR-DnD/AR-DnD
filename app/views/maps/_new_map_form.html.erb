@@ -1,4 +1,4 @@
-<%= form_with(model: @map, url: adventure_map_path, local: true) do |form| %>
+<%= form_with(model: @map, url: adventure_maps_path, local: true) do |form| %>
   <% if map.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(map.errors.count, "error") %> prohibited this map from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <font color="white"><%= form.label :name, "Map Name" %></font>
-    <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank" %>
+    <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank", required: true  %>
   </div>
 
   <div class="field hide">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <font color="white"><%= form.label :story, "Story" %></font>
-    <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank" %>
+    <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank", required: true %>
   </div>
 
   <div class="field hide">
@@ -31,8 +31,9 @@
     <%= form.text_field :adventure_id, :value => params[:adventure_id] %>
   </div>
 
+
   <div class="actions">
-    <%= form.submit "Update Map", class:"btn btn-success btn-md active"%>
+    <%= form.submit "Create Map", class:"btn btn-success btn-md active"%>
   </div>
 
 <% end %>

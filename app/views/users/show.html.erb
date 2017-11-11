@@ -8,7 +8,6 @@
 </div>
 <div class="center">
 </div>
-<%#= render 'articles/article', obj: @user_articles %>
 <div class="center">
 </div>
 
@@ -52,16 +51,7 @@
  <% @user.adventures.each do |adventure|%>
   <tr>
     <td> <%= link_to adventure.title, adventure_path(adventure) %></td>
-    <!--
-    <% if current_user == @user %>
-      <td> <%= link_to adventure.title, edit_adventure_path(adventure) %></td>
-    <% else %>
-      <td> <%= link_to adventure.title, show_adventure_path(adventure) %></td>
-    <% end %>
-  -->
-
     <td> <%= adventure.story %></td>
-
     <% if current_user == @user %>
       <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
     <% end %>

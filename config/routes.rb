@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :adventures
-  resources :maps
+  resources :adventures do
+    resources :maps
+  end
 
 
 
