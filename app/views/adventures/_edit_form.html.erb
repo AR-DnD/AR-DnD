@@ -53,8 +53,8 @@
               <td><%= map.data %></td>
 
               <% if @adventure.user == current_user%>
-              <td><%= link_to 'Edit', edit_adventure_map_path(map), class:"btn btn-info btn-sm active" %></td>
-              <td><%= link_to 'Destroy', adventure_map_path(map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+              <td><%= link_to 'Edit', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
+              <td><%= link_to 'Destroy', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
               <td><%= link_to 'Show', map %></td>
               <% end %>

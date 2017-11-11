@@ -13,17 +13,14 @@ class MapsController < ApplicationController
   end
 
   def edit
-    @map = Map.find(params[:id].to_i)
   end
 
   def create
-    @map = Map.new(params)
-    #@map.adventure = Adventure.find(map_params[:adventure].to_i)
-    puts "Map: #{@map.inspect}"
+    @map = Map.new(map_params)
     respond_to do |format|
       if @map.save
-        format.html { redirect_to adventure_path(@map.adventure.id), notice: 'Map was successfully created.' }
-        format.json { render :show, status: :created, location: @map }
+        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully created.' }
+        format.json { render :show, status: :created, location: adventure_path(@map.adventure) }
       else
         format.html { render :new }
         format.json { render json: @map.errors, status: :unprocessable_entity }
@@ -34,7 +31,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to @map, notice: 'Map was successfully updated.' }
+        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }
@@ -65,7 +62,7 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:name, :data, :story, :adventure, :size)
+      params.require(:map).permit(:name, :data, :story, :adventure_id, :size)
     end
 
 

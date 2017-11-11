@@ -30,7 +30,7 @@ class AdventuresController < ApplicationController
     puts "Adventure: #{@adventure.inspect}"
 
     if @adventure.save
-      redirect_to new_map_path(:adventure => @adventure), notice: 'Adventure was successfully created.'
+      redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.'
     else
       respond_to do |format|
         if @adventure.save
