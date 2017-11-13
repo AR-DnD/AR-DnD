@@ -1,43 +1,31 @@
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
-  # GET /adventures
-  # GET /adventures.json
   def index
     @adventures = Adventure.all
     @adventures = current_user.adventures
   end
 
-  # GET /adventures/1
-  # GET /adventures/1.json
   def show
   end
 
-  # GET /adventures/new
   def new
     @adventure = Adventure.new
   end
 
-  # GET /adventures/1/edit
   def edit
   end
 
-  # POST /adventures
-  # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
-    puts "Adventure: #{@adventure.inspect}"
-
     if @adventure.save
-      redirect_to new_map_path(:adventure => @adventure), notice: 'Adventure was successfully created.'
+      redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.'
     else
       respond_to do |format|
         if @adventure.save
           format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
           format.json { render :show, status: :created, location: @adventure }
-          # format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
-          # format.json { render :show, status: :created, location: @adventure }
         else
           format.html { render :new }
           format.json { render json: @adventure.errors, status: :unprocessable_entity }
@@ -46,8 +34,6 @@ class AdventuresController < ApplicationController
     end
   end
 
-  # PATCH/PUT /adventures/1
-  # PATCH/PUT /adventures/1.json
   def update
     respond_to do |format|
       if @adventure.update(adventure_params)
@@ -60,8 +46,6 @@ class AdventuresController < ApplicationController
     end
   end
 
-  # DELETE /adventures/1
-  # DELETE /adventures/1.json
   def destroy
     user = @adventure.user
 
@@ -77,12 +61,10 @@ class AdventuresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_adventure
       @adventure = Adventure.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
       params.require(:adventure).permit(:title, :story, :user_id)
     end

@@ -1,6 +1,11 @@
+<span id="new_map-flag" style="display: none"></span>
+
 <div class="container">
     <div class="row">
         <div class="jumbotron2"><%= render "element_chooser" %></div>
+        <div class="tutorial">
+          <p>To create a map, select which elements you want to place from the dropdown menus and click on the tiles to place them</p>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-1">
@@ -10,8 +15,8 @@
         </div>
         <div class="jumbotron">
             <div class="col-md-3" style="text-align: center;">
-              <%= render 'form', map: @map %>
-              <%= link_to 'Cancel And Back', maps_path, class:"btn btn-warning btn-md active" %>
+              <%= render 'new_map_form', map: @map %>
+              <%= link_to 'Cancel And Back', adventure_maps_path, class:"btn btn-warning btn-md active" %>
             </div>
         </div>
          <div class="col-md-1">
@@ -20,4 +25,3 @@
 </div>
 
 <%= javascript_include_tag "_map_maker" %>
-<!--make sure to precompile! -->
