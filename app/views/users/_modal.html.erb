@@ -5,7 +5,7 @@
 <button class="waves-effect waves-light btn-large red darken-2 trigger-iFrame">Modal iFrame</button> -->
 
 
-<button class="btn btn-link btn-lg active" data-izimodal-open="#modal-custom">Login/Sign Up</button>
+<button class="btn btn-link btn-lg active" data-izimodal-open="#modal-custom">LOGIN/SIGN UP</button>
 <!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
 
 <%= javascript_include_tag "_login" %>
@@ -13,8 +13,8 @@
 <div id="modal-custom" data-iziModal-group="group1">
     <button data-iziModal-close class="icon-close">x</button>
     <header>
-        <a href="" class="active">Login</a>
-        <a href="" id="signin">Sign Up</a>
+        <a href="" class="active">LOGIN</a>
+        <a href="" id="signin">SIGN UP</a>
     </header>
     <section class>
       <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
@@ -23,7 +23,7 @@
 
           <%= f.label :password %>
           <%= f.password_field :password, class: "form-control", placeholder: "Enter your password.", autocomplete: "off" %>
-          <%= f.submit "Login", class: "btn btn-primary btn-lg" %>
+          <%= f.submit "LOGIN", class: "btn btn-primary btn-lg" %>
       <% end %>
     </section>
     <section class="hide">
@@ -41,7 +41,7 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
 
-        <%= f.submit "Create my account", class: "btn btn-primary btn-lg" %>
+        <%= f.submit "CREATE MY ACCOUNT", class: "btn btn-primary btn-lg" %>
       <% end %>
     </section>
 </div>
