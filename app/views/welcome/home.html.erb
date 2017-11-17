@@ -1,6 +1,6 @@
 <div class="center jumbotron">
-  
-  <% if !logged_in? %>
+
+  <% if !logged_in? || User.all.size == 0 %>
     <div class="center">
      <!-- <a href="http://dnd.wizards.com/dungeons-and-dragons/what-is-dd"><button class="btn btn-info btn-lg active" >Tutorial</button></a> -->
       <%= javascript_include_tag "_login" %>
