@@ -30,7 +30,7 @@
         </div>
 
         <div class="actions">
-          <%= form.submit "Save Changes", class:"btn btn-success btn-lg active" %>
+          <%= form.submit "SAVE CHANGES", class:"btn btn-success btn-lg active" %>
         </div>
       </div>
 
@@ -53,10 +53,10 @@
               <td><%= map.data %></td>
 
               <% if @adventure.user == current_user%>
-              <td><%= link_to 'Edit', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
-              <td><%= link_to 'Destroy', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+              <td><%= link_to 'EDIT', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
+              <td><%= link_to 'DELETE', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
-              <td><%= link_to 'Show', map %></td>
+              <td><%= link_to 'SHOW', map %></td>
               <% end %>
             </tr>
             <% end %>
@@ -64,9 +64,9 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-        <%= link_to 'Add Map', new_adventure_map_path(@adventure), class:"btn btn-info btn-lg btn-block active" %>
+        <%= link_to 'ADD MAP', new_adventure_map_path(@adventure), class:"btn btn-info btn-lg btn-block active" %>
         <br>
-        <%= link_to 'Back', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
+        <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <br>
         <% end %>
       </div>

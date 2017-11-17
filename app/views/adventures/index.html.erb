@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -16,14 +17,14 @@
         <tr>
           <td><%= adventure.title %></td>
           <td><%= adventure.story %></td>
-          <td><%= link_to 'Edit/Add Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sm active"%></td>
-          <td><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+          <td><%= link_to 'EDIT INFO/ADD Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sm active"%></td>
+          <td><%= link_to 'DELETE', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <%= link_to 'Create New Adventures', new_adventure_path, class:"btn btn-success btn-lg btn-block active" %>
+    <%= link_to 'CREATE NEW ADVENTURES', new_adventure_path, class:"btn btn-success btn-lg btn-block active" %>
   </div>
 </div>

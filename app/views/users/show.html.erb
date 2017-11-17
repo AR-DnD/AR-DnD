@@ -18,7 +18,7 @@
         <%= @user.email %>
       </p>
     </font>
-      <p><%= link_to 'Edit Profile', edit_user_path(@user), class:"btn btn-success btn-lg active" %></p>
+      <p><%= link_to 'EDIT PROFILE', edit_user_path(@user), class:"btn btn-success btn-lg active" %></p>
       <!-- <p><%= link_to 'Back', users_path, class:"btn btn-warning btn-lg active" %></p> -->
     </div>
 
@@ -39,12 +39,12 @@
        <tr>
         <td><%= adventure.title %></td>
         <td><%= adventure.story %></td>
-        <td><%= link_to 'Edit/Add Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sma active" %></td>
-        <td><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
+        <td><%= link_to 'EDIT INFO/ADD Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sma active" %></td>
+        <td><%= link_to 'DELETE', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
        </tr>
        <% end %>
        </table>
-       <p><%= link_to 'New Adventure', new_adventure_path(:user => @user), class:"btn btn-success btn-lg btn-block active" %></p>
+       <p><%= link_to 'NEW ADVENTURE', new_adventure_path(:user => @user), class:"btn btn-success btn-lg btn-block active" %></p>
    </div>
  </div>
 </div>
