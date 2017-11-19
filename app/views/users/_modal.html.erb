@@ -19,10 +19,10 @@
     <section class>
       <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
           <%= f.label :email %>
-          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email.", autofocus: true %>
+          <%= f.email_field :email, class: "form-control", id: :login_email, placeholder: "Enter your email.", autofocus: true %>
 
           <%= f.label :password %>
-          <%= f.password_field :password, class: "form-control", placeholder: "Enter your password.", autocomplete: "off" %>
+          <%= f.password_field :password, class: "form-control", id: :login_password, placeholder: "Enter your password.", autocomplete: "off" %>
           <%= f.submit "LOGIN", class: "btn btn-primary btn-lg" %>
       <% end %>
     </section>
@@ -30,16 +30,16 @@
       <%= form_for User.new, url: register_path do |f| %>
 
         <%= f.label :username %>
-        <%= f.text_field :username %>
+        <%= f.text_field :username, id: :signup_name, placeholder: "Enter a unique username.", autofocus: true %>
 
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, id: :signup_email, placeholder: "Enter your email.", autofocus: true %>
 
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, id: :signup_password, placeholder: "Enter your password of at least five characters.", autofocus: true %>
 
         <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, id: :signup_confirmation, placeholder: "Enter your password again." %>
 
         <%= f.submit "CREATE MY ACCOUNT", class: "btn btn-primary btn-lg" %>
       <% end %>
