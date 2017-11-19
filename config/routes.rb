@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   post 'mobile_adventures', to: 'mobile#adventures'
+  get 'mobile_test', to: 'mobile#test'
 
   get '/maps/:id/jsondata', to: 'maps#jsondata', as: 'set_map'
 
