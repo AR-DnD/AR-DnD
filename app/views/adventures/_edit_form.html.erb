@@ -15,12 +15,12 @@
     <div class="row">
       <div class="col-md-3 col-md-offset-2">
         <div class="field">
-          <font color="white"><%= form.label :title %></font>
+          <font color="white"><%= form.label :title, "Adventure Title" %></font>
           <%= form.text_field :title, id: :adventure_title %>
         </div>
 
         <div class="field">
-          <font color="white"><%= form.label :story %></font>
+          <font color="white"><%= form.label :story, "Adventure Story" %></font>
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
         </div>
 
@@ -50,13 +50,14 @@
             <% @adventure.maps.each do |map| %>
             <tr>
               <td><%= map.name %></td>
-              <td><%= map.data %></td>
+              <td><%= render 'display_map', map: map%></td>
+              <td><%= map.story %></td>
 
               <% if @adventure.user == current_user%>
-              <td><%= link_to 'EDIT', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
-              <td><%= link_to 'DELETE', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+                <td><%= link_to 'EDIT', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
+                <td><%= link_to 'DELETE', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
-              <td><%= link_to 'SHOW', map %></td>
+                <td><%= link_to 'SHOW', map %></td>
               <% end %>
             </tr>
             <% end %>
