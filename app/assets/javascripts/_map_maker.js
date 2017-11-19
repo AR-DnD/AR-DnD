@@ -1,11 +1,9 @@
 $(document).on('turbolinks:load', function(){
   $("input[type='submit'][name='commit'][value='Create Map']").prop("disabled",true);
-  //var grid = Array(3).fill().map(x >> Array(3).fill(null))
   var grid = new Array(3);
   for (i=0; i<grid.length; i++){
     grid[i]=new Array(3).fill(null)
   }
-  console.log(grid)
 
   var currElement = "Tree"
   var grid = [[null, null, null], [null, null, null], [null, null, null]]
@@ -18,7 +16,6 @@ $(document).on('turbolinks:load', function(){
         var currGridCoord = $("#" + stringID)
         var currGridElement = savedState[i][j]
         if (currGridElement) {
-          //currGridCoord.html(currGridElement)
           currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
         }
       }
@@ -28,7 +25,6 @@ $(document).on('turbolinks:load', function(){
 
   if ($("#show_map-flag").length > 0) {
     var savedState = JSON.parse($("#map_data").html())
-    console.log(savedState)
     for (var i = 0; i < savedState.length; i++) {
       for (var j = 0; j < savedState[i].length; j++) {
         var stringID = String(i) + "-" + String(j)
@@ -68,10 +64,8 @@ $(document).on('turbolinks:load', function(){
     } else {
       grid[rowNum][colNum] = currElement
     }
-    console.log("Grid", grid)
     var imageUrlString = "/assets/" + currElement + ".png"
     $(this).css("background-image", "url(" + imageUrlString + ")")
-    //$(this).html(currElement)
     $("#map_data").val(JSON.stringify(grid))
   })
 
