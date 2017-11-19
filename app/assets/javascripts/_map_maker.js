@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function(){
         var currGridElement = savedState[i][j]
         if (currGridElement) {
           //currGridCoord.html(currGridElement)
-          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".jpg)")
         }
       }
     }
@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function(){
         var currGridCoord = $("#" + stringID)
         var currGridElement = savedState[i][j]
         if (currGridElement) {
-          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".png)")
+          currGridCoord.css("background-image", "url(/assets/" + currGridElement + ".jpg)")
         }
       }
     }
@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', function(){
       grid[rowNum][colNum] = currElement
     }
     console.log("Grid", grid)
-    var imageUrlString = "/assets/" + currElement + ".png"
+    var imageUrlString = "/assets/" + currElement + ".jpg"
     $(this).css("background-image", "url(" + imageUrlString + ")")
     //$(this).html(currElement)
     $("#map_data").val(JSON.stringify(grid))
