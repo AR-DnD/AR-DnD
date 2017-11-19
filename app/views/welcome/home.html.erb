@@ -12,13 +12,13 @@
           <%= f.text_field :username , class:"form-control", placeholder:"Please create your username", autofocus: true%>
           <br>
           <font color="black"><%= f.label :email, "EMAIL" %></font>
-          <%= f.email_field :email, class:"form-control", placeholder:"Here is for your email address", autofocus: true %>
+          <%= f.email_field :email, class:"form-control", placeholder:"Please fill in your email address", autofocus: true %>
           <br>
           <font color="black"><%= f.label :password, "PASSWORD" %></font>
-          <%= f.password_field :password, class:"form-control", placeholder:"Think of a dope password only you would know...", autofocus: true %>
+          <%= f.password_field :password, class:"form-control", placeholder:"Please create your password", autofocus: true %>
           <br>
           <font color="black"><%= f.label :password, "CONFIRMATION" %></font>
-          <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Now type in your password again", autofocus: true%>
+          <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Confirmation of your password", autofocus: true%>
           <br>
           <%= f.submit "CREATE ACCOUNT", class: "btn btn-success btn-lg btn-block active" %>
           <% end %>
