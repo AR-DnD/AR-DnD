@@ -4,10 +4,7 @@ class MobileController < ApplicationController
 
     end
 
-    def create_session
-        user = User.find_by(email: params[:email].downcase)
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
-        end
+    def adventures
+        @adventures = User.find_by(email: params[:email].downcase).adventures
     end
 end
