@@ -50,8 +50,8 @@ $(document).on('turbolinks:load', function(){
 
   $( ".mapElement" ).on("click", function() {
     currElement = $(this).attr("id")
-    $(".selected").html("You have selected: " + currElement)
-    console.log("currElement", currElement)
+    $(".selected-text").html(currElement)
+    $(".selected-picture").css("background-image", "url(/assets/images/" + currElement + ".png)")
   })
 
   $( ".btn-mapgrid" ).on("click", function() {

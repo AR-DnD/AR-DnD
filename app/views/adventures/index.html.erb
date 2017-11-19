@@ -17,7 +17,7 @@
         <tr>
           <td><%= adventure.title %></td>
           <td><%= adventure.story %></td>
-          <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post %></td>
+          <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-info btn-sm active" %></td>
           <td><%= link_to 'EDIT INFO/ADD Maps', edit_adventure_path(adventure), class:"btn btn-info btn-sm active"%></td>
           <td><%= link_to 'DELETE', adventure, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
         </tr>

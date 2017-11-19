@@ -9,7 +9,7 @@ class Adventure < ApplicationRecord
     return copy
   end
 
-  def copy_adventures old_adventure
+  def copy_maps old_adventure
     old_adventure.maps.each do |map|
       copy_map = map.dup
       copy_map.adventure_id = self.id
