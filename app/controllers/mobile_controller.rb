@@ -1,11 +1,11 @@
 class MobileController < ApplicationController
-
+  protect_from_forgery with: :null_session
     def new
 
     end
 
     def test
-      html 'success'
+      render html: 'success'
     end
 
     def adventures
