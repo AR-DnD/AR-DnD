@@ -7,20 +7,20 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get users_url
+    get users_path
     assert_response :success
   end
 
   test "should get new" do
-    get new_user_url
+    get new_user_path
     assert_response :success
   end
 
   test "should create user" do
     assert_difference('User.count') do
       post :create, params: {
-        username: "bob",
-        email: "bob@bob.com",
+        username: "bob2",
+        email: "bob2@bob.com",
         password: "abcdef",
         password_confirmation: "abcdef",
         admin: false
@@ -31,17 +31,17 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show user" do
-    get user_url(@user)
+    get user_path(@user)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_user_url(@user)
+    get edit_user_path(@user)
     assert_response :success
   end
 
   test "should update user" do
-    patch user_url(@user), params: { email: @user.email, username: @user.username, admin: false }
+    patch user_path(@user), params: { email: @user.email, username: @user.username, admin: false }
     assert_redirected_to user_path(assigns(:user))
   end
 

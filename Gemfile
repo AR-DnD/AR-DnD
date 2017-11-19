@@ -13,6 +13,8 @@ gem 'izimodal'
 
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'jquery-validation-rails'
+
 gem 'rails', '~> 5.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
