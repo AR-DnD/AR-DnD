@@ -1,5 +1,12 @@
 class AdventuresController < ApplicationController
-  before_action :set_adventure, only: [:show, :edit, :update, :destroy]
+  before_action :set_adventure, only: [:show, :edit, :update, :destroy, :copy]
+
+  def copy
+    @copy = @adventure.make_copy current_user
+    current_user.adventures << @copy
+    @copy.copy_adventures @adventure
+    redirect_to edit_adventure_path(@copy), notice: 'Adventure was successfully saved.'
+  end
 
   def index
     @adventures = Adventure.all

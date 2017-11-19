@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :maps
   end
 
-
+  post 'copy', to: 'adventures#copy'
 
   post '/adventures/new', to: 'users#new_adventure'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
