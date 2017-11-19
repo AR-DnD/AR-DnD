@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    if (users_exist)
+      !!current_user
+    else
+      return false
+    end
   end
 
   def require_user

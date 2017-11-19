@@ -1,10 +1,5 @@
 <%#= render partial 'shared/errors', obj: @user %>
 
-<br>
-<br>
-
-<font color="white"><h1 align="center">Edit your account</h1></font>
-
 <% if logged_in? %>
   <%= render 'form' %>
 <% end %>

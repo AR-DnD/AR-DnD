@@ -11,28 +11,36 @@
     </div>
   <% end %>
 
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <div class="login-page">
+        <div class="form">
       <div class="field">
-        <font color="white"><%= f.label :username, "New Username" %></font>
+        <div class="login-headline"><font color="black"><h1 align="center">Edit your account</h1></font></div>
+        <br>
+        <font color="black"><%= f.label :username, "New Username" %></font>
         <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
       </div>
       <div class="field">
-        <font color="white"><%= f.label :email, "New Email Address" %></font>
+        <font color="black"><%= f.label :email, "New Email Address" %></font>
         <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
       </div>
       <div class="field">
-        <font color="white"><%= f.label :password, "New Password" %></font>
+        <font color="black"><%= f.label :password, "New Password" %></font>
         <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
       </div>
       <div class="form-group">
-        <div class="col-md-4 col-md-offset-3">
+        <div class="col-md-7">
           <%= f.submit(@user.new_record? ? "SIGN UP" : "UPDATE ACCOUNT", class: 'btn btn-success btn-md active') %>
         </div>
         <div class="col-md-2">
-          <%=link_to "CANCEL/BACK", users_path, class: "btn btn-warning btn-md active" %>
+          <%=link_to "CANCEL/BACK", user_path(current_user), class: "btn btn-warning btn-md active" %>
         </div>
       </div>
+      <br>
     </div>
   </div>
+</div>
+</div>
 <% end %>
