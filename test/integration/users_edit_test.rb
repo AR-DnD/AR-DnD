@@ -1,18 +1,18 @@
 require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
+  # 
+  # def setup
+  #   @user = users(:one)
+  # end
 
-  def setup
-    @user = users(:one)
-  end
-
-  test "unsuccessful edit" do
-    log_in(@user)
-    get edit_user_path(@user)
-  end
-
-  test "successful edit" do
-    log_in(@user)
-    get edit_user_path(@user)
-  end
+  # test "unsuccessful edit" do
+  #   log_in(@user)
+  #   get edit_user_path(@user)
+  # end
+  #
+  # test "successful edit" do
+  #   log_in(@user)
+  #   get edit_user_path(@user)
+  # end
 end
