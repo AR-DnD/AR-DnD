@@ -51,7 +51,8 @@ $(document).on('turbolinks:load', function(){
   $( ".mapElement" ).on("click", function() {
     currElement = $(this).attr("id")
     $(".selected-text").html(currElement)
-    $(".selected-picture").css("background-image", "url(/assets/images/" + currElement + ".png)")
+    var image =  "<%= image_path"Orc.png  "%>"
+    $("#selected-image").attr("src", "<%= asset_path('Orc.png') %>");
   })
 
   $( ".btn-mapgrid" ).on("click", function() {
