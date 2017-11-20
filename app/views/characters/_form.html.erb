@@ -1,0 +1,47 @@
+<%= simple_form_for(@character) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :profession %>
+    <%= f.input :level %>
+    <%= f.input :race %>
+    <%= f.input :strength %>
+    <%= f.input :dexterity %>
+    <%= f.input :constitution %>
+    <%= f.input :intelligence %>
+    <%= f.input :wisdom %>
+    <%= f.input :charisma %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<!-- <%= form_with(model: @character, url: character_path, local: true) do |form| %>
+  <div class="field">
+    <font color="white"><%= form.label :name, "Map Name" %></font>
+    <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank", required: true  %>
+  </div>
+
+  <div class="field hide">
+    <font color="white"><%= form.label :data %></font>
+    <%= form.text_field :data, class:"form-control", id: :map_data %>
+  </div>
+
+  <div class="field">
+    <font color="white"><%= form.label :story, "Story" %></font>
+    <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank", required: true %>
+  </div>
+
+  <div class="field hide">
+    <%= form.label :adventure %>
+    <%= form.text_field :adventure_id, :value => params[:adventure_id] %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit "Create Map", class:"btn btn-success btn-md active"%>
+  </div> -->
+
+<% end %>

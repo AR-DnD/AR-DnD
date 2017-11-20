@@ -20,8 +20,8 @@ class MapsController < ApplicationController
     puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
-        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully created.' }
-        format.json { render :show, status: :created, location: adventure_path(@map.adventure) }
+        format.html { redirect_to edit_user_adventure_path(params[:adventure_id]), notice: 'Map was successfully created.' }
+        format.json { render :show, status: :created, location: user_adventure_path(@map.adventure) }
       else
         format.html { render :new }
         format.json { render json: @map.errors, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully updated.' }
+        format.html { redirect_to edit_user_adventure_path(params[:adventure_id]), notice: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }
@@ -46,7 +46,7 @@ class MapsController < ApplicationController
     @map.destroy
 
     respond_to do |format|
-      format.html { redirect_to edit_adventure_path(adventure.id), notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to edit_user_adventure_path(adventure.id), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

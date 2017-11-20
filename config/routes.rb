@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :adventures do
-    resources :maps
+  resources :characters
+
+  resources :users do
+    resources :adventures do
+      resources :maps
+    end
   end
+
 
   post 'copy', to: 'adventures#copy'
 

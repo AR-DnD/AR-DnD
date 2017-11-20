@@ -1,4 +1,4 @@
-<%= form_with(model: adventure, local: true) do |form| %>
+<%= form_with(model: @adventure, url: edit_user_adventure_path(current_user), local: true) do |form| %>
   <% if adventure.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
@@ -54,8 +54,8 @@
               <td><%= map.story %></td>
 
               <% if @adventure.user == current_user%>
-                <td><%= link_to 'EDIT', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
-                <td><%= link_to 'DELETE', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+                <td><%= link_to 'EDIT', edit_user_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
+                <td><%= link_to 'DELETE', user_adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
                 <td><%= link_to 'SHOW', map %></td>
               <% end %>
@@ -65,7 +65,7 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-        <%= link_to 'ADD MAP', new_adventure_map_path(@adventure), class:"btn btn-info btn-lg btn-block active" %>
+        <%= link_to 'ADD MAP', new_user_adventure_map_path(@adventure), class:"btn btn-info btn-lg btn-block active" %>
         <br>
         <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <br>
