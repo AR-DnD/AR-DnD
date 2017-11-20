@@ -1,1 +1,1 @@
-json.array! @adventures, partial: 'adventures/adventure', as: :adventure
+json.array! @adventures, partial: 'mobile/adventure', as: :adventure

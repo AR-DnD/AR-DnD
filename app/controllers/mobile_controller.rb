@@ -9,7 +9,13 @@ class MobileController < ApplicationController
     end
 
     def adventures
-      @user = User.find_by(email: params[:email].downcase)
-      @adventures = @user.adventures
+      user = User.find_by(email: params[:email].downcase)
+      @adventures = user.adventures
+    end
+
+    def maps
+      adventure = User.find(params[:user_id].to_i)
+        .adventures[params[:adventure_id].to_i - 1]
+      @maps = adventure.maps
     end
 end
