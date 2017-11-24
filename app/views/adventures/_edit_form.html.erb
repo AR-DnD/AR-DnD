@@ -54,8 +54,8 @@
               <td><%= map.story %></td>
 
               <% if @adventure.user == current_user%>
-                <td><%= link_to 'EDIT', user_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
-                <td><%= link_to 'DELETE', user_adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+                <td><%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), class:"btn btn-info btn-sm active" %></td>
+                <td><%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
                 <td><%= link_to 'SHOW', map %></td>
               <% end %>
@@ -65,7 +65,8 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-        <%= link_to 'ADD MAP', new_user_adventure_map_path(@adventure, current_user), class:"btn btn-info btn-lg btn-block active" %>
+
+        <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
         <br>
         <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <br>

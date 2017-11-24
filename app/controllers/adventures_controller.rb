@@ -24,7 +24,6 @@ class AdventuresController < ApplicationController
   end
 
   def create
-
     @adventure = Adventure.new(adventure_params)
     respond_to do |format|
       if @adventure.save
