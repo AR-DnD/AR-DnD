@@ -5,7 +5,7 @@ class AdventuresController < ApplicationController
     @copy = @adventure.make_copy current_user
     current_user.adventures << @copy
     @copy.copy_adventures @adventure
-    redirect_to edit_user_adventure_path(@copy), notice: 'Adventure was successfully saved.'
+    redirect_to edit_user_adventure_path(@copy, user_id: @adventure.user.id), notice: 'Adventure was successfully saved.'
   end
 
   def index
@@ -18,26 +18,21 @@ class AdventuresController < ApplicationController
 
   def new
     @adventure = Adventure.new
-    @adventure.user = current_user
   end
 
   def edit
   end
 
   def create
+
     @adventure = Adventure.new(adventure_params)
-    @adventure.user = current_user
-    if @adventure.save
-      redirect_to edit_user_adventure_path(@adventure), notice: 'Adventure was successfully created.'
-    else
-      respond_to do |format|
-        if @adventure.save
-          format.html { redirect_to edit_user_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
-          format.json { render :show, status: :created, location: @adventure }
-        else
-          format.html { render :new }
-          format.json { render json: @adventure.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @adventure.save
+        format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }
+        format.json { render :show, status: :created, location: @adventure }
+      else
+        format.html { render :new }
+        format.json { render json: @adventure.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -63,7 +58,7 @@ class AdventuresController < ApplicationController
 
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to user_url(user), notice: 'Adventure was successfully destroyed.' }
+      format.html { redirect_to user_path(user.id), notice: 'Adventure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
