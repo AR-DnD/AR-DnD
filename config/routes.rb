@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :characters
 
   resources :users do
     resources :adventures do
       resources :maps
     end
+    resources :characters
   end
 
 

@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <% if logged_in? %>
           <li><%= link_to "Adventures", user_adventures_path(current_user) %></li>
-          <li><%= link_to "Characters", characters_path %></li>
+          <li><%= link_to "Characters", user_characters_path(current_user) %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

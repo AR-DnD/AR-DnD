@@ -39,7 +39,7 @@ class AdventuresController < ApplicationController
   def update
     respond_to do |format|
       if @adventure.update(adventure_params)
-        format.html { redirect_to @adventure, notice: 'Adventure was successfully updated.' }
+        format.html { redirect_to user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully updated.' }
         format.json { render :show, status: :ok, location: @adventure }
       else
         format.html { render :edit }

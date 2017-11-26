@@ -1,4 +1,4 @@
-<%= form_with(model: @character, url: user_characters_path(), local: true) do |form| %>
+<%= form_with(model: @character, url: user_character_path(current_user), local: true) do |form| %>
 
 
   <% if character.errors.any? %>
@@ -75,7 +75,7 @@
       </div>
 
       <div class="actions">
-        <%= form.submit "CREATE CHARACTER", class:"btn btn-info btn-lg btn-block active" %>
+        <%= form.submit "EDIT CHARACTER", class:"btn btn-info btn-lg btn-block active" %>
       </div>
       <%= link_to 'CANCEL/BACK', user_characters_path(current_user), class:"btn btn-danger btn-lg btn-block active" %>
     </div>

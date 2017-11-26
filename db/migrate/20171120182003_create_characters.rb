@@ -12,6 +12,8 @@ class CreateCharacters < ActiveRecord::Migration[5.1]
       t.integer :wisdom
       t.integer :charisma
 
+      t.belongs_to :user, foreign_key: true
+
       t.timestamps
     end
   end
