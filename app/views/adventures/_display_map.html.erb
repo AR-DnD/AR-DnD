@@ -6,7 +6,7 @@
         <% (0..2).each do |j| %>
           <td>
             <% currElement = data[i][j].to_s %>
-            <% image_string = "url(/assets/" + currElement + ".jpg);"  %>
+            <% image_string = currElement != '' ? "url(/assets/" + currElement.split('-')[1] + ".png);" : 'nil' %>
             <button type="button"  class="btn-mapgrid-mini" style = "background-image: <%= image_string %>"  ></button>
           </td>
         <% end %>

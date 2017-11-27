@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Characters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Backstory</th>
+      <th>Profession</th>
+      <th>Race</th>
+      <th>Level</th>
+      <th>Strength</th>
+      <th>Dexterity</th>
+      <th>Constitution</th>
+      <th>Intelligence</th>
+      <th>Wisdom</th>
+      <th>Charisma</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.name %></td>
+        <td><%= character.backstory %></td>
+        <td><%= character.profession %></td>
+        <td><%= character.race %></td>
+        <td><%= character.level %></td>
+        <td><%= character.strength %></td>
+        <td><%= character.dexterity %></td>
+        <td><%= character.constitution %></td>
+        <td><%= character.intelligence %></td>
+        <td><%= character.wisdom %></td>
+        <td><%= character.charisma %></td>
+
+        <td><%= link_to 'SHOW CHARACTER', user_character_path(id: character.id), class:"btn btn-default btn-sm active" %></td>
+        <td><%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id), class:"btn btn-info btn-sm active" %></td>
+        <td><%= link_to 'DELETE', user_character_path(id: character.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %>

@@ -2,7 +2,7 @@ class MapsController < ApplicationController
   before_action :set_map, only: [:show, :edit, :update, :destroy, :jsondata]
 
   def index
-    @maps = Map.all
+    @maps = Map.where('adventure_id = ?', params[:adventure_id])
   end
 
   def show
@@ -10,6 +10,7 @@ class MapsController < ApplicationController
 
   def new
     @map = Map.new
+    @adventure = Adventure.find(params[:adventure_id])
   end
 
   def edit
@@ -17,11 +18,10 @@ class MapsController < ApplicationController
 
   def create
     @map = Map.new(map_params)
-    puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
-        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully created.' }
-        format.json { render :show, status: :created, location: adventure_path(@map.adventure) }
+        format.html { redirect_to edit_user_adventure_path(id: params[:adventure_id], user_id: current_user.id), notice: 'Map was successfully created.' }
+        format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
         format.json { render json: @map.errors, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to edit_adventure_path(params[:adventure_id]), notice: 'Map was successfully updated.' }
+        format.html { redirect_to edit_user_adventure_path(id: params[:adventure_id], user_id: current_user.id), notice: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }
@@ -46,7 +46,7 @@ class MapsController < ApplicationController
     @map.destroy
 
     respond_to do |format|
-      format.html { redirect_to edit_adventure_path(adventure.id), notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to user_adventure_maps_path(), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -59,12 +59,10 @@ class MapsController < ApplicationController
 
     def set_map
       @map = Map.find(params[:id])
+      @adventure = Adventure.find(params[:adventure_id])
     end
 
     def map_params
       params.require(:map).permit(:name, :data, :story, :adventure_id, :size)
     end
-
-
-
 end

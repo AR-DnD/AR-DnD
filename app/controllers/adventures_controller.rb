@@ -5,11 +5,11 @@ class AdventuresController < ApplicationController
     @copy = @adventure.make_copy current_user
     current_user.adventures << @copy
     @copy.copy_adventures @adventure
-    redirect_to edit_adventure_path(@copy), notice: 'Adventure was successfully saved.'
+    redirect_to edit_user_adventure_path(@copy, user_id: @adventure.user.id), notice: 'Adventure was successfully saved.'
   end
 
   def index
-    @adventures = Adventure.all
+    # @adventures = Adventure.all
     @adventures = current_user.adventures
   end
 
@@ -25,26 +25,30 @@ class AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.new(adventure_params)
-    @adventure.user = current_user
-    if @adventure.save
-      redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.'
-    else
-      respond_to do |format|
-        if @adventure.save
-          format.html { redirect_to edit_adventure_path(@adventure), notice: 'Adventure was successfully created.' }
-          format.json { render :show, status: :created, location: @adventure }
-        else
-          format.html { render :new }
-          format.json { render json: @adventure.errors, status: :unprocessable_entity }
-        end
+    if params[:characters]
+      params[:characters].each do |character_id|
+        @adventure.characters << Character.find(character_id.to_i)
+      end
+    end
+    respond_to do |format|
+      if @adventure.save
+        format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }
+        format.json { render :show, status: :created, location: @adventure }
+      else
+        format.html { render :new }
+        format.json { render json: @adventure.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
+    @adventure.characters = []
+    params[:characters].each do |character_id|
+      @adventure.characters << Character.find(character_id.to_i)
+    end
     respond_to do |format|
       if @adventure.update(adventure_params)
-        format.html { redirect_to @adventure, notice: 'Adventure was successfully updated.' }
+        format.html { redirect_to user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully updated.' }
         format.json { render :show, status: :ok, location: @adventure }
       else
         format.html { render :edit }
@@ -62,7 +66,7 @@ class AdventuresController < ApplicationController
 
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to user_url(user), notice: 'Adventure was successfully destroyed.' }
+      format.html { redirect_to user_path(user.id), notice: 'Adventure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +77,6 @@ class AdventuresController < ApplicationController
     end
 
     def adventure_params
-      params.require(:adventure).permit(:title, :story, :user_id)
+      params.require(:adventure).permit(:title, :story, :user_id, :characters)
     end
 end

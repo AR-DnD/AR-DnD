@@ -1,6 +1,7 @@
 class Adventure < ApplicationRecord
   belongs_to :user, optional: true
   has_many :maps
+  has_and_belongs_to_many :characters
 
   def make_copy new_user
     copy = self.dup
@@ -9,7 +10,7 @@ class Adventure < ApplicationRecord
     return copy
   end
 
-  def copy_adventures old_adventure
+  def copy_maps old_adventure
     old_adventure.maps.each do |map|
       copy_map = map.dup
       copy_map.adventure_id = self.id

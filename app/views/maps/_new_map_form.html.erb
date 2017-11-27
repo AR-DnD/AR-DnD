@@ -1,4 +1,4 @@
-<%= form_with(model: @map, url: adventure_maps_path, local: true) do |form| %>
+<%= form_with(model: @map, url: user_adventure_maps_path(), local: true) do |form| %>
   <% if map.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(map.errors.count, "error") %> prohibited this map from being saved:</h2>
