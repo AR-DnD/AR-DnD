@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :characters
+
   has_many :adventures
   has_many :maps, through: :adventures
 
@@ -30,7 +32,7 @@ class User < ActiveRecord::Base
        end
     end
   end
-  
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

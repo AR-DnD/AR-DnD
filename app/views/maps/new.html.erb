@@ -1,24 +1,30 @@
 <br>
 <span id="new_map-flag" style="display: none"></span>
 
+<br>
 <div class="container">
     <div class="row">
       <div class="col-md-offset-1">
         <div class="jumbotron2"><%= render "element_chooser" %></div>
       </div>
+      <div>
+        <%= render 'selected' %>
+      </div>
+      <br>
       <br>
         <div class="tutorial">
           <p>To create a map, select which elements you want to place from the dropdown menus and click on the tiles to place them</p>
         </div>
     </div>
     <div class="row">
+
         <div class="col-md-7">
             <div class="jumbotron"><%= render "mapgrid" %></div>
         </div>
         <div class="jumbotron">
             <div class="col-md-3" style="text-align: center;">
               <%= render 'new_map_form', map: @map %>
-              <%= link_to 'Cancel And Back', adventures_path, class:"btn btn-warning btn-md active" %>
+              <%= link_to 'Cancel And Back', user_adventures_path, class:"btn btn-warning btn-md active" %>
             </div>
         </div>
          <div class="col-md-1">
