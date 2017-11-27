@@ -20,7 +20,7 @@ class MapsController < ApplicationController
     @map = Map.new(map_params)
     respond_to do |format|
       if @map.save
-        format.html { redirect_to user_adventure_maps_path(), notice: 'Map was successfully created.' }
+        format.html { redirect_to edit_user_adventure_path(id: params[:adventure_id], user_id: current_user.id), notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to user_adventure_maps_path(), notice: 'Map was successfully updated.' }
+        format.html { redirect_to edit_user_adventure_path(id: params[:adventure_id], user_id: current_user.id), notice: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }

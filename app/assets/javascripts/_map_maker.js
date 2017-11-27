@@ -15,6 +15,7 @@ $(document).on('turbolinks:load', function () {
           var currGridElement = savedState[i][j].split('-')
           currGridCoord.css('background-image', 'url(/assets/' + currGridElement[1] + '.png)')
           if (currGridElement[0] === 'char') {
+            currGridCoord.empty()
             $('<p>' + currGridElement[2] + '</p>').appendTo(currGridCoord)
           }
         }
@@ -42,6 +43,8 @@ $(document).on('turbolinks:load', function () {
     }
     var currData = currElement.split('-')
     if (currData[0] === 'char') {
+      $(this).empty()
+      $('<p>' + currData[2] + '</p>').appendTo($(this))
       for (var i = 0; i < grid.length; i++) {
         for (var j = 0; j < grid.length; j++) {
           if (grid[i][j] === currElement) {
@@ -53,7 +56,6 @@ $(document).on('turbolinks:load', function () {
           }
         }
       }
-      $('<p>' + currData[2] + '</p>').appendTo($(this))
     }
     var coords = $(this).attr('id').split('-')
     var rowNum = coords[0]
