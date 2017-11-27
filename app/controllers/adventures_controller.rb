@@ -25,6 +25,10 @@ class AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.new(adventure_params)
+    params[:characters].each do |character_id|
+      @adventure.characters << Character.find(character_id.to_i)
+    end
+    byebug
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }
@@ -68,6 +72,6 @@ class AdventuresController < ApplicationController
     end
 
     def adventure_params
-      params.require(:adventure).permit(:title, :story, :user_id)
+      params.require(:adventure).permit(:title, :story, :user_id, :characters)
     end
 end

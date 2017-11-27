@@ -57,7 +57,7 @@
                 <td><%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), class:"btn btn-info btn-sm active" %></td>
                 <td><%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
-                <td><%= link_to 'SHOW', map %></td>
+                <td><%= link_to 'SHOW', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %></td>
               <% end %>
             </tr>
             <% end %>

@@ -27,6 +27,22 @@
         <font color="white"><%= form.label :user %></font>
         <%= form.text_field :user_id, :value => params[:user_id] %>
       </div>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown with selection
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <% current_user.characters.each do |character| %>
+           <div class="checkbox">
+              <label>
+                <%= check_box_tag 'characters[]', character.id -%>
+                <%= h character.name -%>
+              </label>
+            </div>
+          <% end %>
+        </ul>
+      </div>
 
       <br>
       <div class="actions">

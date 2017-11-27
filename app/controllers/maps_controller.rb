@@ -2,7 +2,7 @@ class MapsController < ApplicationController
   before_action :set_map, only: [:show, :edit, :update, :destroy, :jsondata]
 
   def index
-    @maps = Map.all
+    @maps = Map.where('adventure_id = ?', params[:adventure_id])
   end
 
   def show
@@ -17,7 +17,6 @@ class MapsController < ApplicationController
 
   def create
     @map = Map.new(map_params)
-    puts "Map: #{@map.inspect}"
     respond_to do |format|
       if @map.save
         format.html { redirect_to user_adventure_maps_path(), notice: 'Map was successfully created.' }
@@ -64,7 +63,4 @@ class MapsController < ApplicationController
     def map_params
       params.require(:map).permit(:name, :data, :story, :adventure_id, :size)
     end
-
-
-
 end

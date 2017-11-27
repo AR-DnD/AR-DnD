@@ -48,9 +48,9 @@
        <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
 
        <% if current_user == @user %>
-       <font color="white"><td>Your Adventures</td></font>
+       <font color="white"><td>Your Characters</td></font>
        <% else %>
-       <td> View <%=  %> 's Adventures: </td>
+       <td> View <%=  %> 's Characters: </td>
        <% end %>
 
        <table>
@@ -59,16 +59,16 @@
           <th>Character</th>
           <th colspan=3></th>
         </tr>
-        <% @user.adventures.each do |adventure|%>
+        <% @user.characters.each do |character|%>
         <tr>
-         <td><%= adventure.title %></td>
-         <td><%= adventure.story %></td>
-         <td><%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id), class:"btn btn-info btn-sm active"%></td>
-         <td><%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
+         <td><%= character.name %></td>
+         <td><%= character.backstory %></td>
+         <td><%= link_to 'EDIT INFO', edit_user_character_path(id: character.id, user_id: character.user_id), class:"btn btn-info btn-sm active"%></td>
+         <td><%= link_to 'DELETE', user_character_path(id: character.id, user_id: character.user_id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
         </tr>
         <% end %>
         </table>
-        <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
+        <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
    </div>
  </div>
 </div>

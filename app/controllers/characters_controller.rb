@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
   # GET /characters.json
   def index
     # @characters = current_user.characters
-    @characters = Character.all
+    @characters = Character.where('user_id = ?', current_user.id)
   end
 
   # GET /characters/1
@@ -27,10 +27,11 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user_id = current_user.id
+    byebug
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to edit_user_character_path(id: @character.id, user_id: @character.user.id), notice: 'Adventure was successfully created.' }
+        format.html { redirect_to user_characters_path(current_user), notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
@@ -72,6 +73,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :profession, :level, :race, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
+      params.require(:character).permit(:name, :backstory, :profession, :level, :race, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
     end
 end
