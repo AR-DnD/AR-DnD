@@ -3,21 +3,25 @@
 $(document).on('turbolinks:load', function () {
   $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', true)
 
-  var currElement = 'Tree'
+  var currElement = 'obj-Tree'
   var grid = [[null, null, null], [null, null, null], [null, null, null]]
-  var savedState = JSON.parse($('#map_data').val())
-  for (var i = 0; i < savedState.length; i++) {
-    for (var j = 0; j < savedState[i].length; j++) {
-      var stringID = String(i) + '-' + String(j)
-      var currGridCoord = $('#' + stringID)
-      var currGridElement = savedState[i][j]
-      if (currGridElement) {
-        currGridCoord.css('background-image', 'url(/assets/' + currGridElement + '.png)')
+  if ($('#map_data').val()) {
+    var savedState = JSON.parse($('#map_data').val())
+    for (var i = 0; i < savedState.length; i++) {
+      for (var j = 0; j < savedState[i].length; j++) {
+        var stringID = String(i) + '-' + String(j)
+        var currGridCoord = $('#' + stringID)
+        if (savedState[i][j]) {
+          var currGridElement = savedState[i][j].split('-')
+          currGridCoord.css('background-image', 'url(/assets/' + currGridElement[1] + '.png)')
+          if (currGridElement[0] === 'char') {
+            $('<p>' + currGridElement[2] + '</p>').appendTo(currGridCoord)
+          }
+        }
       }
     }
+    grid = savedState
   }
-  grid = savedState
-  console.log('grid', grid)
 
   $('#map_data').val(JSON.stringify(grid))
 
@@ -30,22 +34,47 @@ $(document).on('turbolinks:load', function () {
     $('.selected').html('You have selected: ' + currElement)
   })
 
-  $('.btn-mapgrid').on('click', function () {
+  $('.btn-mapgrid').unbind('click').on('click', function (e) {
+    console.log('event', e)
+    e.stopPropagation()
+    e.preventDefault()
     if ($('#show_map-flag').length > 0) {
       return
+    }
+    var currData = currElement.split('-')
+    if (currData[0] === 'char') {
+      for (var i = 0; i < grid.length; i++) {
+        for (var j = 0; j < grid.length; j++) {
+          if (grid[i][j] === currElement) {
+            grid[i][j] = null
+            var stringID = String(i) + '-' + String(j)
+            var currGridCoord = $('#' + stringID)
+            console.log('currGridCoord', currGridCoord)
+            currGridCoord.css('background-image', '')
+            currGridCoord.html('')
+          }
+        }
+      }
+      $('<p>' + currData[2] + '</p>').appendTo($(this))
     }
     var coords = $(this).attr('id').split('-')
     var rowNum = coords[0]
     var colNum = coords[1]
     rowNum = parseInt(rowNum)
     colNum = parseInt(colNum)
-    if (currElement === 'Nil') {
+    console.log('currData', currData)
+    if (currData[1] === 'Nil') {
       grid[rowNum][colNum] = null
+      console.log('grid', grid)
+      console.log('emptying')
+      $(this).css('background-image', '')
+      $(this).html('')
+      $(this).empty()
     } else {
       grid[rowNum][colNum] = currElement
+      var imageUrlString = '/assets/' + currData[1] + '.png'
+      $(this).css('background-image', 'url(' + imageUrlString + ')')
     }
-    var imageUrlString = '/assets/' + currElement + '.png'
-    $(this).css('background-image', 'url(' + imageUrlString + ')')
     $('#map_data').val(JSON.stringify(grid))
   })
 

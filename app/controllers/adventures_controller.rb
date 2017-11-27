@@ -28,7 +28,6 @@ class AdventuresController < ApplicationController
     params[:characters].each do |character_id|
       @adventure.characters << Character.find(character_id.to_i)
     end
-    byebug
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }
@@ -41,6 +40,10 @@ class AdventuresController < ApplicationController
   end
 
   def update
+    @adventure.characters = []
+    params[:characters].each do |character_id|
+      @adventure.characters << Character.find(character_id.to_i)
+    end
     respond_to do |format|
       if @adventure.update(adventure_params)
         format.html { redirect_to user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully updated.' }

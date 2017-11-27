@@ -27,8 +27,6 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user_id = current_user.id
-    byebug
-
     respond_to do |format|
       if @character.save
         format.html { redirect_to user_characters_path(current_user), notice: 'Character was successfully created.' }

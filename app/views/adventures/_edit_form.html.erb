@@ -24,6 +24,23 @@
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
         </div>
 
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Characters
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <% current_user.characters.each do |character| %>
+             <div class="checkbox">
+                <label>
+                  <%= check_box_tag 'characters[]', character.id -%>
+                  <%= h character.name -%>
+                </label>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+
         <div class="field hide">
           <%= form.label :user_id %>
           <%= form.text_field :user_id, id: :adventure_user_id%>

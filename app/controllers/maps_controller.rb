@@ -10,6 +10,7 @@ class MapsController < ApplicationController
 
   def new
     @map = Map.new
+    @adventure = Adventure.find(params[:adventure_id])
   end
 
   def edit
@@ -58,6 +59,7 @@ class MapsController < ApplicationController
 
     def set_map
       @map = Map.find(params[:id])
+      @adventure = Adventure.find(params[:adventure_id])
     end
 
     def map_params
