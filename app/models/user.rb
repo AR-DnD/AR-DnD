@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :characters
+
   has_many :adventures
   has_many :maps, through: :adventures
 
@@ -23,6 +25,14 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :password, presence: true, length: { minimum: 5 }
+  def password_complexity
+    if password.present?
+       if !password.match(/^(?=.*[a-z])(?=.*[A-Z])/)
+         errors.add :password, "Password complexity requirement not met"
+       end
+    end
+  end
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

@@ -5,12 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'deep_cloneable', '~> 2.3.0'
+
 gem 'rails_admin', '~> 1.2'
 
 gem 'izimodal'
 
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'jquery-validation-rails'
+
 gem 'rails', '~> 5.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

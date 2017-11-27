@@ -52,5 +52,5 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
 
 
 
-
+end
 end

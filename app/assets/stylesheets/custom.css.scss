@@ -8,6 +8,56 @@ $navbar-default-bg: #F8C471;
   background: #ffeb99;
 }
 
+.login-headline {
+  font-size: 40px;
+  line-height: 1.125;
+  font-weight: 600;
+  letter-spacing: .004em;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.login-page {
+  width: 500px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.login-page-2 {
+  width: 300px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+
+.form-2 {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  opacity: 0.9;
+  max-width: 300px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.font-pretty {
+  font-size: 18px;
+  line-height: 1.125;
+  font-weight: 600;
+  letter-spacing: .004em;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;

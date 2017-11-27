@@ -7,12 +7,12 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "unsuccessful edit" do
-    log_in_as(@user)
+    log_in(@user)
     get edit_user_path(@user)
   end
 
   test "successful edit" do
-    log_in_as(@user)
+    log_in(@user)
     get edit_user_path(@user)
   end
 end

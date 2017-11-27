@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101030039) do
+ActiveRecord::Schema.define(version: 20171127035514) do
 
   create_table "adventures", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,37 @@ ActiveRecord::Schema.define(version: 20171101030039) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_adventures_on_user_id"
+  end
+
+  create_table "adventures_characters", id: false, force: :cascade do |t|
+    t.integer "adventure_id", null: false
+    t.integer "character_id", null: false
+    t.index ["adventure_id", "character_id"], name: "index_adventures_characters_on_adventure_id_and_character_id"
+    t.index ["character_id", "adventure_id"], name: "index_adventures_characters_on_character_id_and_adventure_id"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.string "profession"
+    t.integer "level"
+    t.string "race"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "backstory"
+    t.integer "user_id"
+  end
+
+  create_table "characters_maps", id: false, force: :cascade do |t|
+    t.integer "map_id", null: false
+    t.integer "character_id", null: false
+    t.index ["character_id", "map_id"], name: "index_characters_maps_on_character_id_and_map_id"
+    t.index ["map_id", "character_id"], name: "index_characters_maps_on_map_id_and_character_id"
   end
 
   create_table "maps", force: :cascade do |t|
