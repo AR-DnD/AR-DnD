@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 20171127035514) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "backstory"
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "characters_maps", id: false, force: :cascade do |t|
