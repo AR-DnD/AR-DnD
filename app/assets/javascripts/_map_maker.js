@@ -35,7 +35,6 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.btn-mapgrid').unbind('click').on('click', function (e) {
-    console.log('event', e)
     e.stopPropagation()
     e.preventDefault()
     if ($('#show_map-flag').length > 0) {
@@ -49,7 +48,6 @@ $(document).on('turbolinks:load', function () {
             grid[i][j] = null
             var stringID = String(i) + '-' + String(j)
             var currGridCoord = $('#' + stringID)
-            console.log('currGridCoord', currGridCoord)
             currGridCoord.css('background-image', '')
             currGridCoord.html('')
           }
@@ -62,11 +60,8 @@ $(document).on('turbolinks:load', function () {
     var colNum = coords[1]
     rowNum = parseInt(rowNum)
     colNum = parseInt(colNum)
-    console.log('currData', currData)
     if (currData[1] === 'Nil') {
       grid[rowNum][colNum] = null
-      console.log('grid', grid)
-      console.log('emptying')
       $(this).css('background-image', '')
       $(this).html('')
       $(this).empty()

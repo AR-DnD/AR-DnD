@@ -25,8 +25,10 @@ class AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.new(adventure_params)
-    params[:characters].each do |character_id|
-      @adventure.characters << Character.find(character_id.to_i)
+    if params[:characters]
+      params[:characters].each do |character_id|
+        @adventure.characters << Character.find(character_id.to_i)
+      end
     end
     respond_to do |format|
       if @adventure.save
