@@ -4,7 +4,7 @@ class AdventuresController < ApplicationController
   def copy
     @copy = @adventure.make_copy current_user
     current_user.adventures << @copy
-    @copy.copy_adventures @adventure
+    @copy.copy_maps @adventure
     redirect_to edit_user_adventure_path(@copy, user_id: @adventure.user.id), notice: 'Adventure was successfully saved.'
   end
 
