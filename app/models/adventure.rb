@@ -1,6 +1,7 @@
 class Adventure < ApplicationRecord
   belongs_to :user, optional: true
   has_many :maps
+  has_and_belongs_to_many :characters
 
   def make_copy new_user
     copy = self.dup

@@ -1,4 +1,4 @@
-<%= form_with(model: adventure, local: true) do |form| %>
+<%= form_with(model: @adventure, url: user_adventure_path(current_user), local: true) do |form| %>
   <% if adventure.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
@@ -22,6 +22,23 @@
         <div class="field">
           <font color="white"><%= form.label :story, "Adventure Story" %></font>
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Characters
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <% current_user.characters.each do |character| %>
+             <div class="checkbox">
+                <label>
+                  <%= check_box_tag 'characters[]', character.id -%>
+                  <%= h character.name -%>
+                </label>
+              </div>
+            <% end %>
+          </ul>
         </div>
 
         <div class="field hide">
@@ -54,10 +71,10 @@
               <td><%= map.story %></td>
 
               <% if @adventure.user == current_user%>
-                <td><%= link_to 'EDIT', edit_adventure_map_path(@adventure, map), class:"btn btn-info btn-sm active" %></td>
-                <td><%= link_to 'DELETE', adventure_map_path(@adventure, map), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
+                <td><%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), class:"btn btn-info btn-sm active" %></td>
+                <td><%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
               <% else  %>
-                <td><%= link_to 'SHOW', map %></td>
+                <td><%= link_to 'SHOW', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %></td>
               <% end %>
             </tr>
             <% end %>
@@ -65,7 +82,8 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-        <%= link_to 'ADD MAP', new_adventure_map_path(@adventure), class:"btn btn-info btn-lg btn-block active" %>
+
+        <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
         <br>
         <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <br>

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tbody>
+    <tr>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <td>
+            <strong>NAME</strong>
+            <%= @character.name %>
+          </td>
+          <td>
+            <strong>BACKSTORY</strong>
+            <%= @character.backstory %>
+          </td>
+          <td>
+            <strong>PROFESSION</strong>
+            <%= @character.profession %>
+          </td>
+          <td>
+            <strong>RACE</strong>
+            <%= @character.race %>
+          </td>
+          <td>
+            <strong>LEVEL</strong>
+            <%= @character.level %>
+          </td>
+          <td>
+            <strong>STRENGTH</strong>
+            <%= @character.strength %>
+          </td>
+          <td>
+            <strong>DEXTERITY</strong>
+            <%= @character.dexterity %>
+          </td>
+          <td>
+            <strong>CONSTITUTION</strong>
+            <%= @character.constitution %>
+          </td>
+          <td>
+            <strong>INTELLIGENCE</strong>
+            <%= @character.intelligence %>
+          </td>
+          <td>
+            <strong>WISDOM</strong>
+            <%= @character.wisdom %>
+          </td>
+          <td>
+            <strong>CHARISMA</strong>
+            <%= @character.charisma %>
+          </td>
+        </div>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><%= link_to 'EDIT CHARACTER', edit_user_character_path(id: @character.id), class:"btn btn-info btn-sm btn-block active" %></td>
+      <td><%= link_to 'CANCEL/BACK', user_characters_path(current_user), class:"btn btn-danger btn-sm btn-block active" %></td>
+    </tr>
+  </tbody>
+</table>
