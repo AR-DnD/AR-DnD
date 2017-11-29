@@ -24,7 +24,8 @@
 
     <div class="col-md-6">
       <% if current_user == @user %>
-      <font color="white"><td>Your Adventures</td></font>
+      <div class="font-title"><font color="white"><td>YOUR ADVENTURE</td></font></div>
+      <br>
       <% else %>
       <td> View <%=  %> 's Adventures: </td>
       <% end %>
@@ -46,8 +47,12 @@
        </table>
        <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
 
+       <br>
+       <br>
+
        <% if current_user == @user %>
-       <font color="white"><td>Your Characters</td></font>
+       <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
+       <br>
        <% else %>
        <td> View <%=  %> 's Characters: </td>
        <% end %>

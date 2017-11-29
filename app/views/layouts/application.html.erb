@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AR Dungeons & Dragons</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>AR Dungeons & Dragons</title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/navigation' %>
-    <%= yield %>
-</body>
+<% if !logged_in? %>
+<body class="display-background">
+	<%= render 'layouts/navigation' %>
+	<%= yield %>
+</div>
+<% else %>
+<body class="not-display-background">
+	<%= render 'layouts/navigation' %>
+	<%= yield %>
+</div>
+<% end %>
+
 </html>

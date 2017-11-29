@@ -8,6 +8,23 @@ $navbar-default-bg: #ffffff;
   background: #ffeb99;
 }
 
+.display-background {
+  background-image: image-url('background.jpg');
+  background-size: cover;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%
+}
+
+.not-display-background {
+  background-size: cover;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
 .login-headline {
   font-size: 40px;
   line-height: 1.125;
@@ -56,6 +73,13 @@ $navbar-default-bg: #ffffff;
   font-weight: 600;
   letter-spacing: .004em;
   font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.font-title {
+  font-size: 25px;
+  line-height: 1.125;
+  font-weight: 500;
+  letter-spacing: .004em;
 }
 
 #logo {
