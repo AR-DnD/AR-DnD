@@ -17,7 +17,7 @@
 
       <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
         <div class = "row">
-          <div class="field" style="padding-right: 0px; padding-left: 0px;">
+          <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
             <font color="white"><%= form.label :name, "Character Name" %></font>
             <%= form.text_field :name, id: :character_name, class:"form-control" %>
           </div>
@@ -64,13 +64,13 @@
       <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
           <font color="white"><%= form.label :name, "Character Backstory" %></font>
-          <%= form.text_field :backstory, id: :character_backstory, class:"form-control" %>
+          <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
         </div>
       </div>
 
     </div>
 
-    <div class = "row" >
+    <div class = "row" style = "margin-left: -30px;">
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
