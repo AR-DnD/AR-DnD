@@ -29,7 +29,7 @@ class CharactersController < ApplicationController
     @character.user_id = current_user.id
     respond_to do |format|
       if @character.save
-        format.html { redirect_to user_characters_path(current_user), notice: 'Character was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
