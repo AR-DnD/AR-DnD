@@ -16,45 +16,48 @@
     <div class = "row">
 
       <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
-
-        <div class="field">
-          <font color="white"><%= form.label :name, "Character Name" %></font>
-          <%= form.text_field :name, id: :character_name, class:"form-control" %>
+        <div class = "row">
+          <div class="field" style="padding-right: 0px; padding-left: 0px;">
+            <font color="white"><%= form.label :name, "Character Name" %></font>
+            <%= form.text_field :name, id: :character_name, class:"form-control" %>
+          </div>
         </div>
 
         <div class = "row">
-          <div class = "col-md-2">
-            <div class="field">
-              <font color="white"><%= form.label :profession, "Profession" %></font>
-              <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
-            </div>
-          </div>
 
-          <div class = "col-md-2">
+          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="white"><%= form.label :race, "Race" %></font>
               <%= form.select :race, ['Dwarf', 'Elf', 'Gnome', 'Half-orc', 'Human'], id: :character_race, class:"form-control" %>
             </div>
           </div>
 
+          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="white"><%= form.label :profession, "Profession" %></font>
+              <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
+            </div>
+          </div>
+
         </div>
 
         <div class = "row">
-        <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-          <div class="field" >
-            <font color="white"><%= form.label :level, "Level" %></font>
-            <%= form.number_field :level, id: :character_level, value: 0, min: 0, max: 20, class:"form-control" %>
-          </div>
-        </div>
 
-        <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-          <div class="field">
-            <font color="white"><%= form.label :strength, "Strength" %></font>
-            <%= form.number_field :strength, id: :character_strength, value: 0, min: 0, max: 20, class:"form-control" %>
+          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field" >
+              <font color="white"><%= form.label :level, "Level" %></font>
+              <%= form.number_field :level, id: :character_level, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
           </div>
-        </div>
 
-      </div>
+          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="white"><%= form.label :strength, "Strength" %></font>
+              <%= form.number_field :strength, id: :character_strength, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+        </div>
 
       </div>
 
@@ -67,7 +70,8 @@
 
     </div>
 
-    <div class = "row">
+    <div class = "row" >
+
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
           <font color="white"><%= form.label :dexterity, "Dexterity" %></font>
