@@ -58,7 +58,7 @@ class CharactersController < ApplicationController
     user = @character.user
     @character.destroy
     respond_to do |format|
-      format.html { redirect_to user_characters_path(), notice: 'Character was successfully destroyed.' }
+      format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
