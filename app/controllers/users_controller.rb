@@ -44,6 +44,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
+        Character.make_default_character @user
         format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
