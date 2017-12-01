@@ -1,0 +1,60 @@
+<button class="btn btn-link btn-lg active" data-izimodal-open="#modal-custom">NEW ADVENTURE / NEW CHARACTER</button>
+<!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
+
+<%= javascript_include_tag "_adventure-character" %>
+
+<div id="modal-custom" data-iziModal-group="group1">
+    <button data-iziModal-close class="icon-close">x</button>
+    <header>
+        <a href="" class="active">NEW ADVENTURE</a>
+        <!-- <a href="" id="character">NEW CHARACTER</a> -->
+    </header>
+    <section class>
+
+      <%= form_for(:adventure, :html => {class: "form-horizontal", role: "form"}, url: user_adventure_path(current_user)) do |f| %>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control", id: :adventure_title, placeholder: "Enter your adventure title." %>
+          </div>
+          <div class="field">
+            <%= f.label :story %>
+            <%= f.text_area :story, class: "form-control", id: :adventure_story, placeholder: "Enter your adventure story.", rows: 10 %>
+          </div>
+          <div class="field hide">
+            <%= f.label :user %>
+            <%= f.text_field :user_id, :value => params[:user_id] %>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CHARACTERS
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <% current_user.characters.each do |character| %>
+               <div class="checkbox">
+                  <label>
+                    <%= check_box_tag 'characters[]', character.id -%>
+                    <%= h character.name -%>
+                  </label>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+
+          <!-- <button id="submit" class="btn btn-primary btn-lg" data-dismiss="modal">CREATE ADVENTURE</button> -->
+
+          <div class="actions">
+            <%= f.submit "CREATE ADVENTURE", class:"btn btn-primary btn-lg" %>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <% end %> -->
+    </section>
+</div>

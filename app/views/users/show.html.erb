@@ -24,6 +24,7 @@
 
     <div class="col-md-6">
       <% if current_user == @user %>
+      <li><%= render 'adventures/modal', adventure: @adventure, user: current_user %></li>
       <font color="white"><td>Your Adventures</td></font>
       <% else %>
       <td> View <%=  %> 's Adventures: </td>

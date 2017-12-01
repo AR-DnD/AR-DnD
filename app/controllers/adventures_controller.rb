@@ -11,6 +11,8 @@ class AdventuresController < ApplicationController
   def index
     # @adventures = Adventure.all
     @adventures = current_user.adventures
+    @adventure = Adventure.new
+
   end
 
   def show
@@ -30,8 +32,10 @@ class AdventuresController < ApplicationController
         @adventure.characters << Character.find(character_id.to_i)
       end
     end
+    @adventure.user = current_user
     respond_to do |format|
       if @adventure.save
+        byebug
         format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
       else
