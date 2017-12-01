@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <font color="white"><%= form.label :name, "Map Name" %></font>
+    <div class="font-title-2"><font color="white"><%= form.label :name, "NAME" %></font></div>
     <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank" %>
   </div>
 
@@ -20,9 +20,9 @@
     <font color="white"><%= form.label :data %></font>
     <%= form.text_field :data, class:"form-control", id: :map_data %>
   </div>
-
+  <br>
   <div class="field">
-    <font color="white"><%= form.label :story, "Story" %></font>
+    <div class="font-title-2"><font color="white"><%= form.label :story, "STORY" %></font></div>
     <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank" %>
   </div>
 
@@ -30,9 +30,9 @@
     <%= form.label :adventure %>
     <%= form.text_field :adventure_id, :value => params[:adventure_id] %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit "UPDATE MAP", class:"btn btn-success btn-md active" %>
+    <%= form.submit "UPDATE MAP", class:"btn btn-success btn-md btn-block active" %>
   </div>
 
 <% end %>

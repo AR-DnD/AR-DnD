@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-5 col-md-offset-3">
       <div class="field">
-        <font color="white"><%= form.label :title, "Adventure Name" %></font>
+        <div class="font-title"><font color="white"><%= form.label :title, "Adventure Name" %></font></div>
         <%= form.text_field :title, id: :adventure_title, class:"form-control" %>
       </div>
-
+      <br>
       <div class="field">
-        <font color="white"><%= form.label :story %></font>
+        <div class="font-title"><font color="white"><%= form.label :story %></font></div>
         <%= form.text_area :story, id: :adventure_story, class:"form-control", rows: 10 %>
       </div>
 
@@ -28,7 +28,7 @@
         <%= form.text_field :user_id, :value => params[:user_id] %>
       </div>
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-lg btn-success dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Characters
           <span class="caret"></span>
         </button>

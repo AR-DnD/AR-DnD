@@ -21,7 +21,7 @@
 </div>
 <div class="col-md-3">
   <div class="dropdown" display = "block">
-    <button class="btn btn-warning btn-md active">Characters</button>
+    <button class="btn btn-info btn-md active">Characters</button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
         <label class="btn btn-primary mapElement" id="char-<%= character.race %>-<%= character.name %>">
@@ -36,3 +36,4 @@
     <input type="radio" class="mapElement" name="options" value="Remove" id="rm-Nil" autocomplete="off"> Remove
   </label>
 </div>
+

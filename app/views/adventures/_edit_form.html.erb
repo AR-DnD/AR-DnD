@@ -15,17 +15,17 @@
     <div class="row">
       <div class="col-md-3 col-md-offset-2">
         <div class="field">
-          <font color="white"><%= form.label :title, "Adventure Title" %></font>
+          <div class="font-title-2"><font color="white"><%= form.label :title, "TITLE" %></font></div>
           <%= form.text_field :title, id: :adventure_title %>
         </div>
-
+        <br>
         <div class="field">
-          <font color="white"><%= form.label :story, "Adventure Story" %></font>
+          <div class="font-title-2"><font color="white"><%= form.label :story, "STORY" %></font></div>
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
         </div>
 
         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Characters
             <span class="caret"></span>
           </button>
@@ -46,13 +46,14 @@
           <%= form.text_field :user_id, id: :adventure_user_id%>
         </div>
 
+        <br>
         <div class="actions">
           <%= form.submit "SAVE CHANGES", class:"btn btn-success btn-lg active" %>
         </div>
       </div>
 
       <div class="col-md-5">
-        <font color="white"><h1>EDIT/ADD maps to this adventure</h1></font>
+        <div class="font-title-2"><font color="white"><h1>MAP TABLE</h1></font></div>
         <br>
         <table>
           <thead>

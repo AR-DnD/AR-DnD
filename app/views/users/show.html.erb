@@ -9,13 +9,17 @@
       <br>
       <font color="white">
       <p>
-        <strong>Username:</strong>
-        <%= @user.username %>
+        <div class="font-contents">
+          <strong>USERNAME:</strong>
+          <%= @user.username %>
+        </div>
       </p>
 
       <p>
-        <strong>Email:</strong>
-        <%= @user.email %>
+        <div class="font-contents">
+          <strong>EMAIL:</strong>
+          <%= @user.email %>
+        </div>
       </p>
     </font>
       <p><%= link_to 'EDIT PROFILE', edit_user_path(@user), class:"btn btn-success btn-lg active" %></p>
