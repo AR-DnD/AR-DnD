@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @adventure = Adventure.new
+    @character = Character.new
     #@user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 

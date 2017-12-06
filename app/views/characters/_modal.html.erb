@@ -1,0 +1,125 @@
+<button class="btn btn-link btn-lg active" data-izimodal-open="#modal-custom2">NEW CHARACTER</button>
+<!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
+<%= form_with(model: @character, url: user_characters_path(user_id: current_user.id), local: true) do |form| %>
+
+
+  <%= javascript_include_tag "_character" %>
+
+  <div id="modal-custom2" data-iziModal-group="group1">
+    <button data-iziModal-close class="icon-close">x</button>
+    <header>
+        <a href="" class="active">NEW CHARACTER</a>
+        <!-- <a href="" id="character">NEW CHARACTER</a> -->
+    </header>
+    <section class>
+
+      <div class="col-md-12 col-offset-2">
+        <div class = "row">
+
+          <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
+            <div class = "row">
+              <div class="field" style="padding-right: 0px; padding-left: 0px;">
+                <font color="black"><%= form.label :name, "Character Name" %></font>
+                <%= form.text_field :name, id: :character_name, class:"form-control" %>
+              </div>
+            </div>
+
+            <div class = "row">
+
+              <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                <div class="field">
+                  <font color="black"><%= form.label :race, "Race" %></font>
+                  <%= form.select :race, ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-orc'], id: :character_race, class:"form-control" %>
+                </div>
+              </div>
+
+              <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                <div class="field">
+                  <font color="black"><%= form.label :profession, "Profession" %></font>
+                  <%= form.select :profession, ['Warrior', 'Ranger', 'Rogue', 'Wizard'], id: :character_profession, class:"form-control" %>
+                </div>
+              </div>
+
+            </div>
+
+            <div class = "row">
+
+              <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                <div class="field" >
+                  <font color="black"><%= form.label :level, "Level" %></font>
+                  <%= form.number_field :level, id: :character_level, value: 0, min: 0, max: 20, class:"form-control" %>
+                </div>
+              </div>
+
+              <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                <div class="field">
+                  <font color="black"><%= form.label :strength, "Strength" %></font>
+                  <%= form.number_field :strength, id: :character_strength, value: 0, min: 0, max: 20, class:"form-control" %>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "col-md-6" style="padding-right: 0px; padding-left: 10px;">
+            <div class="field">
+              <font color="black"><%= form.label :name, "Character Backstory" %></font>
+              <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class = "row" style = "margin-left: -30px;">
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="black"><%= form.label :dexterity, "Dexterity" %></font>
+              <%= form.number_field :dexterity, id: :character_dexterity, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="black"><%= form.label :constitution, "Constitution" %></font>
+              <%= form.number_field :constitution, id: :character_constitution, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="white"><%= form.label :intelligence, "Intelligence" %></font>
+              <%= form.number_field :intelligence, id: :character_intelligence, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="white"><%= form.label :wisdom, "Wisdom" %></font>
+              <%= form.number_field :wisdom, id: :character_wisdom, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="white"><%= form.label :charisma, "Charisma" %></font>
+              <%= form.number_field :charisma, id: :character_charisma, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="field hide">
+          <%= form.label :user_id %>
+          <%= form.number_field :user_id, id: :character_user_id%>
+        </div>
+
+        <div class="actions">
+          <%= form.submit "CREATE CHARACTER", class:"btn btn-primary btn-lg" %>
+        </div>
+
+
+
+    </section>
+<% end %>

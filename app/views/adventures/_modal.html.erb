@@ -3,12 +3,12 @@
 <%= form_with(model: @adventure, url: user_adventures_path(user_id: current_user.id), local: true) do |f| %>
 
 
-  <%= javascript_include_tag "_adventure-character" %>
+  <%= javascript_include_tag "_adventure" %>
 
   <div id="modal-custom" data-iziModal-group="group1">
     <button data-iziModal-close class="icon-close">x</button>
     <header>
-        <a href="" class="active">NEW ADVENTURE</a>
+      <a>NEW ADVENTURE</a>
         <!-- <a href="" id="character">NEW CHARACTER</a> -->
     </header>
     <section class>
