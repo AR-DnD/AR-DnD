@@ -49,6 +49,7 @@
        </tr>
        <% end %>
        </table>
+       
        <li><%= render 'adventures/modal', adventure: @adventure, user: current_user %></li>
 
        <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
@@ -78,6 +79,7 @@
         </tr>
         <% end %>
         </table>
+
         <li><%= render 'characters/modal', character: @character, user: current_user %></li>
 
         <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
