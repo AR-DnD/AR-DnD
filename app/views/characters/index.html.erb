@@ -40,7 +40,7 @@
   </tbody>
 </table>
 <br>
-
+<li><%= render 'characters/modal', character: @character, user: current_user %></li>
 <%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %>
 </div>
 </div>

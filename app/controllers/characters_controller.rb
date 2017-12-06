@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
+    @character = Character.new
   end
 
   # GET /characters/new
@@ -27,6 +28,9 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user_id = current_user.id
+
+    @character.user = current_user
+
     respond_to do |format|
       if @character.save
         format.html { redirect_to user_path(current_user), notice: 'Character was successfully created.' }
@@ -58,7 +62,7 @@ class CharactersController < ApplicationController
     user = @character.user
     @character.destroy
     respond_to do |format|
-      format.html { redirect_to user_characters_path(), notice: 'Character was successfully destroyed.' }
+      format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @adventure = Adventure.new
+    @character = Character.new
     #@user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
@@ -43,6 +45,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
+        Character.make_default_character @user
         format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
