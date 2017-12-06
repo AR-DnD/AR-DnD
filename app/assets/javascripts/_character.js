@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   // $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
   // $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
 
