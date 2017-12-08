@@ -33,6 +33,7 @@ class AdventuresController < ApplicationController
       end
     end
     @adventure.user = current_user
+    @adventure.times_copied = 0
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to edit_user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully created.' }

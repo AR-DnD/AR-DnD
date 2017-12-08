@@ -4,8 +4,11 @@ class Adventure < ApplicationRecord
   has_and_belongs_to_many :characters
 
   def make_copy new_user
+    self.times_copied += 1
+    self.save
     copy = self.dup
     copy.user_id = new_user.id
+    copy.times_copied = 0
     copy.save
     return copy
   end
