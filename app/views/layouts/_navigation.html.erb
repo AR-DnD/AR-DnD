@@ -19,8 +19,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if logged_in? %>
-          <li><%= link_to "Adventures", user_adventures_path(current_user) %></li>
-          <li><%= link_to "Characters", user_characters_path(current_user) %></li>
+          <li><%= link_to "All Adventures", root_path %></li>
+          <li><%= link_to "My Adventures", user_adventures_path(current_user) %></li>
+          <li><%= link_to "My Characters", user_characters_path(current_user) %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
