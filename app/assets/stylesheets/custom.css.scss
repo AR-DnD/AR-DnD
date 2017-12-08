@@ -272,16 +272,44 @@ body{
     width: 100%;
 }
 #modal-custom .iziModal-content header a{
+    // display: block;
+    // background: #E69A28;
+    // border: 1px solid #000;
+    // height: 5px;
+    // padding: 0 10px 0;
+    // margin: -10px -10px 0;
+    // box-sizing: initial;
+    // width: 100%;
+
     display: block;
-    float: left;
-    width: 50%;
+    float: center;
+    width: 100%;
     padding: 0;
     text-align: center;
-    background: #ddd;
-    color: #999;
+    background: #E69A28;
     height: 73px;
     vertical-align: middle;
     line-height: 73px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    color: #922610;
+    font-size: 23px;
+    font-variant: small-caps;
+    font-weight: bold;
+
+    border: 1px solid #000;
+
+
+
+    // display: block;
+    // float: left;
+    // width: 50%;
+    // padding: 0;
+    // text-align: center;
+    // background: #ddd;
+    // color: #999;
+    // height: 73px;
+    // vertical-align: middle;
+    // line-height: 73px;
 }
 #modal-custom .iziModal-content header a.active{
     background: #fff;
