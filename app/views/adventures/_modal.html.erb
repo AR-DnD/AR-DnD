@@ -1,4 +1,4 @@
-<button class="btn btn-link btn-lg active" data-izimodal-open="#modal-custom">NEW ADVENTURE</button>
+<button class="trigger-custom" data-izimodal-open="#modal-custom">New Adventure</button>
 <!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
 <%= form_with(model: @adventure, url: user_adventures_path(user_id: current_user.id), local: true) do |f| %>
 

@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
-$navbar-default-bg: #ffffff;
+$navbar-default-bg: #922610;
 
 .tutorial {
   background: #ffeb99;
@@ -233,11 +233,29 @@ body{
 }
 
 .trigger-custom{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #922610;
   padding:10px 20px;
   border-radius:3px;
   border:0;
-  background:#ccc;
-  font-size:14px;
+  background:#FDF1DC;
+  font-size:20px;
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #aaa;
+  cursor:pointer;
+}
+.trigger-custom2{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #922610;
+  padding:10px 20px;
+  border-radius:3px;
+  border:0;
+  background:#FDF1DC;
+  font-size:20px;
   border-top:1px solid #FFF;
   border-bottom:1px solid #aaa;
   cursor:pointer;

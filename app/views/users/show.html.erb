@@ -26,9 +26,14 @@
       <!-- <p><%= link_to 'Back', users_path, class:"btn btn-warning btn-lg active" %></p> -->
     </div>
 
+
+
+
+
+
     <div class="col-md-6">
       <% if current_user == @user %>
-      <div class="font-title"><font color="white"><td>YOUR ADVENTURE</td></font></div>
+      <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
       <br>
       <% else %>
       <td> View <%=  %> 's Adventures: </td>
@@ -49,13 +54,16 @@
        </tr>
        <% end %>
        </table>
-       
-       <li><%= render 'adventures/modal', adventure: @adventure, user: current_user %></li>
 
-       <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
+       <br>
+       <ul><%= render 'adventures/modal', adventure: @adventure, user: current_user %></ul>
+
+       <!-- <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
 
        <br>
        <br>
+
+
 
        <% if current_user == @user %>
        <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
@@ -80,9 +88,10 @@
         <% end %>
         </table>
 
-        <li><%= render 'characters/modal', character: @character, user: current_user %></li>
+        <br>
+        <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
 
-        <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p>
+        <!-- <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
    </div>
  </div>
 </div>
