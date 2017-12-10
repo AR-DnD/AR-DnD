@@ -12,8 +12,8 @@
 
 
 <div class="row">
-  <div class = "sorted-adventures">
-    <%= render 'sorted_adventures' %>
+  <div id = "sorted-adventures">
+    <%= render 'sorted_adventures', locals: {by: :created_at, order: :desc } %>
   </div>
   <div class="col-md-6 col-md-offset-3">
 

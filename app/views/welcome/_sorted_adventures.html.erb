@@ -1,4 +1,4 @@
-<table >
+<table>
   <thead>
     <tr>
       <th>Creator</th>
@@ -9,10 +9,7 @@
   </thead>
 
   <tbody>
-
-    <% @a = :created_at %>
-    <% @b = :asc %>
-    <% @adventures.order(@a => @b).each do |adventure| %>
+    <% @adventures.order(locals[:by] => locals[:order]).each do |adventure| %>
     <tr>
       <td><%= User.find(adventure.user_id.to_i).username %></td>
       <td><%= adventure.title %></td>
