@@ -9,15 +9,30 @@
   </thead>
 
   <tbody>
-    <% @adventures.order(locals[:by] => locals[:order]).each do |adventure| %>
-    <tr>
-      <td><%= User.find(adventure.user_id.to_i).username %></td>
-      <td><%= adventure.title %></td>
-      <td><%= adventure.story %></td>
-      <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-default btn-sm active"%></td>
-      <td><%= link_to 'SHOW', user_adventure_path(id: adventure.id, user_id: adventure.user_id), class:"btn btn-info btn-sm active"%></td>
-      </tr>
-    </tr>
+    <% if @by == :times_copied %>
+      <p>HEY</p>
+      <% @adventures.order(times_copied: :desc).each do |adventure| %>
+        <tr>
+          <td><%= User.find(adventure.user_id.to_i).username %></td>
+          <td><%= adventure.title %></td>
+          <td><%= adventure.story %></td>
+          <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-default btn-sm active"%></td>
+          <td><%= link_to 'SHOW', user_adventure_path(id: adventure.id, user_id: adventure.user_id), class:"btn btn-info btn-sm active"%></td>
+          </tr>
+        </tr>
+      <% end %>
+    <% elsif @by == :created_at %>
+      <p>YOU</p>
+      <% @adventures.order(created_at: :desc).each do |adventure| %>
+        <tr>
+          <td><%= User.find(adventure.user_id.to_i).username %></td>
+          <td><%= adventure.title %></td>
+          <td><%= adventure.story %></td>
+          <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-default btn-sm active"%></td>
+          <td><%= link_to 'SHOW', user_adventure_path(id: adventure.id, user_id: adventure.user_id), class:"btn btn-info btn-sm active"%></td>
+          </tr>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

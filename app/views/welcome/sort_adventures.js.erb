@@ -6,3 +6,5 @@ $(document).on("turbolinks:load", function(){
 
   })
 });
+
+$('#sorted-adventures').html('<%= escape_javascript(render( 'welcome/sorted_adventures' ))%>')

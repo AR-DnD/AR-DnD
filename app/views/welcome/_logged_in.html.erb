@@ -1,12 +1,12 @@
-<%= javascript_include_tag '_sort_adventures' %>
 
 <div>
-  <p> Sort By:</p>
-  <input type="radio" class="sort-by" name="sort-by" id="newest" checked="checked">
-  <label for="contactChoice1">Newest</label>
-
-  <input type="radio" class="sort-by" name="sort-by" id="most popular">
-  <label for="contactChoice2">Most Popular</label>
+  <%= form_for sort_adventures_path, url: sort_adventures_path, remote: true, id: "sort_form" do |f|%>
+    <%= f.radio_button :sortby, 'Newest', :checked => true %>
+    <%= label :sortby, 'Newest' %>
+    <%= f.radio_button :sortby, 'Most Popular' %>
+    <%= label :sortby, 'Most Popular' %>
+    <%= f.submit "Submit" %>
+  <% end %>
 </div>
 
 
