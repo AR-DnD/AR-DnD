@@ -9,8 +9,7 @@
   </thead>
 
   <tbody>
-    <% if @by == :times_copied %>
-      <p>HEY</p>
+    <% if @sortby == :times_copied %>
       <% @adventures.order(times_copied: :desc).each do |adventure| %>
         <tr>
           <td><%= User.find(adventure.user_id.to_i).username %></td>
@@ -21,8 +20,7 @@
           </tr>
         </tr>
       <% end %>
-    <% elsif @by == :created_at %>
-      <p>YOU</p>
+    <% elsif @sortby == :created_at %>
       <% @adventures.order(created_at: :desc).each do |adventure| %>
         <tr>
           <td><%= User.find(adventure.user_id.to_i).username %></td>

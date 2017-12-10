@@ -2,21 +2,15 @@ class WelcomeController < ApplicationController
 
   def home
     @adventures = Adventure.all
-    @by = :times_copied
-    @order = :desc
+    @sortby = :created_at
   end
 
   def sort_adventures
     @adventures = Adventure.all
-    #@by = :times_copied
-    #@order = :desc
     if params["/sort_adventures"]["sortby"] == "Most Popular"
-      @by = :times_copied
-      @order = :desc
-      p "Here"
+      @sortby = :times_copied
     elsif params["/sort_adventures"]["sortby"] == "Newest"
-      @by = :created_at
-      @order = :asc
+      @sortby = :created_at
     end
     respond_to do |format|
       format.js

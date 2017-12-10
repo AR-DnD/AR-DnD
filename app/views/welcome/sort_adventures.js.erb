@@ -1,10 +1,1 @@
-$(document).on("turbolinks:load", function(){
-  $('.sort-by').on('click', function () {
-
-    console.log("Here")
-    $('#sorted-adventures').html("<%= escape_javascript(render 'sorted_adventures', locals: {by: :created_at, order: :desc } )%>")
-
-  })
-});
-
 $('#sorted-adventures').html('<%= escape_javascript(render( 'welcome/sorted_adventures' ))%>')
