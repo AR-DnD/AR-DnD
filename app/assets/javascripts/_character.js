@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
 
 
   /* Instantiating iziModal */
-  $("#modal-custom2").iziModal({
+  $("#modal-custom3").iziModal({
       overlayClose: false,
       overlayColor: 'rgba(0, 0, 0, 0.6)'
   });
@@ -16,22 +16,22 @@ $(document).on('turbolinks:load', function(){
 
   /* JS inside the modal */
 
-  $("#modal-custom2").on('click', 'header a', function(event) {
+  $("#modal-custom3").on('click', 'header a', function(event) {
       event.preventDefault();
       var index = $(this).index();
       $(this).addClass('active').siblings('a').removeClass('active');
       $(this).parents("div").find("section").eq(index).removeClass('hide').siblings('section').addClass('hide');
 
       if( $(this).index() === 0 ){
-          $("#modal-custom2 .iziModal-content .icon-close").css('background', '#ddd');
+          $("#modal-custom3 .iziModal-content .icon-close").css('background', '#ddd');
       } else {
-          $("#modal-custom2 .iziModal-content .icon-close").attr('style', '');
+          $("#modal-custom3 .iziModal-content .icon-close").attr('style', '');
       }
   });
 
   $('button#submit').on('click', function(e){
 
-  $("#modal-custom2").on('click', '.submit', function(event) {
+  $("#modal-custom3").on('click', '.submit', function(event) {
       event.preventDefault();
 
       var fx = "wobble",  //wobble shake

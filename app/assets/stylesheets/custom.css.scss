@@ -9,7 +9,7 @@ $navbar-default-bg: #922610;
 }
 
 .display-background {
-  background-image: image-url('background.jpg');
+  background-image: image-url('new-background.jpg');
   background-size: cover;
   background-attachment:fixed;
   background-position: center;
@@ -260,18 +260,85 @@ body{
   border-bottom:1px solid #aaa;
   cursor:pointer;
 }
+.trigger-custom3{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #922610;
+  padding:10px 20px;
+  border-radius:3px;
+  border:0;
+  background:#FDF1DC;
+  font-size:20px;
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #aaa;
+  cursor:pointer;
+}
 .trigger-custom:hover{
   background:#d5d5d5;
 }
-
 #modal-custom .iziModal-content header{
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    width: 100%;
+    // background: #FDF1DC;
+
+}
+#modal-custom .iziModal-content header a{
+    // display: block;
+    // background: #E69A28;
+    // border: 1px solid #000;
+    // height: 5px;
+    // padding: 0 10px 0;
+    // margin: -10px -10px 0;
+    // box-sizing: initial;
+    // width: 100%;
+
+    // display: block;
+    // float: center;
+    // width: 100%;
+    // padding: 0;
+    // text-align: center;
+    // background: #E69A28;
+    // height: 73px;
+    // vertical-align: middle;
+    // line-height: 73px;
+    // font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    // color: #922610;
+    // font-size: 23px;
+    // font-variant: small-caps;
+    // font-weight: bold;
+    //
+    // border: 1px solid #000;
+    //
+    //
+
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 0;
+    text-align: center;
+    height: 73px;
+    vertical-align: middle;
+    line-height: 73px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    color: #922610;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: #ddd;
+
+
+}
+#modal-custom2 .iziModal-content header{
     background: #eee;
     margin-bottom: 10px;
     overflow: hidden;
     border-radius: 3px 3px 0 0;
     width: 100%;
 }
-#modal-custom .iziModal-content header a{
+#modal-custom2 .iziModal-content header a{
     // display: block;
     // background: #E69A28;
     // border: 1px solid #000;
@@ -290,11 +357,62 @@ body{
     height: 73px;
     vertical-align: middle;
     line-height: 73px;
-    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
     color: #922610;
     font-size: 23px;
     font-variant: small-caps;
     font-weight: bold;
+    background: #FDF1DC;
+
+
+    border: 1px solid #000;
+
+
+
+    // display: block;
+    // float: left;
+    // width: 50%;
+    // padding: 0;
+    // text-align: center;
+    // background: #ddd;
+    // color: #999;
+    // height: 73px;
+    // vertical-align: middle;
+    // line-height: 73px;
+}
+#modal-custom3 .iziModal-content header{
+    background: #eee;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    width: 100%;
+}
+#modal-custom3 .iziModal-content header a{
+    // display: block;
+    // background: #E69A28;
+    // border: 1px solid #000;
+    // height: 5px;
+    // padding: 0 10px 0;
+    // margin: -10px -10px 0;
+    // box-sizing: initial;
+    // width: 100%;
+
+    display: block;
+    float: center;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background: #E69A28;
+    height: 73px;
+    vertical-align: middle;
+    line-height: 73px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    color: #922610;
+    font-size: 23px;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: #FDF1DC;
+
 
     border: 1px solid #000;
 
@@ -313,10 +431,18 @@ body{
 }
 #modal-custom .iziModal-content header a.active{
     background: #fff;
-    color: #777;
+    color: #922610;
+
 }
+
 #modal-custom .iziModal-content section{
     padding: 30px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    color: #922610;
+    font-size: 16px;
+    font-variant: small-caps;
+    font-weight: bold;
+
 }
 #modal-custom .iziModal-content section input:not([type="checkbox"]), #modal-custom .iziModal-content section button{
     width: 100%;
@@ -325,10 +451,15 @@ body{
     margin-bottom: 26px;
     padding: 15px;
     font-size: 14px;
+
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    // color: #922610;
+    // font-variant: small-caps;
+    // font-weight: bold;
 }
 #modal-custom .iziModal-content section button{
-  height: 46px;
-  padding: 0;
+    height: 46px;
+    padding: 0;
 }
 #modal-custom .iziModal-content section input:focus{
     border-color:#28CA97;

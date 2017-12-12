@@ -23,7 +23,9 @@
 
           <%= f.label :password %>
           <%= f.password_field :password, class: "form-control", id: :login_password, placeholder: "Enter your password.", autocomplete: "off" %>
-          <%= f.submit "LOGIN", class: "btn btn-primary btn-lg" %>
+          <div class="button-color">
+            <%= f.submit "LOGIN", class: "btn btn-danger btn-lg" %>
+          </div>
       <% end %>
     </section>
     <section class="hide">
@@ -41,7 +43,8 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation, id: :signup_confirmation, placeholder: "Enter your password again." %>
 
-        <%= f.submit "CREATE MY ACCOUNT", class: "btn btn-primary btn-lg" %>
+        <%= f.submit "CREATE MY ACCOUNT", class: "btn btn-danger btn-lg" %>
+
       <% end %>
     </section>
 </div>
