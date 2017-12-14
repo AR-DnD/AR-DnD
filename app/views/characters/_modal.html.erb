@@ -1,11 +1,11 @@
-<button class="trigger-custom2" data-izimodal-open="#modal-custom2">New Character</button>
+<button class="trigger-custom3" data-izimodal-open="#modal-custom3">New Character</button>
 <!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
 <%= form_with(model: @character, url: user_characters_path(user_id: current_user.id), local: true) do |form| %>
 
 
   <%= javascript_include_tag "_character" %>
 
-  <div id="modal-custom2" data-iziModal-group="group1">
+  <div id="modal-custom3" data-iziModal-group="group1">
     <button data-iziModal-close class="icon-close">x</button>
     <header>
         <a href="" class="active">NEW CHARACTER</a>
