@@ -3,8 +3,12 @@
 $(document).on('turbolinks:load', function () {
   $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', true)
 
-  var currElement = 'obj-Tree'
-  var grid = [[null, null, null], [null, null, null], [null, null, null]]
+  var gridDimension = 6;
+  var grid = new Array(gridDimension)
+  for (var i = 0; i < gridDimension; i++){
+    grid[i] = new Array(gridDimension).fill(null)
+  }
+
   if ($('#map_data').val()) {
     var savedState = JSON.parse($('#map_data').val())
     for (var i = 0; i < savedState.length; i++) {
@@ -22,9 +26,10 @@ $(document).on('turbolinks:load', function () {
       }
     }
     grid = savedState
+  } else {
+      $('#map_data').val(JSON.stringify(grid))
   }
-
-  $('#map_data').val(JSON.stringify(grid))
+  var currElement = 'obj-Tree'
 
   $('input').on('click', function () {
     $('#log').html($('input:checked').val() + ' is checked!')

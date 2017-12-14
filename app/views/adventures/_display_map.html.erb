@@ -1,9 +1,10 @@
+<% grid_dimension = 6%>
 <table class="table table-mapgrid-mini">
   <tbody>
     <% data = JSON.parse map.data%>
-    <% (0..2).each do |i| %>
+    <% (0..(grid_dimension-1)).each do |i| %>
       <tr>
-        <% (0..2).each do |j| %>
+        <% (0..(grid_dimension-1)).each do |j| %>
           <td>
             <% currElement = data[i][j].to_s %>
             <% image_string = currElement != '' ? "url(/assets/" + currElement.split('-')[1] + ".png);" : 'nil' %>

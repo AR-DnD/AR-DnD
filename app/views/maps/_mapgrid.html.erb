@@ -1,8 +1,9 @@
+<% grid_dimension = 6%>
 <table class="table table-mapgrid">
   <tbody>
-    <% (0..2).each do |i| %>
+    <% (0..(grid_dimension-1)).each do |i| %>
       <tr>
-        <% (0..2).each do |j| %>
+        <% (0..(grid_dimension-1)).each do |j| %>
           <% id_string = i.to_s + "-"+ j.to_s %>
           <td>
             <button type="button"  class="btn-mapgrid" id="<%= id_string %>" ></button>
