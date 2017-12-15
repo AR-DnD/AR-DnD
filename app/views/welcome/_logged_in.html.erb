@@ -1,24 +1,31 @@
 
-<div>
-  <%= form_for sort_adventures_path, url: sort_adventures_path, remote: true, id: "sort_form" do |f|%>
-    <%= f.radio_button :sortby, 'Newest', :checked => true, :onclick => "$('#submit').click();" %>
-    <%= label :sortby, 'Newest' %>
-    <%= f.radio_button :sortby, 'Most Popular', :onclick => "$('#submit').click();" %>
-    <%= label :sortby, 'Most Popular' %>
-    <%= f.submit "Submit", id: 'submit', style: 'display:none' %>
-  <% end %>
-</div>
 
 
+
+<% @adventure = Adventure.new %>
 
 <div class="row">
-  <div id = "sorted-adventures">
-    <%= render 'sorted_adventures', locals: {by: :created_at, order: :desc } %>
-  </div>
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-12">
+    <div class="box-border">
+      <div class="font-title"><font color="white"><td>ALL ADVENTURES</td></font></div>
+      <br>
 
 
-    <br>
-    <%= link_to 'CREATE NEW ADVENTURES', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %>
+      <div>
+        <%= form_for sort_adventures_path, url: sort_adventures_path, remote: true, id: "sort_form" do |f|%>
+          <%= f.radio_button :sortby, 'Newest', :checked => true, :onclick => "$('#submit').click();" %>
+          <%= label :sortby, 'Newest' %>
+          <%= f.radio_button :sortby, 'Most Popular', :onclick => "$('#submit').click();" %>
+          <%= label :sortby, 'Most Popular' %>
+          <%= f.submit "Submit", id: 'submit', style: 'display:none' %>
+        <% end %>
+      </div>
+
+      <div id = "sorted-adventures">
+        <%= render 'sorted_adventures', locals: {by: :created_at, order: :desc } %>
+      </div>
+      <br>
+      <ul><%= render 'adventures/modal', adventure: @adventure, user: current_user %></ul>
+    </div>
   </div>
 </div>
