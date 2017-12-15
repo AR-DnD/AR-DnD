@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   post 'sort_adventures', to: 'welcome#sort_adventures'
+  post 'showhide_maps', to: 'adventures#showhide_maps'
 
 
   post 'copy', to: 'adventures#copy'

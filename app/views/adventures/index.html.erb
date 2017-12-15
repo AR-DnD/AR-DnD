@@ -2,10 +2,12 @@
 <br>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-12">
     <div class="box-border">
       <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
       <br>
+
+
 
       <table>
         <thead>
@@ -16,6 +18,8 @@
           </tr>
         </thead>
 
+
+
         <tbody>
           <% @adventures.each do |adventure| %>
           <tr>
@@ -23,6 +27,32 @@
             <td><%= adventure.story %></td>
             <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-default btn-sm active"%></td>
             <td><%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id), class:"btn btn-info btn-sm active"%></td>
+            <td>
+              <div>
+                <%= form_for showhide_maps_path(adventure), url: showhide_maps_path(adventure), remote: true, id: "show_hide_maps_form" do |f|%>
+
+
+
+
+                  <%= f.radio_button :showhide, 'Hide maps', :checked => true, :onclick => "$('#submit').click();" %>
+                  <%= label :showhide, 'Hide maps' %>
+
+                  <%= f.radio_button :showhide, 'Show maps', :onclick => "$('#submit').click();" %>
+                  <%= label :showhide, 'Show maps' %>
+
+                  <%= f.submit "Submit", id: 'submit', style: 'display:none' %>
+
+
+
+                <% end %>
+              </div>
+              <div id = "show_hide_maps">
+                <%= render 'show_hide_maps' %>
+              </div>
+            </td>
+
+
+
             <td><%= link_to 'DELETE', user_adventure_path(id: adventure.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
             </tr>
           </tr>

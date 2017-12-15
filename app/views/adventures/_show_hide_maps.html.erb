@@ -1,0 +1,25 @@
+
+        <% if @showhide == :hide %>
+          <%= @showhide %>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Map Name</th>
+                <th>Map Configuration</th>
+                <th>Map Story</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+          </table>
+
+        <% elsif @showhide == :show %>
+        <%= @showhide %>
+
+
+
+
+        <% else %>
+
+        <% end %>

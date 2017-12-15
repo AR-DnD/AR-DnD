@@ -12,7 +12,26 @@ class AdventuresController < ApplicationController
     # @adventures = Adventure.all
     @adventures = current_user.adventures
     @adventure = Adventure.new
+    @showhide = :hide
+  end
 
+  def showhide_maps
+    @showhide = :hide
+    # @adventure = :adventure
+    # @maps = @adventure.maps
+
+    if params["/showhide_maps"]["showhide"] == "Hide maps"
+      @showhide = :hide
+      puts 'hide'
+
+    elsif params["/showhide_maps"]["showhide"] == "Show maps"
+      @showhide = :show
+      puts 'show'
+
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
