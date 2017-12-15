@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    #@users = User.paginate(page: params[:page], per_page: 5)
     @users= User.paginate(:page => params[:page], :per_page => 5)
 
   end
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
   def show
     @adventure = Adventure.new
     @character = Character.new
-    #@user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /users/new

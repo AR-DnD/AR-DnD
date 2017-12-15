@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post 'register', to: 'users#create'
 
-  resources :users, except: [:new]
+  #resources :users, except: [:new]
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

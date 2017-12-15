@@ -2,9 +2,24 @@ require 'test_helper'
 
 class UserControllerTest < ActionDispatch::IntegrationTest
   setup do
+
     @user = users(:one)
+
+    #@session = sessions(:one)
+    byebug
     @other_user = users(:two)
   end
+
+  # test "should log in" do
+  #   post login_path, params: {
+  #     session: {
+  #       email: @user.email,
+  #       password: @user.password
+  #     }
+  #   }
+  #   byebug
+  #   assert_response :success
+  # end
 
   test "should get index" do
     get users_path
@@ -31,12 +46,13 @@ class UserControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to user_url(User.last)
   end
-  #
-  # test "should show user" do
-  #   get user_path(@user)
-  #   assert_response :success
-  # end
-  #
+
+  test "should show user" do
+    byebug
+    get user_path(@user)
+    assert_response :success
+  end
+
   # test "should get edit" do
   #   get edit_user_path(@user)
   #   assert_response :success

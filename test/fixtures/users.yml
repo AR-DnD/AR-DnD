@@ -1,6 +1,7 @@
 one:
   username: bob
   email: bob@bob.com
+  #password: 123456
   password_digest: unsafe
   admin: false
   id: 1
