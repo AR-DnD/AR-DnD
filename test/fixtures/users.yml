@@ -1,7 +1,6 @@
 one:
   username: bob
   email: bob@bob.com
-  #password: 123456
   password_digest: $2a$10$F8UBEYFa6cNbon8Pi1Y9Kentm7rNkTvu0dntOljDhXGj6cElnv2wW
   admin: false
   id: 1
@@ -9,6 +8,6 @@ one:
 two:
   username: joe
   email: joe@joe.com
-  password_digest: unsafe
+  password_digest: $2a$10$F8UBEYFa6cNbon8Pi1Y9Kentm7rNkTvu0dntOljDhXGj6cElnv2wW
   admin: false
   id: 2
