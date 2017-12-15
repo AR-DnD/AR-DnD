@@ -4,9 +4,18 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   setup do
 
     @user = users(:one)
+    post login_path, params: {
+      session: {
+        user_id: @user.id,
+        email: @user.email,
+        password: 123456
+      }
+    }
+    byebug
+    #log_in(@user)
 
     #@session = sessions(:one)
-    byebug
+
     @other_user = users(:two)
   end
 
