@@ -75,11 +75,7 @@
   </div>
 <% end %>
 
-<%= form_for switch_characters_path, url: switch_characters_url, id: 4, remote: true, id: "switch_form" do |f|%>
-  <%= f.submit "Submit", id: 'submit_switch' %>
-  <%= hidden_field_tag 'adventure id', @adventure.id %>
-
-
+<%= form_for switch_characters_path, url: switch_characters_url, remote: true, id: "switch_form" do |f|%>
   <div class="dropdown">
     <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Characters
@@ -94,4 +90,6 @@
       <% end %>
     </ul>
   </div>
+  <%= hidden_field_tag 'adventure id', @adventure.id %>
+  <%= f.submit "Submit", id: 'submit_switch', style: 'display:none' %>
 <% end %>
