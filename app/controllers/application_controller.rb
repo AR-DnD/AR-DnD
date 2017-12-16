@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  include SessionsHelper
+
   def users_exist
     User.all.size > 0
   end

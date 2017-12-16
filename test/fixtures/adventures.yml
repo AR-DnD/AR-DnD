@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  story: MyString
-  user: one
+  title: MyFirstAdventure
+  story: TheMagicBeginning
+  user_id: 1
+  id: 1
 
 two:
-  title: MyString
-  story: MyString
-  user: two
+  title: MySecondAdventure
+  story: TheMagicEnding
+  user_id: 1
+  id: 2

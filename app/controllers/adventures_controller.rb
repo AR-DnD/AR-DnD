@@ -48,6 +48,7 @@ class AdventuresController < ApplicationController
   def update
     @adventure.characters = []
     params[:characters].each do |character_id|
+      byebug
       @adventure.characters << Character.find(character_id.to_i)
     end
     respond_to do |format|
