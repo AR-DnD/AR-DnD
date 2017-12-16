@@ -3,28 +3,58 @@
 <br>
 <br>
 <div class="container-fluid">
+
   <div class="row">
     <div class="col-md-4">
       <div class="box-border">
 
         <%= gravatar_for @user, size: 150 %>
-        <br>
-        <font color="white">
-        <p>
-          <div class="font-contents">
-            <strong>USERNAME:</strong>
-            <%= @user.username %>
-          </div>
-        </p>
 
-        <p>
-          <div class="font-contents">
-            <strong>EMAIL:</strong>
-            <%= @user.email %>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="stat-block wide">
+              <hr class="orange-border" />
+                <div class="section-left">
+                  <div class="creature-heading">
+
+
+                      <h1><%= @user.username %></h1>
+                      <br>
+                      <svg height="5" width="100%" class="tapered-rule">
+                        <polyline points="0,0 400,2.5 0,5"></polyline>
+                      </svg>
+                      <h1><%= @user.email %></h1>
+                      <br>
+
+
+                    </div>
+                    <svg height="5" width="100%" class="tapered-rule">
+                      <polyline points="0,0 400,2.5 0,5"></polyline>
+                    </svg>
+                </div>
+              </hr>
+
+            </div>
+
+        </div>
+        <br>
+        </div>
+
+
+        <br>
+        <% if current_user == @user %>
+          <center>
+          <div class="edit-profile">
+            <%= link_to 'EDIT PROFILE', edit_user_path(@user) %>
           </div>
-        </p>
-      </font>
-        <p><%= link_to 'EDIT PROFILE', edit_user_path(@user), class:"btn btn-danger btn-lg active" %></p>
+          </center>
+          <br>
+          <ul><center><%= render 'adventures/modal', adventure: @adventure %></center></ul>
+          <br>
+          <ul><center><%= render 'characters/modal', character: @character, user: current_user %></center></ul>
+
+
+        <% end %>
       </div>
       <!-- <p><%= link_to 'Back', users_path, class:"btn btn-warning btn-lg active" %></p> -->
     </div>
@@ -37,49 +67,74 @@
     <div class="col-md-8">
       <div class="box-border">
 
-      <% if current_user == @user %>
+        <% if current_user == @user %>
+          <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
+          <br>
+          <% else %>
+          <div class="font-title"><font color="white"><td> VIEW <%=  %> 'S ADVENTURES</td></div>
+          <% end %>
+          <br>
 
 
-        <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
-        <br>
-        <% else %>
-        <td> View <%=  %> 's Adventures: </td>
-        <% end %>
 
-        <table>
-          <tr>
-           <th>Adventure Title</th>
-           <th>Adventure Story</th>
-           <th colspan=3></th>
-         </tr>
-         <% @user.adventures.each do |adventure|%>
-         <tr>
-          <td><%= adventure.title %></td>
-          <td><%= adventure.story %></td>
-          <td><%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id), class:"btn btn-info btn-sm active"%></td>
-          <td><%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
-         </tr>
-         <% end %>
-         </table>
+          <% @user.adventures.each do |adventure| %>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="stat-block2 wide">
+                  <hr class="orange-border" />
+                    <div class="section-left">
+                      <div class="creature-heading">
+
+
+                          <h1><%= adventure.title %></h1>
+                          <br>
+                          <svg height="5" width="100%" class="tapered-rule">
+                            <polyline points="0,0 400,2.5 0,5"></polyline>
+                          </svg>
+                          <h6><%= adventure.story %></h6>
+
+                        <svg height="5" width="100%" class="tapered-rule">
+                          <polyline points="0,0 400,2.5 0,5"></polyline>
+                        </svg>
+                      </div>
+
+                    </div>
+                  </hr>
+                  <p>
+
+                    <% if current_user == @user %>
+
+                      <td>
+                        <div class="value-button-edit5">
+                          <%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id) %>
+                        </div>
+                      </td>
+                      <br>
+                      <td>
+                        <div class="value-button-delete5">
+                          <%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </div>
+                      </td>
+                     <% end %>
+                  </p>
+
+
+            </div>
+            <br>
+          </div>
+
+          <% end %>
+
 
          <br>
-         <ul><%= render 'adventures/modal', adventure: @adventure, user: current_user %></ul>
-
-         <!-- <p><%= link_to 'NEW ADVENTURE', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
-       </div>
-
-         <br>
          <br>
 
-
-
-       <div class="box-border">
 
          <% if current_user == @user %>
          <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
          <br>
          <% else %>
-         <td> View <%=  %> 's Characters: </td>
+         <div class="font-title"><font color="white"><td> VIEW <%=  %> 's CHARACTERS </td></div>
          <% end %>
 
 
@@ -87,8 +142,8 @@
 
                 <% @user.characters.each do |character| %>
                   <div class="row">
-                    <div class="col-md-6">
-                      <div class="stat-block wide">
+                    <div class="col-md-4">
+                      <div class="stat-block2 wide">
                       	<hr class="orange-border" />
                         	<div class="section-left">
                         		<div class="creature-heading">
@@ -114,35 +169,7 @@
                         			<svg height="5" width="100%" class="tapered-rule">
                         	    <polyline points="0,0 400,2.5 0,5"></polyline>
                         	  </svg>
-                        			<div class="abilities">
-                        				<div class="ability-strength">
-                        					<h4>STR</h4>
-                        					<p><%= character.strength %></p>
-                        				</div> <!-- ability strength -->
-                        				<div class="ability-dexterity">
-                        					<h4>DEX</h4>
-                        					<p><%= character.dexterity %></p>
-                        				</div> <!-- ability dexterity -->
-                        				<div class="ability-constitution">
-                        					<h4>CON</h4>
-                        					<p><%= character.constitution %></p>
-                        				</div> <!-- ability constitution -->
-                        				<div class="ability-intelligence">
-                        					<h4>INT</h4>
-                        					<p><%= character.intelligence %></p>
-                        				</div> <!-- ability intelligence -->
-                        				<div class="ability-wisdom">
-                        					<h4>WIS</h4>
-                        					<p><%= character.wisdom %></p>
-                        				</div> <!-- ability wisdom -->
-                        				<div class="ability-charisma">
-                        					<h4>CHA</h4>
-                        					<p><%= character.charisma %></p>
-                        				</div> <!-- ability charisma -->
-                        			</div> <!-- abilities -->
-                        			<svg height="5" width="100%" class="tapered-rule">
-                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
-                        	  </svg>
+
                           </div>
                         </hr>
                       </div>
@@ -166,10 +193,8 @@
               </div>
 
           <br>
-          <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
         </div>
 
         <!-- <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
-   </div>
  </div>
 </div>
