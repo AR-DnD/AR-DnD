@@ -87,7 +87,7 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
       <% current_user.characters.each do |character| %>
        <div class="checkbox">
-         <%= f.check_box character.id, {onclick: "$('#submit_switch').click();"} %>
+         <%= f.check_box character.id, {onclick: "$('#submit_switch').click();", checked: character.adventures.exists?(@adventure.id)} %>
          <%= character.name %>
           <!-- <label>
             <% if character.adventures.exists?(@adventure.id)%>
