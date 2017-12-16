@@ -1,9 +1,9 @@
 
 <div class="col-md-3">
   <div class="dropdown">
-    <button class="btn btn-success btn-md active">Terrain</button>
+    <button class="value-button-edit-2"><div class="creature-heading"><sm>Terrain</sm></div></button>
     <div class="dropdown-content" style="left:0;">
-      <label class="btn btn-primary active mapElement" id="obj-Tree">
+      <label class="btn mapElement" id="obj-Tree">
         <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
       </label>
     </div>
@@ -11,9 +11,9 @@
 </div>
 <div class="col-md-3">
   <div class="dropdown" display = "block">
-    <button class="btn btn-warning btn-md active">Objects</button>
+    <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
     <div class="dropdown-content" style="left:0;">
-      <label class="btn btn-primary mapElement" id="obj-Orc">
+      <label class="btn mapElement" id="obj-Orc">
         <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
       </label>
     </div>
@@ -21,10 +21,10 @@
 </div>
 <div class="col-md-3">
   <div class="dropdown" display = "block">
-    <button class="btn btn-info btn-md active">Characters</button>
+    <button class="value-button-edit-2"><div class="creature-heading"><sm>Characters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
-        <label class="btn btn-primary mapElement" id="char-<%= character.race %>-<%= character.name %>">
+        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>">
           <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"> <%= character.name %>
         </label>
       <% end %>
@@ -32,8 +32,8 @@
   </div>
 </div>
 <div class="col-md-3">
-  <label class="btn btn-danger btn-md active" id="rm-Nil">
-    <input type="radio" class="mapElement" name="options" value="Remove" id="rm-Nil" autocomplete="off"> Remove
+  <label class="value-button-edit-2" id="rm-Nil">
+    <input type="radio" class="mapElement" name="options" value="Remove" id="rm-Nil" autocomplete="off" style="display:none"><div class="creature-heading"><sm>Remove</sm></div>
   </label>
 </div>
 
