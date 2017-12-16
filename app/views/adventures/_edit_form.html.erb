@@ -24,23 +24,6 @@
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
         </div>
 
-        <div class="dropdown">
-          <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Characters
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <% current_user.characters.each do |character| %>
-             <div class="checkbox">
-                <label>
-                  <%= check_box_tag 'characters[]', character.id -%>
-                  <%= h character.name -%>
-                </label>
-              </div>
-            <% end %>
-          </ul>
-        </div>
-
         <div class="field hide">
           <%= form.label :user_id %>
           <%= form.text_field :user_id, id: :adventure_user_id%>
@@ -84,13 +67,29 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-
-        <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
-        <br>
-        <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
-        <br>
+          <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
+          <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <% end %>
       </div>
     </div>
   </div>
+<% end %>
+
+<%= form_for switch_characters_path, url: switch_characters_url, remote: true, id: "switch_form" do |f|%>
+  <div class="dropdown">
+    <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Characters
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <% current_user.characters.each do |character| %>
+       <div class="checkbox">
+         <%= f.check_box character.id, {onclick: "$('#submit_switch').click();", checked: character.adventures.exists?(@adventure.id)} %>
+         <%= character.name %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+  <%= hidden_field_tag 'adventure id', @adventure.id %>
+  <%= f.submit "Submit", id: 'submit_switch', style: 'display:none' %>
 <% end %>

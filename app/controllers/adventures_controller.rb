@@ -1,6 +1,19 @@
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy, :copy]
 
+  def switch_characters
+    adventure = Adventure.find(params["adventure id"])
+    params["/switch_characters"].each do |character,selected|
+      character = Character.find(character)
+      if character.adventures.exists?(adventure.id) && selected == "0"
+        character.adventures.delete(adventure)
+      elsif !character.adventures.exists?(adventure.id) && selected == "1"
+        character.adventures << adventure
+      end
+
+    end
+  end
+
   def copy
     @copy = @adventure.make_copy current_user
     current_user.adventures << @copy
@@ -46,14 +59,9 @@ class AdventuresController < ApplicationController
   end
 
   def update
-    @adventure.characters = []
-    params[:characters].each do |character_id|
-      byebug
-      @adventure.characters << Character.find(character_id.to_i)
-    end
     respond_to do |format|
       if @adventure.update(adventure_params)
-        format.html { redirect_to user_adventure_path(id: @adventure.id, user_id: @adventure.user.id), notice: 'Adventure was successfully updated.' }
+        format.html { redirect_to user_path(id: @adventure.user.id), notice: 'Adventure was successfully updated.' }
         format.json { render :show, status: :ok, location: @adventure }
       else
         format.html { render :edit }
