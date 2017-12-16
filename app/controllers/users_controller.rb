@@ -37,7 +37,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    puts "Creating new user: #{user_params.inspect}"
     @user = User.new(user_params)
 
     respond_to do |format|
