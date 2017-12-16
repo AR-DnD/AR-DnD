@@ -1,5 +1,5 @@
 
-<div class="col-md-3">
+<div class="col-md-2">
   <div class="dropdown">
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Terrain</sm></div></button>
     <div class="dropdown-content" style="left:0;">
@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-<div class="col-md-3">
+<div class="col-md-2">
   <div class="dropdown" display = "block">
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
     <div class="dropdown-content" style="left:0;">
@@ -25,8 +25,10 @@
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
         <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>">
-          <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"> <%= character.name %>
+          <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"><%= character.name %>
         </label>
+        <br>
+
       <% end %>
     </div>
   </div>
