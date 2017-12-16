@@ -4,7 +4,7 @@
 <br>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 col-md-offset-2">
+    <div class="col-md-4">
       <div class="box-border">
 
         <%= gravatar_for @user, size: 150 %>
@@ -34,7 +34,7 @@
 
 
 
-    <div class="col-md-6">
+    <div class="col-md-8">
       <div class="box-border">
 
       <% if current_user == @user %>
@@ -82,21 +82,88 @@
          <td> View <%=  %> 's Characters: </td>
          <% end %>
 
-         <table>
-           <tr>
-            <th>Character Name</th>
-            <th>Character</th>
-            <th colspan=3></th>
-          </tr>
-          <% @user.characters.each do |character|%>
-          <tr>
-           <td><%= character.name %></td>
-           <td><%= character.backstory %></td>
-           <td><%= link_to 'EDIT INFO', edit_user_character_path(id: character.id, user_id: character.user_id), class:"btn btn-info btn-sm active"%></td>
-           <td><%= link_to 'DELETE', user_character_path(id: character.id, user_id: character.user_id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
-          </tr>
-          <% end %>
-          </table>
+
+                <br>
+
+                <% @user.characters.each do |character| %>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="stat-block wide">
+                      	<hr class="orange-border" />
+                        	<div class="section-left">
+                        		<div class="creature-heading">
+                        			<h1><%= character.name %></h1>
+                        			<h2><%= character.backstory %></h2>
+                        		</div> <!-- creature heading -->
+                        		<svg height="5" width="100%" class="tapered-rule">
+                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
+                        	  </svg>
+                        		<div class="top-stats">
+                        			<div class="property-line first">
+                        				<h4>Profession</h4>
+                        				<p><%= character.profession %></p>
+                        			</div> <!-- property line -->
+                        			<div class="property-line">
+                        				<h4>Race</h4>
+                        				<p><%= character.race %></p>
+                        			</div> <!-- property line -->
+                        			<div class="property-line last">
+                        				<h4>Level</h4>
+                        				<p><%= character.level %></p>
+                        			</div> <!-- property line -->
+                        			<svg height="5" width="100%" class="tapered-rule">
+                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
+                        	  </svg>
+                        			<div class="abilities">
+                        				<div class="ability-strength">
+                        					<h4>STR</h4>
+                        					<p><%= character.strength %></p>
+                        				</div> <!-- ability strength -->
+                        				<div class="ability-dexterity">
+                        					<h4>DEX</h4>
+                        					<p><%= character.dexterity %></p>
+                        				</div> <!-- ability dexterity -->
+                        				<div class="ability-constitution">
+                        					<h4>CON</h4>
+                        					<p><%= character.constitution %></p>
+                        				</div> <!-- ability constitution -->
+                        				<div class="ability-intelligence">
+                        					<h4>INT</h4>
+                        					<p><%= character.intelligence %></p>
+                        				</div> <!-- ability intelligence -->
+                        				<div class="ability-wisdom">
+                        					<h4>WIS</h4>
+                        					<p><%= character.wisdom %></p>
+                        				</div> <!-- ability wisdom -->
+                        				<div class="ability-charisma">
+                        					<h4>CHA</h4>
+                        					<p><%= character.charisma %></p>
+                        				</div> <!-- ability charisma -->
+                        			</div> <!-- abilities -->
+                        			<svg height="5" width="100%" class="tapered-rule">
+                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
+                        	  </svg>
+                          </div>
+                        </hr>
+                      </div>
+                    <p>
+                      <td>
+                        <div class="value-button-edit">
+                          <%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id, user_id: character.user_id) %>
+                        </div>
+                      </td>
+                      <br>
+                      <td>
+                        <div class="value-button-delete">
+                          <%= link_to 'DELETE', user_character_path(id: character.id, user_id: character.user_id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </div>
+                      </td>
+                    </p>
+                  </div>
+                  <br>
+                  </div>
+                <% end %>
+              </div>
 
           <br>
           <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
