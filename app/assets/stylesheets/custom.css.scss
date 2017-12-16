@@ -7,6 +7,9 @@ $navbar-default-bg: #922610;
 .tutorial {
   background: #ffeb99;
 }
+.btn-mapgrid {
+  background-image: image-url('blank-paper.jpg');
+}
 
 
 .stat-block-2 {
@@ -45,12 +48,18 @@ $navbar-default-bg: #922610;
   height: 100%;
 }
 
+.col-md-12 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .value-button-edit {
   border:0px;
   border-style: solid;
   border-color: #ac3939;
   background-color: #ac3939;
   border-radius: 5px;
+  text-align: center;
 }
 .value-button-delete {
   border:0px;
@@ -58,13 +67,129 @@ $navbar-default-bg: #922610;
   border-color: #151515;
   background-color: #151515;
   border-radius: 5px;
+  text-align: center;
+}
+.value-button-copy2 {
+  border:0px;
+  border-style: solid;
+  border-color: #ffbf80;
+  background-color: #ffbf80;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+}
+.value-button-edit2 {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: #ac3939;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+}
+.value-button-delete2 {
+  border:0px;
+  border-style: solid;
+  border-color: #151515;
+  background-color: #151515;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+}
+.value-button-edit4 {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: #ac3939;
+  border-radius: 5px;
+  max-width: 150px;
+  text-align: center;
+}
+.value-button-delete4 {
+  border:0px;
+  border-style: solid;
+  border-color: #151515;
+  background-color: #151515;
+  border-radius: 5px;
+  max-width: 150px;
+  text-align: center;
+}
+.value-button-copy5 {
+  border:0px;
+  border-style: solid;
+  border-color: #ffbf80;
+  background-color: #ffbf80;
+  border-radius: 5px;
+  text-align: center;
+}
+.value-button-edit5 {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: #ac3939;
+  border-radius: 5px;
+  text-align: center;
+}
+.value-button-delete5 {
+  border:0px;
+  border-style: solid;
+  border-color: #151515;
+  background-color: #151515;
+  border-radius: 5px;
+  text-align: center;
+}
+.value-button-edit a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-delete a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-copy2 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-edit2 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-delete2 a:visited, a:link, a:active {
+  color: #ffffff !important;
 }
 
 .value-button-edit a:visited {
   color: #ffffff;
+.value-button-edit4 a:visited, a:link, a:active {
+  color: #ffffff !important;
 }
-.value-button-delete a:visited {
-  color: #ffffff;
+.value-button-delete4 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-copy5 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-edit5 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-delete5 a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+
+.edit-profile {
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #922610 !important;
+  padding:10px 20px;
+  border-radius:3px;
+  border:0;
+  background:#FDF1DC;
+  font-size:16px;
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #aaa;
+  cursor:pointer;
+  text-align: center;
+  width: 196px;
+}
+.edit-profile a:visited, a:link, a:active {
+  color: #922610 !important;
 }
 
 .value-button-edit-2 {
@@ -280,6 +405,36 @@ footer ul li {
   max-width: 360px;
   text-align: center;
 }
+.stat-block.wide2{
+  width: 95%;
+  // min-width: 1000px;
+  // max-width: 1400px;
+  text-align: left;
+}
+.stat-block2 {
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 17%;
+  min-width:200px;
+  background: #FDF1DC;
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+}
+.stat-block2.wide{
+  width: 50%;
+  // min-width: 560px;
+  max-width: 360px;
+  text-align: center;
+}
+.stat-block2.wide2{
+  width: 95%;
+  // min-width: 1000px;
+  // max-width: 1400px;
+  text-align: left;
+}
+
 // .stat-block.wide .section-left,
 // .stat-block.wide .section-right{
 //   display: inline-block;
@@ -341,6 +496,46 @@ footer ul li {
   font-size: 12px;
   line-height: 1.2em;
   margin: 0 0 10px;
+  word-wrap: break-word;
+}
+.creature-heading h3{
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+  word-wrap: break-word;
+  max-width: 200px;
+  min-height: 100px;
+}
+.creature-heading h4{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  color: #922610;
+  font-size: 16px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.creature-heading h5{
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+  word-wrap: break-word;
+  max-width: 150px;
+  min-height: 85px;
+}
+.creature-heading h6{
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+  word-wrap: break-word;
+  min-height: 80px;
 }
 .property-line h4,
 .property-line p{
