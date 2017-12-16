@@ -3,27 +3,41 @@
 <br>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4 col-md-offset-2">
-			<div class="row">
-				<div class="col-md-12">
-					<%= render "element_chooser" %>
+		<div class="col-md-offset-1">
+			<div class="stat-block-2 wide">
+				<br>
+				<div class="col-md-7 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-12">
+							<%= render "element_chooser" %>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<div class="col-md-8">
+							<%= render "selected" %>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<div class="col-md-12">
+							<%= render "mapgrid" %>
+						</div>
+					</div>
 				</div>
 				<br>
 				<br>
 				<br>
 				<br>
-				<div class="col-md-12">
-					<%= render "mapgrid" %>
+				<br>
+				<div class="col-md-4">
+					<%= render 'form', map: @map %>
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<div class="col-md-3 col-md-offset-1">
-			<%= render 'form', map: @map %>
-		</div>
+	</div>
 </div>
 
 <%= javascript_include_tag "_map_maker" %>

@@ -12,30 +12,44 @@
 
 <br>
 <br>
+
 <div class="container">
   <div class="row">
+    <div class="col-md-offset-0.5">
+      <div class="stat-block-2 wide">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <br>
+              <br>
+              <%= render "element_chooser" %>
+            </div>
 
-    <div class="col-md-5 col-md-offset-1">
-      <%= render "element_chooser" %>
-    </div>
+            <br>
+            <div class="col-md-4 col-md-offset-1">
+              <%= render 'selected' %>
+            </div>
+          </div>
 
-    <div class="col-md-5 col-md-offset-1">
-      <%= render 'selected' %>
+          <div class="row">
+
+            <div class="col-md-7">
+              <br>
+              <br>
+              <div class="jumbotron"><%= render "mapgrid" %></div>
+            </div>
+            <div class="jumbotron">
+              <div class="col-md-3" style="text-align: center;">
+                <br>
+                <%= render 'new_map_form', map: @map %>
+                <div class="creature-heading"><h1><%= link_to 'Cancel', user_adventures_path, class:"value-button-edi-2" %></h1></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-    <div class="row">
-
-        <div class="col-md-7">
-            <div class="jumbotron"><%= render "mapgrid" %></div>
-        </div>
-        <div class="jumbotron">
-            <div class="col-md-3" style="text-align: center;">
-              <%= render 'new_map_form', map: @map %>
-              <%= link_to 'CANCEL', user_adventures_path, class:"btn btn-danger btn-md btn-block active" %>
-            </div>
-        </div>
-    </div>
 </div>
 
 <%= javascript_include_tag "_map_maker" %>

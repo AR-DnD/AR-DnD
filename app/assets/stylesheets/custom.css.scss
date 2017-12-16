@@ -11,6 +11,25 @@ $navbar-default-bg: #922610;
   background-image: image-url('blank-paper.jpg');
 }
 
+
+.stat-block-2 {
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  min-width:280px;
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+}
+
+.stat-block-2.wide{
+  width: 46.5%;
+  min-width: 1100px;
+  text-align: center;
+  background-image: image-url('blank-paper.jpg');
+}
+
 .display-background {
   background-image: image-url('new-background.jpg');
   background-size: cover;
@@ -134,6 +153,9 @@ $navbar-default-bg: #922610;
 .value-button-delete2 a:visited, a:link, a:active {
   color: #ffffff !important;
 }
+
+.value-button-edit a:visited {
+  color: #ffffff;
 .value-button-edit4 a:visited, a:link, a:active {
   color: #ffffff !important;
 }
@@ -168,6 +190,31 @@ $navbar-default-bg: #922610;
 }
 .edit-profile a:visited, a:link, a:active {
   color: #922610 !important;
+}
+
+.value-button-edit-2 {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.value-button-delete-2 {
+  border:0px;
+  border-style: solid;
+  border-color: #151515;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.value-button-edit-2 a:visited {
+  color: #ffffff;
+}
+
+.value-button-delete-2 a:visited {
+  color: #ffffff;
 }
 
 .box-border{
@@ -426,6 +473,17 @@ footer ul li {
   font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
   color: #922610;
   font-size: 23px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.creature-heading sm{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  color: #922610;
+  font-size: 16px;
   line-height: 1.2em;
   margin: 10px 0 0;
   letter-spacing: 1px;
