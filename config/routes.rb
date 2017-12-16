@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
 
   post 'switch_characters', to: 'adventures#switch_characters'
-
   post 'sort_adventures', to: 'welcome#sort_adventures'
 
 

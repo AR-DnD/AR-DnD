@@ -2,7 +2,17 @@ class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy, :copy]
 
   def switch_characters
-    
+    adventure = Adventure.find(params["adventure id"])
+    params["/switch_characters"].each do |character,selected|
+      character = Character.find(character)
+      if character.adventures.exists?(adventure.id) && selected == "0"
+        p "deleting", character.id
+        character.adventures.delete(adventure)
+      elsif !character.adventures.exists?(adventure.id) && selected == "1"
+        character.adventures << adventure
+      end
+
+    end
   end
 
   def copy

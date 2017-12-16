@@ -75,8 +75,9 @@
   </div>
 <% end %>
 
-<%= form_for switch_characters_path, url:switch_characters_url, remote: true, id: "switch_form" do |f|%>
+<%= form_for switch_characters_path, url: switch_characters_url, id: 4, remote: true, id: "switch_form" do |f|%>
   <%= f.submit "Submit", id: 'submit_switch' %>
+  <%= hidden_field_tag 'adventure id', @adventure.id %>
 
 
   <div class="dropdown">
@@ -89,13 +90,6 @@
        <div class="checkbox">
          <%= f.check_box character.id, {onclick: "$('#submit_switch').click();", checked: character.adventures.exists?(@adventure.id)} %>
          <%= character.name %>
-          <!-- <label>
-            <% if character.adventures.exists?(@adventure.id)%>
-
-            <% else %>
-            <% end %>
-            <%= character.name %>
-          </label> -->
         </div>
       <% end %>
     </ul>
