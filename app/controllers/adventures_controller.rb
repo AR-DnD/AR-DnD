@@ -1,6 +1,10 @@
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy, :copy]
 
+  def switch_characters
+    
+  end
+
   def copy
     @copy = @adventure.make_copy current_user
     current_user.adventures << @copy

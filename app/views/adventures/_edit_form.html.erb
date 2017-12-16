@@ -75,23 +75,29 @@
   </div>
 <% end %>
 
-<div class="dropdown">
-  <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Characters
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <% current_user.characters.each do |character| %>
-     <div class="checkbox">
-        <label>
-          <% if character.adventures.exists?(@adventure.id)%>
-            <%= check_box_tag 'characters[]', style = "checked = true;", character.id %>
-          <% else %>
-            <%= check_box_tag 'characters[]', character.id %>
-          <% end %>
-          <%= character.name %>
-        </label>
-      </div>
-    <% end %>
-  </ul>
-</div>
+<%= form_for switch_characters_path, url:switch_characters_url, remote: true, id: "switch_form" do |f|%>
+  <%= f.submit "Submit", id: 'submit_switch' %>
+
+
+  <div class="dropdown">
+    <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Characters
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <% current_user.characters.each do |character| %>
+       <div class="checkbox">
+         <%= f.check_box character.id, {onclick: "$('#submit_switch').click();"} %>
+         <%= character.name %>
+          <!-- <label>
+            <% if character.adventures.exists?(@adventure.id)%>
+
+            <% else %>
+            <% end %>
+            <%= character.name %>
+          </label> -->
+        </div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

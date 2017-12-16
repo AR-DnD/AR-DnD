@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :characters
   end
 
+  post 'switch_characters', to: 'adventures#switch_characters'
+
   post 'sort_adventures', to: 'welcome#sort_adventures'
 
 
