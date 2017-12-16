@@ -24,23 +24,6 @@
           <%= form.text_area :story, id: :adventure_story, rows: 10%>
         </div>
 
-        <div class="dropdown">
-          <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Characters
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <% current_user.characters.each do |character| %>
-             <div class="checkbox">
-                <label>
-                  <%= check_box_tag 'characters[]', character.id -%>
-                  <%= h character.name -%>
-                </label>
-              </div>
-            <% end %>
-          </ul>
-        </div>
-
         <div class="field hide">
           <%= form.label :user_id %>
           <%= form.text_field :user_id, id: :adventure_user_id%>
@@ -84,13 +67,31 @@
         </table>
         <br>
         <% if @adventure.user == current_user%>
-
-        <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
-        <br>
-        <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
-        <br>
+          <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id), class:"btn btn-info btn-lg btn-block active" %>
+          <%= link_to 'BACK', user_path(@adventure.user.id), class:"btn btn-danger btn-lg btn-block active" %>
         <% end %>
       </div>
     </div>
   </div>
 <% end %>
+
+<div class="dropdown">
+  <button class="btn btn-warning btn-lg dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Characters
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <% current_user.characters.each do |character| %>
+     <div class="checkbox">
+        <label>
+          <% if character.adventures.exists?(@adventure.id)%>
+            <%= check_box_tag 'characters[]', style = "checked = true;", character.id %>
+          <% else %>
+            <%= check_box_tag 'characters[]', character.id %>
+          <% end %>
+          <%= character.name %>
+        </label>
+      </div>
+    <% end %>
+  </ul>
+</div>
