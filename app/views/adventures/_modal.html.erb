@@ -1,36 +1,58 @@
-<button class="trigger-custom" data-izimodal-open="#modal-custom2">New Adventure</button>
+<button class="trigger-custom2" data-izimodal-open="#modal-custom2">New Adventure</button>
 <!-- <button class="trigger-custom" data-izimodal-open="#modal-custom">Login/Sign Up</button> -->
 <%= form_with(model: @adventure, url: user_adventures_path(user_id: current_user.id), local: true) do |f| %>
 
 
   <%= javascript_include_tag "_adventure" %>
 
-  <div id="modal-custom2" data-iziModal-group="group1">
+  <div id="modal-custom2" data-iziModal-group="group2">
     <button data-iziModal-close class="icon-close">x</button>
+    <hr class="orange-border">
+    </hr>
     <header>
       <a>NEW ADVENTURE</a>
         <!-- <a href="" id="character">NEW CHARACTER</a> -->
     </header>
+    <hr class="orange-border">
+    </hr>
     <section class>
+
+
 
 
             <div class="row">
               <div class="col-md-12">
+
+
+
                 <div class="field">
                   <%= f.label :title %>
+                  <svg height="5" width="100%" class="tapered-rule">
+          	         <polyline points="0,0 600,2.5 0,5"></polyline>
+          	      </svg>
                   <%= f.text_field :title, class: "form-control", id: :adventure_title, placeholder: "Enter your adventure title." %>
                 </div>
+
+
+
                 <div class="field">
                   <%= f.label :story %>
-                  <%= f.text_area :story, class: "form-control", id: :adventure_story, placeholder: "Enter your adventure story.", rows: 10 %>
+                  <svg height="5" width="100%" class="tapered-rule">
+                     <polyline points="0,0 600,2.5 0,5"></polyline>
+                  </svg>
+                  <%= f.text_area :story, class: "form-control", id: :adventure_story, placeholder: "Enter your adventure story.", rows: 6 %>
                 </div>
                 <div class="field hide">
                   <%= f.label :user %>
                   <%= f.text_field :user_id, :value => params[:user_id] %>
                 </div>
 
+                <svg height="5" width="100%" class="tapered-rule">
+                   <polyline points="0,0 600,2.5 0,5"></polyline>
+                </svg>
+
                 <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     CHARACTERS
                     <span class="caret"></span>
                   </button>
@@ -46,10 +68,15 @@
                   </ul>
                 </div>
 
+                <svg height="5" width="100%" class="tapered-rule">
+                   <polyline points="0,0 600,2.5 0,5"></polyline>
+                </svg>
+
                 <!-- <button id="submit" class="btn btn-primary btn-lg" data-dismiss="modal">CREATE ADVENTURE</button> -->
 
-                <div class="actions">
-                  <%= f.submit "CREATE ADVENTURE", class:"btn btn-primary btn-lg" %>
+
+                <div class="button-color">
+                  <%= f.submit "CREATE ADVENTURE", class:"btn btn-danger btn-lg" %>
                 </div>
 
               </div>

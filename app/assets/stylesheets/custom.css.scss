@@ -18,11 +18,46 @@ $navbar-default-bg: #922610;
 }
 
 .not-display-background {
+  background-color: #E9E6DA;
   background-size: cover;
   background-attachment:fixed;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
+}
+
+.value-button-edit {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: #ac3939;
+  border-radius: 5px;
+}
+.value-button-delete {
+  border:0px;
+  border-style: solid;
+  border-color: #151515;
+  background-color: #151515;
+  border-radius: 5px;
+}
+.value-button-edit a:visited {
+  color: #ffffff;
+}
+.value-button-delete a:visited {
+  color: #ffffff;
+}
+
+.box-border{
+  border:3px;
+  border-style: solid;
+  border-color: #151515;
+  padding: 1em;
+  background-color: #922610;
+  // background-image: image-url('blank-paper.jpg');
+}
+.box-border .row{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .login-headline {
@@ -180,6 +215,163 @@ footer ul li {
     display: none;
 }
 
+
+// Character CSS
+
+.stat-block {
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 17%;
+  min-width:280px;
+  background: #FDF1DC;
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+}
+.stat-block.wide{
+  width: 50%;
+  // min-width: 560px;
+  max-width: 360px;
+  text-align: center;
+}
+// .stat-block.wide .section-left,
+// .stat-block.wide .section-right{
+//   display: inline-block;
+//   vertical-align: top;
+//   width: 48%;
+//   text-align: left;
+// }
+// .stat-block.wide .section-left{
+//   margin-right: 1.5%;
+// }
+// .stat-block.wide .section-right{
+//   margin-left: 1.5%;
+// }
+.orange-border{
+  display: block;
+  background: #E69A28;
+  border: 1px solid #000;
+  height: 5px;
+  padding: 0 10px 0;
+  margin: -10px -10px 0;
+  box-sizing: initial;
+}
+.orange-border.bottom{
+  margin: 15px -10px -20px;
+}
+.tapered-rule{
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: none;
+  color: #922610;
+  fill: #922610;
+  stroke: #922610;
+}
+.creature-heading h1{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  color: #922610;
+  font-size: 23px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.creature-heading h2{
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+}
+.property-line h4,
+.property-line p{
+  display: inline;
+  margin: 0;
+  color: #922610;
+  font-size: 13.5px;
+  line-height: 1.2em;
+}
+.property-line h4{
+  color: #7A200D;
+  font-weight: bold;
+}
+.property-line{
+  text-indent: -1em;
+  padding-left: 1.1em;
+  line-height: 1.4em;
+}
+.property-line.first{
+  margin: 8px 0 0;
+}
+.property-line.last{
+  margin: 0 0 10px;
+}
+.abilities{
+  text-align: center;
+  color: #922610;
+}
+.abilities > div{
+  display: inline-block;
+  vertical-align: middle;
+  width: 15.5%;
+  min-width: 40px;
+  font-size: 12px;
+  line-height: 1em;
+}
+.abilities h4{
+  margin: 10px 0 2px;
+  font-size: 14px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: #7A200D;
+}
+.abilities p{
+  margin: 0 0 10px;
+  line-height: 1.2em;
+}
+@media print{
+	.orange-border{
+		display: none;
+	}
+	.stat-block,
+	.stat-block.wide,
+	.stat-block.wide .section-left,
+	.stat-block.wide .section-right,
+	.property-line,
+	.property-block{
+		width: 100%;
+		display: block;
+	}
+	.stat-block.wide .section-left{
+	  margin: 0;
+	}
+	.stat-block.wide .section-right{
+	  margin: 0;
+	}
+	.stat-block{
+		width: 40%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.stat-block.wide{
+		page-break-after: always;
+	}
+}
+@media screen and (max-width: 575px){
+	.stat-block{
+		margin: 20px 0;
+	}
+}
+
+
+
+
+
+
+
 // Modal CSS
 @charset "utf-8";
 html, body, div, span, applet, object, iframe, h1, h2, h3,
@@ -331,55 +523,9 @@ body{
 
 
 }
-#modal-custom2 .iziModal-content header{
-    background: #eee;
-    margin-bottom: 10px;
-    overflow: hidden;
-    border-radius: 3px 3px 0 0;
-    width: 100%;
-}
-#modal-custom2 .iziModal-content header a{
-    // display: block;
-    // background: #E69A28;
-    // border: 1px solid #000;
-    // height: 5px;
-    // padding: 0 10px 0;
-    // margin: -10px -10px 0;
-    // box-sizing: initial;
-    // width: 100%;
-
-    display: block;
-    float: center;
-    width: 100%;
-    padding: 0;
-    text-align: center;
-    background: #E69A28;
-    height: 73px;
-    vertical-align: middle;
-    line-height: 73px;
-    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
-    color: #922610;
-    font-size: 23px;
-    font-variant: small-caps;
-    font-weight: bold;
-    background: #FDF1DC;
-
-
-    border: 1px solid #000;
 
 
 
-    // display: block;
-    // float: left;
-    // width: 50%;
-    // padding: 0;
-    // text-align: center;
-    // background: #ddd;
-    // color: #999;
-    // height: 73px;
-    // vertical-align: middle;
-    // line-height: 73px;
-}
 #modal-custom3 .iziModal-content header{
     background: #eee;
     margin-bottom: 10px;
@@ -514,7 +660,6 @@ body{
 
 #modal-custom2 .iziModal-content header{
     background: #eee;
-    margin-bottom: 10px;
     overflow: hidden;
     border-radius: 3px 3px 0 0;
     width: 100%;
@@ -522,21 +667,57 @@ body{
 #modal-custom2 .iziModal-content header a{
     display: block;
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 0;
     text-align: center;
-    background: #ddd;
-    color: #999;
     height: 73px;
     vertical-align: middle;
     line-height: 73px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    color: white;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: #922610;
+    // background-image: image-url('new-background.jpg');
+
 }
-#modal-custom2 .iziModal-content header a.active{
-    background: #fff;
-    color: #777;
+#modal-custom2 .orange-border{
+  display: block;
+  background: #E69A28;
+  border: 1px solid #000;
+  height: 5px;
+  margin: 0px 0px 0px;
+  box-sizing: initial;
 }
+
+#modal-custom2 .tapered-rule{
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: none;
+  color: #922610;
+  fill: #922610;
+  stroke: #922610;
+}
+
 #modal-custom2 .iziModal-content section{
     padding: 30px;
+    // font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    // color: #922610;
+    // font-size: 16px;
+    // font-variant: small-caps;
+    // font-weight: bold;
+    // background: #FDF1DC;
+
+    font-family: 'Noto Sans', 'Myriad Pro', 'Calibri', 'Helvetica', 'Arial', 'sans-serif';
+    color: #922610;
+    font-size: 22px;
+    font-variant: small-caps;
+    font-weight: bold;
+    // background: #FDF1DC;
+    // background-image: image-url('blank-paper.jpg');
+
 }
 #modal-custom2 .iziModal-content section input:not([type="checkbox"]), #modal-custom .iziModal-content section button{
     width: 100%;
@@ -551,25 +732,28 @@ body{
   padding: 0;
 }
 #modal-custom2 .iziModal-content section input:focus{
-    border-color:#28CA97;
+    border-color: #28CA97;
 }
 #modal-custom2 .iziModal-content section label[for="check"]{
     margin-bottom: 26px;
     font-size: 14px;
-    color: #999;
+    color: #FDF1DC;
     display: block;
 }
 #modal-custom2 .iziModal-content section footer{
     overflow: hidden;
 }
 #modal-custom2 .iziModal-content section button{
-    background: #28CA97;
     color: white;
     margin: 0;
-    border: 0;
+    border: 0px;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     float: left;
+}
+
+#modal-custom2 .dropdownMenu2 {
+    background: #28CA97;
 }
 #modal-custom2 .iziModal-content section button:hover{
     opacity: 0.8;
@@ -598,6 +782,136 @@ body{
     cursor: pointer;
 }
 #modal-custom2 .iziModal-content .icon-close:hover, #modal-custom2 .iziModal-content .icon-close:focus{
+  color: black;
+}
+
+
+
+
+#modal-custom3 .iziModal-content header{
+    background: #eee;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    width: 100%;
+}
+#modal-custom3 .iziModal-content header a{
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    height: 73px;
+    vertical-align: middle;
+    line-height: 73px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    color: white;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: #922610;
+    // background-image: image-url('new-background.jpg');
+
+}
+#modal-custom3 .orange-border{
+  display: block;
+  background: #E69A28;
+  border: 1px solid #000;
+  height: 5px;
+  margin: 0px 0px 0px;
+  box-sizing: initial;
+}
+
+#modal-custom3 .tapered-rule{
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: none;
+  color: #922610;
+  fill: #922610;
+  stroke: #922610;
+}
+
+#modal-custom3 .iziModal-content section{
+    padding: 30px;
+    // font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    // color: #922610;
+    // font-size: 16px;
+    // font-variant: small-caps;
+    // font-weight: bold;
+    // background: #FDF1DC;
+    font-family: 'Noto Sans', 'Myriad Pro', 'Calibri', 'Helvetica', 'Arial', 'sans-serif';
+    color: #922610;
+    font-size: 14px;
+    font-variant: small-caps;
+    font-weight: bold;
+    // background: #FDF1DC;
+    // background-image: image-url('blank-paper.jpg');
+
+}
+
+#modal-custom3 .iziModal-content section input:not([type="checkbox"]), #modal-custom .iziModal-content section button{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    margin-bottom: 26px;
+    padding: 15px;
+    font-size: 14px;
+}
+#modal-custom3 .iziModal-content section button{
+  height: 46px;
+  padding: 0;
+}
+#modal-custom3 .iziModal-content section input:focus{
+    border-color: #28CA97;
+}
+#modal-custom3 .iziModal-content section label[for="check"]{
+    margin-bottom: 26px;
+    font-size: 14px;
+    color: #FDF1DC;
+    display: block;
+}
+#modal-custom3 .iziModal-content section footer{
+    overflow: hidden;
+}
+#modal-custom3 .iziModal-content section button{
+    color: white;
+    margin: 0;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;
+    float: left;
+}
+
+#modal-custom3 .dropdownMenu2 {
+    background: #28CA97;
+}
+#modal-custom3 .iziModal-content section button:hover{
+    opacity: 0.8;
+}
+#modal-custom3 .iziModal-content section button:nth-child(1){
+    border-radius: 3px 0 0 3px;
+    background: #aaa;
+}
+#modal-custom3 .iziModal-content section button:nth-child(2){
+    border-radius: 0 3px 3px 0;
+}
+
+#modal-custom3 .iziModal-content .icon-close{
+    background: #FFF;
+    margin-bottom: 10px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    color: #a9a9a9;
+    cursor: pointer;
+}
+#modal-custom3 .iziModal-content .icon-close:hover, #modal-custom2 .iziModal-content .icon-close:focus{
   color: black;
 }
 

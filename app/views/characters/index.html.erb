@@ -1,46 +1,111 @@
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Backstory</th>
-      <th>Profession</th>
-      <th>Race</th>
-      <th>Level</th>
-      <th>Strength</th>
-      <th>Dexterity</th>
-      <th>Constitution</th>
-      <th>Intelligence</th>
-      <th>Wisdom</th>
-      <th>Charisma</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="col-md-12">
+    <div class="box-border">
+      <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
+      <br>
 
-  <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-        <td><%= character.name %></td>
-        <td><%= character.backstory %></td>
-        <td><%= character.profession %></td>
-        <td><%= character.race %></td>
-        <td><%= character.level %></td>
-        <td><%= character.strength %></td>
-        <td><%= character.dexterity %></td>
-        <td><%= character.constitution %></td>
-        <td><%= character.intelligence %></td>
-        <td><%= character.wisdom %></td>
-        <td><%= character.charisma %></td>
+      <% @characters.each do |character| %>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="stat-block wide">
+            	<hr class="orange-border" />
+              	<div class="section-left">
+              		<div class="creature-heading">
+              			<h1><%= character.name %></h1>
+              			<h2><%= character.backstory %></h2>
+              		</div> <!-- creature heading -->
+              		<svg height="5" width="100%" class="tapered-rule">
+              	    <polyline points="0,0 400,2.5 0,5"></polyline>
+              	  </svg>
+              		<div class="top-stats">
+              			<div class="property-line first">
+              				<h4>Profession</h4>
+              				<p><%= character.profession %></p>
+              			</div> <!-- property line -->
+              			<div class="property-line">
+              				<h4>Race</h4>
+              				<p><%= character.race %></p>
+              			</div> <!-- property line -->
+              			<div class="property-line last">
+              				<h4>Level</h4>
+              				<p><%= character.level %></p>
+              			</div> <!-- property line -->
+              			<svg height="5" width="100%" class="tapered-rule">
+              	    <polyline points="0,0 400,2.5 0,5"></polyline>
+              	  </svg>
+              			<div class="abilities">
+              				<div class="ability-strength">
+              					<h4>STR</h4>
+              					<p><%= character.strength %></p>
+              				</div> <!-- ability strength -->
+              				<div class="ability-dexterity">
+              					<h4>DEX</h4>
+              					<p><%= character.dexterity %></p>
+              				</div> <!-- ability dexterity -->
+              				<div class="ability-constitution">
+              					<h4>CON</h4>
+              					<p><%= character.constitution %></p>
+              				</div> <!-- ability constitution -->
+              				<div class="ability-intelligence">
+              					<h4>INT</h4>
+              					<p><%= character.intelligence %></p>
+              				</div> <!-- ability intelligence -->
+              				<div class="ability-wisdom">
+              					<h4>WIS</h4>
+              					<p><%= character.wisdom %></p>
+              				</div> <!-- ability wisdom -->
+              				<div class="ability-charisma">
+              					<h4>CHA</h4>
+              					<p><%= character.charisma %></p>
+              				</div> <!-- ability charisma -->
+              			</div> <!-- abilities -->
+              			<svg height="5" width="100%" class="tapered-rule">
+              	    <polyline points="0,0 400,2.5 0,5"></polyline>
+              	  </svg>
+                </div>
+              </hr>
+            </div>
 
-        <td><%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id), class:"btn btn-info btn-sm active" %></td>
-        <td><%= link_to 'DELETE', user_character_path(id: character.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
-<!-- <%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %> -->
-</div>
+
+          <p>
+            <td>
+              <div class="value-button-edit">
+                <%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id) %>
+              </div>
+            </td>
+            <br>
+            <td>
+              <div class="value-button-delete">
+                <%= link_to 'DELETE', user_character_path(id: character.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </td>
+          </p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+        <!-- <%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %> -->
+        </div>
+
+
+      <% end %>
+    </div>
+
+
+      <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
+
+  </div>
 </div>

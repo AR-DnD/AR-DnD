@@ -5,21 +5,28 @@
 
   <%= javascript_include_tag "_character" %>
 
-  <div id="modal-custom3" data-iziModal-group="group1">
+  <div id="modal-custom3" data-iziModal-group="group2">
     <button data-iziModal-close class="icon-close">x</button>
+    <hr class="orange-border">
+    </hr>
     <header>
-        <a href="" class="active">NEW CHARACTER</a>
+        <a>NEW CHARACTER</a>
         <!-- <a href="" id="character">NEW CHARACTER</a> -->
     </header>
+    <hr class="orange-border">
+    </hr>
     <section class>
 
       <div class="col-md-12 col-offset-2">
         <div class = "row">
 
-          <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
+          <div class = "col-md-6" style="padding-right: 10px; padding-left: 10px;">
             <div class = "row">
-              <div class="field" style="padding-right: 0px; padding-left: 0px;">
+              <div class="field" style="padding-right: 10px; padding-left: 10px;">
                 <font color="black"><%= form.label :name, "Character Name" %></font>
+                <svg height="5" width="100%" class="tapered-rule">
+                   <polyline points="0,0 300,2.5 0,5"></polyline>
+                </svg>
                 <%= form.text_field :name, id: :character_name, class:"form-control" %>
               </div>
             </div>
@@ -29,6 +36,9 @@
               <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                 <div class="field">
                   <font color="black"><%= form.label :race, "Race" %></font>
+                  <svg height="5" width="100%" class="tapered-rule">
+          	         <polyline points="0,0 80,2.5 0,5"></polyline>
+          	      </svg>
                   <%= form.select :race, ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-orc'], id: :character_race, class:"form-control" %>
                 </div>
               </div>
@@ -36,25 +46,20 @@
               <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                 <div class="field">
                   <font color="black"><%= form.label :profession, "Profession" %></font>
+                  <svg height="5" width="100%" class="tapered-rule">
+                     <polyline points="0,0 80,2.5 0,5"></polyline>
+                  </svg>
                   <%= form.select :profession, ['Warrior', 'Ranger', 'Rogue', 'Wizard'], id: :character_profession, class:"form-control" %>
                 </div>
               </div>
 
-            </div>
-
-            <div class = "row">
-
               <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                 <div class="field" >
                   <font color="black"><%= form.label :level, "Level" %></font>
+                  <svg height="5" width="100%" class="tapered-rule">
+                     <polyline points="0,0 90,2.5 0,5"></polyline>
+                  </svg>
                   <%= form.number_field :level, id: :character_level, value: 0, min: 0, max: 20, class:"form-control" %>
-                </div>
-              </div>
-
-              <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
-                <div class="field">
-                  <font color="black"><%= form.label :strength, "Strength" %></font>
-                  <%= form.number_field :strength, id: :character_strength, value: 0, min: 0, max: 20, class:"form-control" %>
                 </div>
               </div>
 
@@ -65,17 +70,33 @@
           <div class = "col-md-6" style="padding-right: 0px; padding-left: 10px;">
             <div class="field">
               <font color="black"><%= form.label :name, "Character Backstory" %></font>
-              <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 300,2.5 0,5"></polyline>
+              </svg>
+              <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 4 %>
             </div>
           </div>
 
         </div>
 
-        <div class = "row" style = "margin-left: -30px;">
+        <div class = "row" style = "margin-left: -10px;">
+
+          <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <font color="black"><%= form.label :strength, "Strength" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
+              <%= form.number_field :strength, id: :character_strength, value: 0, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
 
           <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="black"><%= form.label :dexterity, "Dexterity" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
               <%= form.number_field :dexterity, id: :character_dexterity, value: 0, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
@@ -83,6 +104,9 @@
           <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="black"><%= form.label :constitution, "Constitution" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
               <%= form.number_field :constitution, id: :character_constitution, value: 0, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
@@ -90,6 +114,9 @@
           <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="black"><%= form.label :intelligence, "Intelligence" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
               <%= form.number_field :intelligence, id: :character_intelligence, value: 0, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
@@ -97,6 +124,9 @@
           <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="black"><%= form.label :wisdom, "Wisdom" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
               <%= form.number_field :wisdom, id: :character_wisdom, value: 0, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
@@ -104,6 +134,9 @@
           <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
               <font color="black"><%= form.label :charisma, "Charisma" %></font>
+              <svg height="5" width="100%" class="tapered-rule">
+                 <polyline points="0,0 80,2.5 0,5"></polyline>
+              </svg>
               <%= form.number_field :charisma, id: :character_charisma, value: 0, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
@@ -116,10 +149,13 @@
         </div>
 
         <div class="actions">
-          <%= form.submit "CREATE CHARACTER", class:"btn btn-primary btn-lg" %>
+          <%= form.submit "CREATE CHARACTER", class:"btn btn-danger btn-lg" %>
         </div>
+      </div>
 
 
 
     </section>
+  </div>
+
 <% end %>
