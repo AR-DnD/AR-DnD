@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   post 'register', to: 'users#create'
 
+
   #resources :users, except: [:new]
 
   get 'login', to: 'sessions#new'
