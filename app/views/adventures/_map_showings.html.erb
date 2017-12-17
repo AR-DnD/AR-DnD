@@ -4,7 +4,7 @@
     <h5><%= map.story %></h5>
     <td><%= render 'display_map', map: map%></td>
 
-    <% if adventure.user == current_user%>
+    <% if @adventure.user == current_user%>
       <td>
         <div class="value-button-edit4">
           <%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %>
