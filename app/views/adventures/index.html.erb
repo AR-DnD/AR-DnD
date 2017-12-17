@@ -45,8 +45,14 @@
                  </td>
                  <br>
                  <td>
+                   <div class="value-button-add">
+                     <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: adventure.id) %>
+                   </div>
+                 </td>
+                 <br>
+                 <td>
                    <div class="value-button-edit2">
-                     <%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id) %>
+                     <%= link_to 'EDIT INFO', edit_user_adventure_path(id: adventure.id) %>
                    </div>
                  </td>
                  <br>
