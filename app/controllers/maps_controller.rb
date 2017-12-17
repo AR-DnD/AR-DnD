@@ -42,11 +42,12 @@ class MapsController < ApplicationController
   end
 
   def destroy
-    adventure = @map.adventure
+    @adventure = @map.adventure
     @map.destroy
 
     respond_to do |format|
-      format.html { redirect_to edit_user_adventure_path(user_id: adventure.user.id, id:@adventure.id), notice: 'Map was successfully destroyed.' }
+      format.js
+      #format.html { redirect_to edit_user_adventure_path(user_id: adventure.user.id, id:@adventure.id), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
