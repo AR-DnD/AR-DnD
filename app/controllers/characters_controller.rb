@@ -32,6 +32,7 @@ class CharactersController < ApplicationController
     @character.user_id = current_user.id
 
     @character.user = current_user
+    @user = @character.user
 
     respond_to do |format|
       if @character.save
@@ -65,10 +66,10 @@ class CharactersController < ApplicationController
       adventure.characters.delete(@character)
       adventure.remove_character @character
     end
-    user = @character.user
+    @user = @character.user
     @character.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
+      format.js
       format.json { head :no_content }
     end
   end
