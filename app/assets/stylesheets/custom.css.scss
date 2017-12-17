@@ -8,7 +8,9 @@ $navbar-default-bg: #922610;
   background: #ffeb99;
 }
 .btn-mapgrid {
-  background-image: image-url('blank-paper.jpg');
+  // background-image: image-url('blank-paper.jpg');
+  background: #D4BF92;
+  // border: 0px solid black;
 }
 .radio-button {
   color: #ffffff;
@@ -41,6 +43,7 @@ $navbar-default-bg: #922610;
   margin-right: 15px;
 
 }
+
 
 .display-background {
   background-image: image-url('new-background.jpg');
@@ -109,6 +112,24 @@ $navbar-default-bg: #922610;
   border-radius: 5px;
   max-width: 200px;
   text-align: center;
+}
+.value-button-back-big {
+  border:0px;
+  border-style: solid;
+  border-color: #ff8080;
+  background-color: #ff8080;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px;
+}
+.value-button-save-big {
+  border:0px;
+  border-style: solid;
+  border-color: #ffbf80;
+  background-color: #ffbf80;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px;
 }
 .value-button-copy2 {
   border:0px;
@@ -192,6 +213,12 @@ $navbar-default-bg: #922610;
   color: #ffffff !important;
 }
 .value-button-back a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-save-big a:visited, a:link, a:active {
+  color: #ffffff !important;
+}
+.value-button-back-big a:visited, a:link, a:active {
   color: #ffffff !important;
 }
 .value-button-copy2 a:visited, a:link, a:active {
@@ -496,6 +523,16 @@ footer ul li {
   padding: 5px 10px 20px;
   box-shadow: 0 0 1.5em #867453;
 }
+.stat-block4 {
+  text-align: center;
+  margin: 20px;
+  display: inline-block;
+  vertical-align:middle;
+  // background: #FDF1DC;
+  background-image: image-url('blank-paper.jpg');
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+}
 .stat-block2.wide{
   width: 50%;
   // min-width: 560px;
@@ -503,6 +540,12 @@ footer ul li {
   text-align: center;
 }
 .stat-block2.wide2{
+  width: 95%;
+  // min-width: 1000px;
+  // max-width: 1400px;
+  text-align: left;
+}
+.stat-block4.wide{
   width: 95%;
   // min-width: 1000px;
   // max-width: 1400px;
@@ -536,6 +579,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   border-radius: 5px;
   text-align: center;
   max-width: 200px;
+  position: relative;
+  left: 65px;
+  top: 470px;
+  z-index: 1;
 }
 .dropdown-menu {
   text-align: center;

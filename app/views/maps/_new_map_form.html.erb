@@ -10,30 +10,50 @@
       </ul>
     </div>
   <% end %>
+  <center>
+    <div class="field">
+      <div class="creature-heading"><h1><%= form.label :name, "MAP NAME" %></h1></div>
+      <%= form.text_field :name, class:"form-control", id: :map_name, required: true  %>
+    </div>
+  </center>
 
-  <div class="field">
-    <div class="creature-heading"><h1><%= form.label :name, "Map Name" %></h1></div>
-    <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank", required: true  %>
-  </div>
+  <center>
+    <div class="field hide">
+      <font color="white"><%= form.label :data %></font>
+      <%= form.text_field :data, class:"form-control", id: :map_data %>
+    </div>
+  </center>
 
-  <div class="field hide">
-    <font color="white"><%= form.label :data %></font>
-    <%= form.text_field :data, class:"form-control", id: :map_data %>
-  </div>
+  <center>
+    <div class="field">
+      <div class="creature-heading"><h1><%= form.label :story, "MAP STORY" %></h1></div>
+      <%= form.text_area :story, id: :map_story, class:"form-control", rows: 8, required: true %>
+    </div>
+  </center>
 
-  <div class="field">
-    <div class="creature-heading"><h1><%= form.label :story, "Map Story" %></h1></div>
-    <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank", required: true %>
-  </div>
+  <center>
+    <div class="field hide">
+      <%= form.label :adventure %>
+      <%= form.text_field :adventure_id, :value => params[:adventure_id] %>
+    </div>
+  </center>
 
-  <div class="field hide">
-    <%= form.label :adventure %>
-    <%= form.text_field :adventure_id, :value => params[:adventure_id] %>
-  </div>
+  <td>
+    <center>
+      <div class="value-button-save-big">
+        <div class="actions">
+          <%= form.submit "CREATE MAP" %>
+        </div>
+      </div>
+    </center>
+  </td>
+  <td>
+    <center>
+      <div class="value-button-back-big">
+        <%= link_to 'BACK', user_adventures_path %>
+      </div>
+    </center>
+  </td>
 
-
-  <div class="actions">
-    <div class="creature-heading"><h1><%= form.submit "Create Map", class:"value-button-edit-2"%></h1></div>
-  </div>
 
 <% end %>
