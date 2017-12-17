@@ -62,12 +62,9 @@
                            <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: @adventure.id) %>
                          </div>
                        </td>
-
-
-
-
-
+                   
                        <br>
+                   
                        <%= form_for switch_characters_path, url: switch_characters_url, remote: true, id: "switch_form" do |f|%>
                          <div class="character-dropdown">
                            <button class="character-button dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,53 +106,21 @@
                  <div class="row">
                    <div class="creature-heading">
                      <h1>Maps</h1>
-                     <br>
                      <svg height="5" width="100%" class="tapered-rule">
                        <polyline points="0,0 600,2.5 0,5"></polyline>
                      </svg>
-
-
-                     <% @adventure.maps.each do |map| %>
-                     <div class="col-md-4">
-                       <h4><%= map.name %></h4>
-                       <br>
-                       <h5><%= map.story %></h5>
-                       <td><%= render 'display_map', map: map%></td>
-
-
-                       <% if adventure.user == current_user%>
-                       <td>
-                         <div class="value-button-edit4">
-                           <%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %>
-                         </div>
-                       </td>
-                       <td>
-                         <div class="value-button-delete4">
-                           <%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                         </div>
-                       </td>
-                       <% else  %>
-                       <td>
-                         <div class="value-button-copy2">
-                           <%= link_to 'SHOW', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %>
-                         </div>
-                       </td>
-                       <% end %>
+                     <div id = "map-showings">
+                       <%= render 'map_showings'%>
                      </div>
-                     <% end %>
-
-                   </div>
+                  </div>
                </div>
              </div>
-
-
-
+                
            <br>
-           </div>
-
+          </div>
        </div>
-
     </div>
-
   </div>
 <% end %>
+
+<%= render 'character_chooser'%>
