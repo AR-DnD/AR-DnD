@@ -570,7 +570,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   letter-spacing: 1px;
   font-variant: small-caps;
   font-weight: bold;
-  min-height: 70px;
+  min-height: 55px;
+
 }
 
 .creature-heading sm{
@@ -590,6 +591,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   line-height: 1.2em;
   margin: 0 0 10px;
   word-wrap: break-word;
+  min-height: 70px;
+
 }
 .creature-heading h3{
   font-weight: normal;
