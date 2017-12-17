@@ -39,8 +39,8 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Characters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
-        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>">
-          <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"><%= character.name %>
+        <label class="btn mapElement" id="char-<%= character.profession %>-<%= character.name %>">
+          <input type="radio" class="mapElement" name="options" value="Character" autocomplete="off"><%= character.name %>
         </label>
         <br>
 
