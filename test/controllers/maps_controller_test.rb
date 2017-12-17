@@ -54,11 +54,4 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_user_adventure_url(user_id: @user.id, id: @adventure.id)
   end
 
-  test "should destroy map" do
-    assert_difference('Map.count', -1) do
-      delete user_adventure_map_url(user_id: @user.id, adventure_id: @adventure.id, id: @map.id)
-    end
-
-    assert_redirected_to user_adventure_maps_url(user_id: @user.id, adventure_id: @adventure.id)
-  end
 end
