@@ -6,11 +6,15 @@ class AdventuresController < ApplicationController
     params["/switch_characters"].each do |character,selected|
       character = Character.find(character)
       if character.adventures.exists?(adventure.id) && selected == "0"
+        adventure.remove_character(character)
         character.adventures.delete(adventure)
       elsif !character.adventures.exists?(adventure.id) && selected == "1"
         character.adventures << adventure
       end
+    end
 
+    respond_to do |format|
+      format.js
     end
   end
 
