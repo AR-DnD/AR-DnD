@@ -30,8 +30,8 @@ class Adventure < ApplicationRecord
         data[i].length.times do |j|
           entry = data[i][j]
           if !!entry
-            if entry.split[0]=="char"
-              if entry.split[2]==character.name
+            if entry.split('-')[0]=="char"
+              if entry.split('-')[2]==character.name
                 data[i][j] = nil
               end
             end
@@ -39,7 +39,8 @@ class Adventure < ApplicationRecord
         end
       end
 
-      map.data = data.to_s
+      map.data = data.to_json
+      p "Here", map.data
       map.save
     end
   end
