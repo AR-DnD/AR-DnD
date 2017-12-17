@@ -4,6 +4,8 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @map = maps(:one)
     @adventure = adventures(:one)
+
+    @map.adventure = @adventure
     @user = users(:one)
     post login_path, params: {
       session: {
