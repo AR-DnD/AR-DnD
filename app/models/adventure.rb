@@ -26,19 +26,27 @@ class Adventure < ApplicationRecord
   def copy_characters old_adventure
 
     old_adventure.characters.each do |character|
-      #Copy character
-      copy_character = character.dup
-      copy_character.user_id = self.user_id
-      copy_character.save
-      self.user.characters << copy_character
-      self.characters << copy_character
-      copy_character.adventures << self
+      if self.user == old_adventure.user
+        character.adventures << self
+        self.characters << character
+      else
+        #Copy character
+        p "HEEEEE", self.user_id
+        copy_character = character.dup
+        copy_character.user = self.user
+        copy_character.save
+        self.user.characters << copy_character
+        self.characters << copy_character
+        copy_character.adventures << self
 
-      #Go through map by map and change the id's
-      character_string = "char-"+ character.race + "-"+ character.name + "-"+ copy_character.id.to_s
-      self.maps.each do |map|
-        map.switch_to character, character_string
+        #Go through map by map and change the id's
+        character_string = "char-"+ character.race + "-"+ character.name + "-"+ copy_character.id.to_s
+        self.maps.each do |map|
+          map.switch_to character, character_string
+        end
+
       end
+
     end
 
   end
