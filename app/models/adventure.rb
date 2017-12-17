@@ -30,8 +30,6 @@ class Adventure < ApplicationRecord
         character.adventures << self
         self.characters << character
       else
-        #Copy character
-        p "HEEEEE", self.user_id
         copy_character = character.dup
         copy_character.user = self.user
         copy_character.save
