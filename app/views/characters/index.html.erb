@@ -7,7 +7,6 @@
       <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
       <br>
       <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
-      <br>
 
       <% @characters.each do |character| %>
         <div class="row">
