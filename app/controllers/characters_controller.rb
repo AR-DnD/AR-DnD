@@ -32,6 +32,7 @@ class CharactersController < ApplicationController
     @character.user_id = current_user.id
 
     @character.user = current_user
+    @user = @character.user
 
     respond_to do |format|
       if @character.save
@@ -69,7 +70,6 @@ class CharactersController < ApplicationController
     @character.destroy
     respond_to do |format|
       format.js
-      #format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

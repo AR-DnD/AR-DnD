@@ -74,57 +74,12 @@
           <% else %>
           <div class="font-title"><font color="white"><td> VIEW <%=  %> 'S ADVENTURES</td></div>
           <% end %>
-          <br>
 
 
 
-          <% @user.adventures.each do |adventure| %>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="stat-block2 wide">
-                  <hr class="orange-border" />
-                    <div class="section-left">
-                      <div class="creature-heading">
-
-
-                          <h1><%= adventure.title %></h1>
-                          <br>
-                          <svg height="5" width="100%" class="tapered-rule">
-                            <polyline points="0,0 400,2.5 0,5"></polyline>
-                          </svg>
-                          <h6><%= adventure.story %></h6>
-
-                        <svg height="5" width="100%" class="tapered-rule">
-                          <polyline points="0,0 400,2.5 0,5"></polyline>
-                        </svg>
-                      </div>
-
-                    </div>
-                  </hr>
-                  <p>
-
-                    <% if current_user == @user %>
-
-                      <td>
-                        <div class="value-button-edit5">
-                          <%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id) %>
-                        </div>
-                      </td>
-                      <br>
-                      <td>
-                        <div class="value-button-delete5">
-                          <%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                        </div>
-                      </td>
-                     <% end %>
-                  </p>
-
-
-            </div>
-            <br>
+          <div id= 'adventure-showings'>
+            <%= render 'adventure_showings'%>
           </div>
-
-          <% end %>
         </div>
          <% if current_user == @user %>
           <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
@@ -134,7 +89,7 @@
               <div id = 'character-showings'>
                 <%= render 'character_showings'%>
               </div>
-              
+
             </div>
           <br>
         </div>
