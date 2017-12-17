@@ -1,15 +1,8 @@
-<div class="col-md-offset-1">
-<div class="stat-block-2 wide">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-<br>
-<div class="creature-heading">
-  <sm>Edit Your Character</sm>
-</div>
-<br>
-<br>
+
 <%= form_with(model: @character, url: user_character_path(current_user), local: true) do |form| %>
-
-
   <% if character.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -22,116 +15,156 @@
     </div>
   <% end %>
 
-  <div class="col-md-8 col-md-offset-2">
-    <div class = "row">
 
-      <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
-        <div class = "row">
-          <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
-            <div class="creature-heading"><sm><%= form.label :name, "Character Name" %></sm></div>
-            <%= form.text_field :name, id: :character_name, class:"form-control" %>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box-border">
+        <div class="font-title"><font color="white"><td>EDIT YOUR CHARACTER</td></font></div>
+        <br>
 
-        <div class = "row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="stat-block wide2">
+             <hr class="orange-border" />
+             <div class="col-md-8 col-md-offset-2">
+               <div class = "row">
 
-          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
-            <div class="field">
-              <div class="creature-heading"><sm><%= form.label :race, "Race" %></sm></div>
-              <%= form.select :race, ['Dwarf', 'Elf', 'Gnome', 'Half-orc', 'Human'], id: :character_race, class:"form-control" %>
-            </div>
-          </div>
+                 <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                   <div class = "row">
+                     <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
+                       <div class="creature-heading"><sm><%= form.label :name, "Character Name" %></sm></div>
+                       <%= form.text_field :name, id: :character_name, class:"form-control" %>
+                     </div>
+                   </div>
 
-          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
-            <div class="field">
-              <div class="creature-heading"><sm><%= form.label :profession, "Profession" %></sm></div>
-              <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
-            </div>
-          </div>
+                   <div class = "row">
 
-          <div class = "col-md-3" style="padding-right: 0px; padding-left: 0px;">
-            <div class="field" >
-              <div class="creature-heading"><sm><%= form.label :level, "Level" %></sm></div>
-              <%= form.number_field :level, id: :character_level, min: 0, max: 20, class:"form-control" %>
-            </div>
-          </div>
+                     <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                       <div class="field">
+                         <div class="creature-heading"><sm><%= form.label :race, "Race" %></sm></div>
+                         <%= form.select :race, ['Dwarf', 'Elf', 'Gnome', 'Half-orc', 'Human'], id: :character_race, class:"form-control" %>
+                       </div>
+                     </div>
 
-        </div>
+                     <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+                       <div class="field">
+                         <div class="creature-heading"><sm><%= form.label :profession, "Profession" %></sm></div>
+                         <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
+                       </div>
+                     </div>
+
+                     <div class = "col-md-3" style="padding-right: 0px; padding-left: 0px;">
+                       <div class="field" >
+                         <div class="creature-heading"><sm><%= form.label :level, "Level" %></sm></div>
+                         <%= form.number_field :level, id: :character_level, min: 0, max: 20, class:"form-control" %>
+                       </div>
+                     </div>
+
+                   </div>
 
 
 
-      </div>
+                 </div>
 
-      <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :name, "Character Backstory" %></sm></div>
-          <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
-        </div>
-      </div>
+                 <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :name, "Character Backstory" %></sm></div>
+                     <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
+                   </div>
+                 </div>
 
-    </div>
+               </div>
 
-    <div class = "row" style = "margin-left: -30px;">
+               <div class = "row" style = "margin-left: -30px;">
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-            <div class="field">
-              <div class="creature-heading"><sm><%= form.label :strength, "Strength" %></sm></div>
-              <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
-            </div>
-          </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                       <div class="field">
+                         <div class="creature-heading"><sm><%= form.label :strength, "Strength" %></sm></div>
+                         <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
+                       </div>
+                     </div>
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :dexterity, "Dexterity" %></sm></div>
-          <%= form.number_field :dexterity, id: :character_dexterity, min: 0, max: 20, class:"form-control" %>
-        </div>
-      </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :dexterity, "Dexterity" %></sm></div>
+                     <%= form.number_field :dexterity, id: :character_dexterity, min: 0, max: 20, class:"form-control" %>
+                   </div>
+                 </div>
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :constitution, "Constitution" %></sm></div>
-          <%= form.number_field :constitution, id: :character_constitution, min: 0, max: 20, class:"form-control" %>
-        </div>
-      </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :constitution, "Constitution" %></sm></div>
+                     <%= form.number_field :constitution, id: :character_constitution, min: 0, max: 20, class:"form-control" %>
+                   </div>
+                 </div>
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :intelligence, "Intelligence" %></sm></div>
-          <%= form.number_field :intelligence, id: :character_intelligence, min: 0, max: 20, class:"form-control" %>
-        </div>
-      </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :intelligence, "Intelligence" %></sm></div>
+                     <%= form.number_field :intelligence, id: :character_intelligence, min: 0, max: 20, class:"form-control" %>
+                   </div>
+                 </div>
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :wisdom, "Wisdom" %></sm></div>
-          <%= form.number_field :wisdom, id: :character_wisdom, min: 0, max: 20, class:"form-control" %>
-        </div>
-      </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :wisdom, "Wisdom" %></sm></div>
+                     <%= form.number_field :wisdom, id: :character_wisdom, min: 0, max: 20, class:"form-control" %>
+                   </div>
+                 </div>
 
-      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
-        <div class="field">
-          <div class="creature-heading"><sm><%= form.label :charisma, "Charisma" %></sm></div>
-          <%= form.number_field :charisma, id: :character_charisma, min: 0, max: 20, class:"form-control" %>
-        </div>
-      </div>
+                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                   <div class="field">
+                     <div class="creature-heading"><sm><%= form.label :charisma, "Charisma" %></sm></div>
+                     <%= form.number_field :charisma, id: :character_charisma, min: 0, max: 20, class:"form-control" %>
+                   </div>
+                 </div>
 
-    </div>
+               </div>
 
-    <div class="field hide">
-      <%= form.label :user_id %>
-      <%= form.number_field :user_id, id: :character_user_id%>
-    </div>
+               <div class="field hide">
+                 <%= form.label :user_id %>
+                 <%= form.number_field :user_id, id: :character_user_id%>
+               </div>
 
-    <br>
-    <div class="actions">
-      <div class="creature-heading"><h1><%= form.submit "Edit Character", class:"value-button-edit-2" %></h1></div>
-    </div>
-    <br>
-      <div class="creature-heading"><h1><%= link_to 'Cancel', user_path(current_user), class:"value-button-edit-2" %></h1></div>
+               <br>
+
+               <% if @character.user == current_user%>
+                <center>
+                 <td>
+                   <div class="value-button-save">
+                     <div class="actions">
+                       <%= form.submit "SAVE CHANGES" %>
+                     </div>
+                   </div>
+                 </td>
+                </center>
+                 <br>
+                 <center>
+                 <td>
+                   <div class="value-button-back">
+                     <%= link_to 'BACK', user_path(@character.user.id) %>
+                   </div>
+                 </td>
+               </center>
+
+                 <% end %>
+
+
+
+
+
+
+
+
+
+
   </div>
+</div>
 
-  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <% end %>
-</div>
-</div>
