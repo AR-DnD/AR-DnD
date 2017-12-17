@@ -11,9 +11,9 @@
       <br>
 
 
-      <div>
+      <div class="radio-button">
         <%= form_for sort_adventures_path, url: sort_adventures_path, remote: true, id: "sort_form" do |f|%>
-          <%= f.radio_button :sortby, 'Newest', :checked => true, :onclick => "$('#submit').click();" %>
+            <%= f.radio_button :sortby, 'Newest', :checked => true, :onclick => "$('#submit').click();" %>
           <%= label :sortby, 'Newest' %>
           <%= f.radio_button :sortby, 'Most Popular', :onclick => "$('#submit').click();" %>
           <%= label :sortby, 'Most Popular' %>

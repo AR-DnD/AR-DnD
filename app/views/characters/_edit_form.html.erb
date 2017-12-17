@@ -1,3 +1,12 @@
+<div class="col-md-offset-1">
+<div class="stat-block-2 wide">
+
+<br>
+<div class="creature-heading">
+  <sm>Edit Your Character</sm>
+</div>
+<br>
+<br>
 <%= form_with(model: @character, url: user_character_path(current_user), local: true) do |form| %>
 
 
@@ -13,13 +22,13 @@
     </div>
   <% end %>
 
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <div class = "row">
 
       <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
         <div class = "row">
           <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
-            <font color="white"><%= form.label :name, "Character Name" %></font>
+            <div class="creature-heading"><sm><%= form.label :name, "Character Name" %></sm></div>
             <%= form.text_field :name, id: :character_name, class:"form-control" %>
           </div>
         </div>
@@ -28,43 +37,34 @@
 
           <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
-              <font color="white"><%= form.label :race, "Race" %></font>
+              <div class="creature-heading"><sm><%= form.label :race, "Race" %></sm></div>
               <%= form.select :race, ['Dwarf', 'Elf', 'Gnome', 'Half-orc', 'Human'], id: :character_race, class:"form-control" %>
             </div>
           </div>
 
           <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
             <div class="field">
-              <font color="white"><%= form.label :profession, "Profession" %></font>
+              <div class="creature-heading"><sm><%= form.label :profession, "Profession" %></sm></div>
               <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
             </div>
           </div>
 
-        </div>
-
-        <div class = "row">
-
-          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
+          <div class = "col-md-3" style="padding-right: 0px; padding-left: 0px;">
             <div class="field" >
-              <font color="white"><%= form.label :level, "Level" %></font>
+              <div class="creature-heading"><sm><%= form.label :level, "Level" %></sm></div>
               <%= form.number_field :level, id: :character_level, min: 0, max: 20, class:"form-control" %>
             </div>
           </div>
 
-          <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
-            <div class="field">
-              <font color="white"><%= form.label :strength, "Strength" %></font>
-              <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
-            </div>
-          </div>
-
         </div>
+
+
 
       </div>
 
       <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :name, "Character Backstory" %></font>
+          <div class="creature-heading"><sm><%= form.label :name, "Character Backstory" %></sm></div>
           <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
         </div>
       </div>
@@ -74,36 +74,43 @@
     <div class = "row" style = "margin-left: -30px;">
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+            <div class="field">
+              <div class="creature-heading"><sm><%= form.label :strength, "Strength" %></sm></div>
+              <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
+            </div>
+          </div>
+
+      <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :dexterity, "Dexterity" %></font>
+          <div class="creature-heading"><sm><%= form.label :dexterity, "Dexterity" %></sm></div>
           <%= form.number_field :dexterity, id: :character_dexterity, min: 0, max: 20, class:"form-control" %>
         </div>
       </div>
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :constitution, "Constitution" %></font>
+          <div class="creature-heading"><sm><%= form.label :constitution, "Constitution" %></sm></div>
           <%= form.number_field :constitution, id: :character_constitution, min: 0, max: 20, class:"form-control" %>
         </div>
       </div>
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :intelligence, "Intelligence" %></font>
+          <div class="creature-heading"><sm><%= form.label :intelligence, "Intelligence" %></sm></div>
           <%= form.number_field :intelligence, id: :character_intelligence, min: 0, max: 20, class:"form-control" %>
         </div>
       </div>
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :wisdom, "Wisdom" %></font>
+          <div class="creature-heading"><sm><%= form.label :wisdom, "Wisdom" %></sm></div>
           <%= form.number_field :wisdom, id: :character_wisdom, min: 0, max: 20, class:"form-control" %>
         </div>
       </div>
 
       <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
         <div class="field">
-          <font color="white"><%= form.label :charisma, "Charisma" %></font>
+          <div class="creature-heading"><sm><%= form.label :charisma, "Charisma" %></sm></div>
           <%= form.number_field :charisma, id: :character_charisma, min: 0, max: 20, class:"form-control" %>
         </div>
       </div>
@@ -115,13 +122,16 @@
       <%= form.number_field :user_id, id: :character_user_id%>
     </div>
 
+    <br>
     <div class="actions">
-      <%= form.submit "CREATE CHARACTER", class:"btn btn-info btn-lg btn-block active" %>
+      <div class="creature-heading"><h1><%= form.submit "Edit Character", class:"value-button-edit-2" %></h1></div>
     </div>
-    <%= link_to 'CANCEL/BACK', user_path(current_user), class:"btn btn-danger btn-lg btn-block active" %>
+    <br>
+      <div class="creature-heading"><h1><%= link_to 'Cancel', user_path(current_user), class:"value-button-edit-2" %></h1></div>
   </div>
 
   </div>
-
 
 <% end %>
+</div>
+</div>

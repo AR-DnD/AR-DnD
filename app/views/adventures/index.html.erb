@@ -1,39 +1,123 @@
-<br>
-<br>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 <div class="row">
   <div class="col-md-12">
     <div class="box-border">
       <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
       <br>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Adventure Title</th>
-            <th>Adventure Story</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @adventures.each do |adventure| %>
-          <tr>
-            <td><%= adventure.title %></td>
-            <td><%= adventure.story %></td>
-            <td><%= link_to 'COPY', copy_path(id: adventure.id), method: :post, class:"btn btn-default btn-sm active"%></td>
-            <td><%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id), class:"btn btn-info btn-sm active"%></td>
-            <td><%= link_to 'DELETE', user_adventure_path(id: adventure.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %> </td>
-            </tr>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-      <br>
       <ul><%= render 'adventures/modal', adventure: @adventure %></ul>
+
+
+          <% @adventures.each do |adventure| %>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="stat-block wide2">
+                 <hr class="orange-border" />
+                 <div class="col-md-4">
+
+                   <div class="section-left">
+
+
+
+                       <div class="creature-heading">
+                         <h1><%= adventure.title %></h1>
+                         <br>
+                         <svg height="5" width="100%" class="tapered-rule">
+                           <polyline points="0,0 200,2.5 0,5"></polyline>
+                         </svg>
+                         <h3><%= adventure.story %></h3>
+
+                       </div>
+                       <svg height="5" width="100%" class="tapered-rule">
+                 	    <polyline points="0,0 200,2.5 0,5"></polyline>
+                 	  </svg>
+                   </div>
+                 </hr>
+
+               <p>
+                 <td>
+                   <div class="value-button-copy2">
+                     <%= link_to 'COPY', copy_path(id: adventure.id), method: :post %>
+                   </div>
+                 </td>
+                 <br>
+                 <td>
+                   <div class="value-button-add">
+                     <%= link_to 'ADD MAP', new_user_adventure_map_path(adventure_id: adventure.id) %>
+                   </div>
+                 </td>
+                 <br>
+                 <td>
+                   <div class="value-button-edit2">
+                     <%= link_to 'EDIT INFO', edit_user_adventure_path(id: adventure.id) %>
+                   </div>
+                 </td>
+                 <br>
+                 <td>
+                   <div class="value-button-delete2">
+                     <%= link_to 'DELETE', user_adventure_path(id: adventure.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                   </div>
+                 </td>
+               </p>
+             </div>
+             <div class="row">
+               <div class="col-md-8">
+                 <div class="row">
+                   <div class="creature-heading">
+                     <h1>Maps</h1>
+                     <br>
+                     <svg height="5" width="100%" class="tapered-rule">
+                       <polyline points="0,0 600,2.5 0,5"></polyline>
+                     </svg>
+
+
+                     <% adventure.maps.each do |map| %>
+                     <div class="col-md-4">
+                       <h4><%= map.name %></h4>
+                       <br>
+                       <h5><%= map.story %></h5>
+                       <td><%= render 'display_map', map: map%></td>
+
+
+                       <% if adventure.user == current_user%>
+                       <td>
+                         <div class="value-button-edit4">
+                           <%= link_to 'EDIT', edit_user_adventure_map_path(user_id: adventure.user.id, adventure_id: adventure.id, id: map.id) %>
+                         </div>
+                       </td>
+                       <td>
+                         <div class="value-button-delete4">
+                           <%= link_to 'DELETE', user_adventure_map_path(user_id: adventure.user.id, adventure_id: adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                         </div>
+                       </td>
+                       <% else  %>
+                       <td>
+                         <div class="value-button-copy2">
+                           <%= link_to 'SHOW', user_adventure_map_path(user_id: adventure.user.id, adventure_id: adventure.id, id: map.id) %>
+                         </div>
+                       </td>
+                       <% end %>
+                     </div>
+                     <% end %>
+
+                   </div>
+               </div>
+             </div>
+
+           </div>
+
+
+           <br>
+           </div>
+
+
+
+
+         <% end %>
+       </div>
+
     </div>
 
-    <!-- <%= link_to 'CREATE NEW ADVENTURES', new_user_adventure_path(current_user), class:"btn btn-success btn-lg btn-block active" %> -->
   </div>
-</div>

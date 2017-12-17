@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <div class="font-title-2"><font color="white"><%= form.label :name, "MAP NAME" %></font></div>
+    <div class="creature-heading"><h1><%= form.label :name, "Map Name" %></h1></div>
     <%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Please don't leave this part blank", required: true  %>
   </div>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <div class="font-title-2"><font color="white"><%= form.label :story, "MAP STORY" %></font></div>
+    <div class="creature-heading"><h1><%= form.label :story, "Map Story" %></h1></div>
     <%= form.text_area :story, id: :map_story, class:"form-control", rows: 10, placeholder: "Please don't leave this part blank", required: true %>
   </div>
 
@@ -33,7 +33,7 @@
 
 
   <div class="actions">
-    <%= form.submit "CREATE MAP", class:"btn btn-success btn-md btn-block active"%>
+    <div class="creature-heading"><h1><%= form.submit "Create Map", class:"value-button-edit-2"%></h1></div>
   </div>
 
 <% end %>
