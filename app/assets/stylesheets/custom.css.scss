@@ -579,6 +579,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   border-radius: 5px;
   text-align: center;
   max-width: 200px;
+  position: relative;
+  left: 65px;
+  top: 470px;
+  z-index: 1;
 }
 .dropdown-menu {
   text-align: center;
