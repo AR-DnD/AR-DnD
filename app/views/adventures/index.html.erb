@@ -6,6 +6,9 @@
     <div class="box-border">
       <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
       <br>
+      <ul><%= render 'adventures/modal', adventure: @adventure %></ul>
+
+      <br>
 
           <% @adventures.each do |adventure| %>
 
@@ -110,7 +113,6 @@
          <% end %>
        </div>
 
-      <ul><%= render 'adventures/modal', adventure: @adventure %></ul>
     </div>
 
   </div>

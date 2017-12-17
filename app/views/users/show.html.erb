@@ -6,24 +6,26 @@
 
   <div class="row">
     <div class="col-md-4">
-      <div class="box-border">
+      <div class="box-border2">
 
-        <%= gravatar_for @user, size: 150 %>
+        <center><%= gravatar_for @user, size: 150 %></center>
 
         <div class="row">
-          <div class="col-md-4">
-            <div class="stat-block wide">
+          <div class="col-md-12">
+            <div class="stat-block3 wide">
+              <center>
+
               <hr class="orange-border" />
                 <div class="section-left">
                   <div class="creature-heading">
 
 
-                      <h1><%= @user.username %></h1>
+                      <h7><%= @user.username %></h7>
                       <br>
                       <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                       </svg>
-                      <h1><%= @user.email %></h1>
+                      <h7><%= @user.email %></h7>
                       <br>
 
 
@@ -33,6 +35,7 @@
                     </svg>
                 </div>
               </hr>
+            </center>
 
             </div>
 
@@ -63,9 +66,11 @@
 
 
 
-
     <div class="col-md-8">
-      <div class="box-border">
+
+      <div class="box-border2">
+        <div class="row">
+
 
         <% if current_user == @user %>
           <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
@@ -124,6 +129,8 @@
           </div>
 
           <% end %>
+        </div>
+
 
 
          <br>
@@ -194,6 +201,7 @@
 
           <br>
         </div>
+      </div>
 
         <!-- <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
  </div>
