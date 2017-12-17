@@ -65,10 +65,11 @@ class CharactersController < ApplicationController
       adventure.characters.delete(@character)
       adventure.remove_character @character
     end
-    user = @character.user
+    @user = @character.user
     @character.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
+      format.js
+      #format.html { redirect_to user_path(user.id), notice: 'Character was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

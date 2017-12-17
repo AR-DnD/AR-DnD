@@ -1,0 +1,50 @@
+<% @user.characters.each do |character| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="stat-block2 wide">
+        <hr class="orange-border" />
+          <div class="section-left">
+            <div class="creature-heading">
+              <h1><%= character.name %></h1>
+              <h2><%= character.backstory %></h2>
+            </div> <!-- creature heading -->
+            <svg height="5" width="100%" class="tapered-rule">
+              <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+            <div class="top-stats">
+              <div class="property-line first">
+                <h4>Profession</h4>
+                <p><%= character.profession %></p>
+              </div> <!-- property line -->
+              <div class="property-line">
+                <h4>Race</h4>
+                <p><%= character.race %></p>
+              </div> <!-- property line -->
+              <div class="property-line last">
+                <h4>Level</h4>
+                <p><%= character.level %></p>
+              </div> <!-- property line -->
+              <svg height="5" width="100%" class="tapered-rule">
+              <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+
+          </div>
+        </hr>
+      </div>
+    <p>
+      <td>
+        <div class="value-button-edit">
+          <%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id, user_id: character.user_id) %>
+        </div>
+      </td>
+      <br>
+      <td>
+        <div class="value-button-delete">
+          <%= link_to 'DELETE', user_character_path(id: character.id, user_id: character.user_id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+        </div>
+      </td>
+    </p>
+  </div>
+  <br>
+  </div>
+<% end %>
