@@ -31,7 +31,7 @@ class Adventure < ApplicationRecord
           entry = data[i][j]
           if !!entry
             if entry.split('-')[0]=="char"
-              if entry.split('-')[2]==character.name
+              if entry.split('-')[3]==character.id.to_s
                 data[i][j] = nil
               end
             end

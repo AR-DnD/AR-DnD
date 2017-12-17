@@ -4,7 +4,7 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Terrain</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Tree">
-        <input type="radio" class="mapElement" name="options" value="Tree" id="option1" autocomplete="off" checked> Tree
+        <input type="radio" class="mapElement" name="options" id="option1" autocomplete="off" checked> Tree
       </label>
     </div>
   </div>
@@ -14,7 +14,7 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Orc">
-        <input type="radio" class="mapElement" name="options" value="Orc" id="option2" autocomplete="off"> Orc
+        <input type="radio" class="mapElement" name="options" id="option2" autocomplete="off"> Orc
       </label>
     </div>
   </div>
@@ -24,8 +24,8 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Characters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
-        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>">
-          <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"><%= character.name %>
+        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>-<%=character.id%>">
+          <input type="radio" class="mapElement" name="options" autocomplete="off"><%= character.name %>
         </label>
         <br>
 
@@ -38,4 +38,3 @@
     <input type="radio" class="mapElement" name="options" value="Remove" id="rm-Nil" autocomplete="off" style="display:none"><div class="creature-heading"><sm>Remove</sm></div>
   </label>
 </div>
-
