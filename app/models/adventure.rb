@@ -29,6 +29,7 @@ class Adventure < ApplicationRecord
       copy_character = character.dup
       copy_character.user_id = self.user_id
       #Go through map by map and change the id's
+
       self.maps.each do |map|
       end
     end
@@ -38,22 +39,22 @@ class Adventure < ApplicationRecord
   def remove_character character
     self.maps.each do |map|
       map.switch_to character, nil
-      # data = JSON.parse map.data
-      # data.length.times do |i|
-      #   data[i].length.times do |j|
-      #     entry = data[i][j]
-      #     if !!entry
-      #       if entry.split('-')[0]=="char"
-      #         if entry.split('-')[3]==character.id.to_s
-      #           data[i][j] = nil
-      #         end
-      #       end
-      #     end
-      #   end
-      # end
-      #
-      # map.data = data.to_json
-      # map.save
+      data = JSON.parse map.data
+      data.length.times do |i|
+        data[i].length.times do |j|
+          entry = data[i][j]
+          if !!entry
+            if entry.split('-')[0]=="char"
+              if entry.split('-')[3]==character.id.to_s
+                data[i][j] = nil
+              end
+            end
+          end
+        end
+      end
+
+      map.data = data.to_json
+      map.save
     end
   end
 

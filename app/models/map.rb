@@ -5,7 +5,7 @@ class Map < ApplicationRecord
   validates :story, presence: true
 
   def switch_to character, new
-    data = JSON.parse map.data
+    data = JSON.parse self.data
     data.length.times do |i|
       data[i].length.times do |j|
         entry = data[i][j]
@@ -19,7 +19,7 @@ class Map < ApplicationRecord
       end
     end
 
-    map.data = data.to_json
-    map.save
+    self.data = data.to_json
+    self.save
   end
 end
