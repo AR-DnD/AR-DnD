@@ -61,6 +61,10 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.json
   def destroy
+    @character.adventures.each do |adventure|
+      adventure.characters.delete(@character)
+      adventure.remove_character @character
+    end
     user = @character.user
     @character.destroy
     respond_to do |format|

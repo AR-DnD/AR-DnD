@@ -6,7 +6,7 @@ class Character < ApplicationRecord
   def self.make_default_character user
     c = Character.new
     c.user = user
-    c.name = "Cam"
+    c.name = ["Cam", "Tom", "Akiba", "Bruce"].sample
     c.backstory = "A default character to use in your adventures!"
     c.profession = "Warrior"
     c.race = "Human"

@@ -48,6 +48,7 @@ $(document).on('turbolinks:load', function () {
       return
     }
     var currData = currElement.split('-')
+    $(this).html('')
     if (currData[0] === 'char') {
       $(this).empty()
       $('<p>' + currData[2] + '</p>').appendTo($(this))
