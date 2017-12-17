@@ -46,7 +46,7 @@ class MapsController < ApplicationController
     @map.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_adventures_path(), notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to edit_user_adventure_path(id: adventure.id), notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

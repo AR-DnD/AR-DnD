@@ -46,7 +46,7 @@ $navbar-default-bg: #922610;
 
 
 .display-background {
-  background-image: image-url('new-background.jpg');
+  background-image: image-url('new-background2.jpg');
   background-size: cover;
   background-attachment:fixed;
   background-position: center;
@@ -690,6 +690,18 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   font-variant: small-caps;
   font-weight: bold;
 }
+
+.creature-heading h8{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  color: black;
+  font-size: 16px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
 .property-line h4,
 .property-line p{
   display: inline;

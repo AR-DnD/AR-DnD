@@ -133,24 +133,34 @@
              <hr class="orange-border" />
              <div class="col-md-4">
 
-                  <div class="field">
-                     <div class="creature-heading">
-                       <h1><%= form.label :title, "TITLE" %></h1>
-                       <%= form.text_field :title, id: :adventure_title %>
-                     </div>
+
+
+
+
+
+
+
+
+                 <div class="field">
+                   <div class="creature-heading"><h1><%= form.label :title, "TITLE" %></h1>
+                     <h8><%= form.text_field :title, id: :adventure_title %></h8>
                    </div>
+                 </div>
+
+
 
                    <br>
                    <svg height="5" width="100%" class="tapered-rule">
                      <polyline points="0,0 200,2.5 0,5"></polyline>
                    </svg>
-                    <div class="field">
-                     <div class="creature-heading">
-                       <h1><%= form.label :story, "STORY" %></h1>
-                       <%= form.text_field :story, id: :adventure_story, rows: 10 %>
 
+                   <div class="field">
+                     <div class="creature-heading"><h1><%= form.label :story, "Story" %></h1>
+                       <h8><%= form.text_field :story, id: :adventure_story, rows: 8 %></h8>
                      </div>
                    </div>
+
+
                    <svg height="5" width="100%" class="tapered-rule">
                      <polyline points="0,0 200,2.5 0,5"></polyline>
                    </svg>
