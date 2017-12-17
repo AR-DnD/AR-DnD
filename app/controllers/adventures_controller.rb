@@ -12,8 +12,8 @@ class AdventuresController < ApplicationController
         character.adventures << adventure
       end
     end
-    @adventure  = adventure
 
+    @adventure  = adventure
     respond_to do |format|
       format.js
     end

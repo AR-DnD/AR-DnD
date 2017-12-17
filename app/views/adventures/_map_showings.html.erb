@@ -1,15 +1,26 @@
+<% @adventure.maps.each do |map| %>
+  <div class="col-md-4">
+    <h4><%= map.name %></h4>
+    <h5><%= map.story %></h5>
+    <td><%= render 'display_map', map: map%></td>
 
-  <% @adventure.maps.each do |map| %>
-    <tr>
-      <td><%= map.name %></td>
-      <td><%= render 'display_map', map: map%></td>
-      <td><%= map.story %></td>
-
-      <% if @adventure.user == current_user%>
-        <td><%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), class:"btn btn-info btn-sm active" %></td>
-        <td><%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm active" %></td>
-      <% else  %>
-        <td><%= link_to 'SHOW', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %></td>
-      <% end %>
-    </tr>
-  <% end %>
+    <% if adventure.user == current_user%>
+      <td>
+        <div class="value-button-edit4">
+          <%= link_to 'EDIT', edit_user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %>
+        </div>
+      </td>
+      <td>
+        <div class="value-button-delete4">
+          <%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </td>
+    <% else  %>
+      <td>
+        <div class="value-button-copy2">
+          <%= link_to 'SHOW', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id) %>
+        </div>
+      </td>
+    <% end %>
+  </div>
+<% end %>
