@@ -3,6 +3,7 @@ require 'test_helper'
 class MapsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @map = maps(:one)
+    @map.adventure = @adventure
     @adventure = adventures(:one)
 
     @map.adventure = @adventure

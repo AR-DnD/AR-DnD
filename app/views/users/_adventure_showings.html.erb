@@ -32,7 +32,7 @@
             <br>
             <td>
               <div class="value-button-delete5">
-                <%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             </td>
            <% end %>

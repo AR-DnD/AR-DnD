@@ -76,7 +76,7 @@ class AdventuresController < ApplicationController
   end
 
   def destroy
-    user = @adventure.user
+    @user = @adventure.user
 
     @adventure.maps.each do |map|
       map.destroy
@@ -84,9 +84,12 @@ class AdventuresController < ApplicationController
 
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user.id), notice: 'Adventure was successfully destroyed.' }
+      # format.json { head :no_content }
+      format.js
       format.json { head :no_content }
+
     end
+
   end
 
   private

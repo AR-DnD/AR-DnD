@@ -17,25 +17,25 @@
       <div class="login-page">
         <div class="form">
       <div class="field">
-        <div class="login-headline"><font color="black"><h1 align="center">Edit your account</h1></font></div>
+        <div class="login-headline"><font color="black"><h1 align="center">EDIT YOUR ACCOUNT</h1></font></div>
         <br>
-        <font color="black"><%= f.label :username, "New Username" %></font>
+        <font color="black"><%= f.label :username, "New USERNAME" %></font>
         <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
       </div>
       <div class="field">
-        <font color="black"><%= f.label :email, "New Email Address" %></font>
+        <font color="black"><%= f.label :email, "New EMAIL ADDRESS" %></font>
         <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
       </div>
       <div class="field">
-        <font color="black"><%= f.label :password, "New Password" %></font>
+        <font color="black"><%= f.label :password, "NEW PASSWORD" %></font>
         <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
       </div>
       <div class="form-group">
         <div class="col-md-7">
-          <%= f.submit(@user.new_record? ? "SIGN UP" : "UPDATE ACCOUNT", class: 'btn btn-success btn-md active') %>
+          <%= f.submit(@user.new_record? ? "SIGN UP" : "UPDATE ACCOUNT", class: 'btn btn-danger btn-md active') %>
         </div>
         <div class="col-md-2">
-          <%=link_to "CANCEL/BACK", user_path(current_user), class: "btn btn-warning btn-md active" %>
+          <%=link_to "CANCEL/BACK", user_path(current_user), class: "btn btn-danger btn-md active" %>
         </div>
       </div>
       <br>
