@@ -7,7 +7,6 @@
         <div class="section-left">
 
            <div class="creature-heading">
-             <h1><%= @adventure.user.username %>'S ADVENTURE</h1>
              <h1><%= @adventure.title %></h1>
              <br>
              <svg height="5" width="100%" class="tapered-rule">
@@ -39,10 +38,6 @@
        <div class="col-md-8">
          <div class="row">
            <div class="creature-heading">
-             <br>
-             <br>
-             <br>
-
              <h1>Maps</h1>
              <br>
              <svg height="5" width="100%" class="tapered-rule">
@@ -66,7 +61,7 @@
                  </td>
                  <td>
                    <div class="value-button-delete4">
-                     <%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                     <%= link_to 'DELETE', user_adventure_map_path(user_id: @adventure.user.id, adventure_id: @adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
                    </div>
                  </td>
                <% else  %>
