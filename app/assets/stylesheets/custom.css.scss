@@ -276,7 +276,17 @@ $navbar-default-bg: #922610;
   border-color: #ac3939;
   background-color: white;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 14px;
+}
+.value-button-edit-3 {
+  border:0px;
+  border-style: solid;
+  border-color: #ac3939;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  min-width: 100px;
+  min-height: 22px;
 }
 .value-button-delete-2 {
   border:0px;
@@ -503,6 +513,12 @@ footer ul li {
   // max-width: 1400px;
   text-align: left;
 }
+.stat-block.wide3{
+  width: 95%;
+  // min-width: 1000px;
+  // max-width: 1400px;
+  text-align: center;
+}
 .stat-block2 {
   text-align: left;
   margin: 20px;
@@ -534,7 +550,7 @@ footer ul li {
   box-shadow: 0 0 1.5em #867453;
 }
 .stat-block2.wide{
-  width: 50%;
+  width: 60%;
   // min-width: 560px;
   max-width: 360px;
   text-align: center;
