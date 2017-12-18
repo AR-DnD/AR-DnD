@@ -14,7 +14,7 @@
   <center>
     <div class="field">
       <div class="creature-heading"><h1><%= form.label :name, "New Name" %></h1>
-        <h8><%= form.text_field :name, class:"form-control", id: :map_name %></h8>
+        <h8><%= form.text_field :name, class:"form-control", id: :map_name, placeholder: "Enter a name", autofocus: true %></h8>
       </div>
     </div>
   </center>
@@ -29,7 +29,7 @@
   <center>
     <div class="field">
       <div class="creature-heading"><h1><%= form.label :story, "New Story" %></h1>
-        <h8><%= form.text_area :story, id: :map_story, class:"form-control", rows: 8 %></h8>
+        <div class="creature-heading"><h9><%= form.text_area :story, id: :map_story, class:"form-control", rows: 8, placeholder: "Enter a story", autofocus: true %></h9></div>
       </div>
     </div>
   </center>

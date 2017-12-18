@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  // $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
+  // $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop("disabled",true);
   // $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
 
 
@@ -45,23 +45,25 @@ $(document).on('turbolinks:load', function(){
       }
   });
 
-  // $("#adventure_title").on("keyup", function(){
-  //   if(!$(this).val() || !$("#adventure_story").val()){
+  // $("#character_name").on("keyup", function(){
+  //   if(!$(this).val() || !$("#character_backstory").val()){
   //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
+  //     $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop("disabled",true);
   //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",false);
+  //     $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop("disabled",false);
   //   }
   // })
   //
-  // $("#adventure_story").on("keyup", function(){
-  //   if(!$("#adventure_title").val() || !$(this).val()){
+  // $("#character_name").on("keyup", function(){
+  //   if(!$("#character_name").val() || !$(this).val()){
   //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
+  //     $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop("disabled",true);
   //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",false);
+  //     $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop("disabled",false);
   //   }
   // })
+
+
   //
   //
   // $("#signup_name").on("keyup", function(){
