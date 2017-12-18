@@ -5,9 +5,9 @@
   <div class="col-md-12">
     <div class="box-border">
       <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
-      <br>
-      <!-- <ul><%= render 'adventures/modal', adventure: @adventure %></ul> -->
 
+      <br>
+      <ul><%= render 'adventures/modal', adventure: @adventure %></ul>
 
           <% @adventures.each do |adventure| %>
 
@@ -54,12 +54,7 @@
                      <%= link_to 'EDIT INFO', edit_user_adventure_path(id: adventure.id) %>
                    </div>
                  </td>
-                 <br>
-                 <td>
-                   <div class="value-button-delete2">
-                     <%= link_to 'DELETE', user_adventure_path(id: adventure.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                   </div>
-                 </td>
+
                </p>
              </div>
              <div class="row">
@@ -111,13 +106,16 @@
 
            <br>
            </div>
+         </div>
+       </div>
+
 
 
 
 
          <% end %>
-       </div>
 
-    </div>
 
   </div>
+</div>
+</div>

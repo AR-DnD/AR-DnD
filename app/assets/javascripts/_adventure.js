@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
     if($(this).val() && $('#adventure_story').val()){
       $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
     } else {
-      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
     }
   })
 
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function(){
     if($(this).val() && $('#adventure_title').val()){
       $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
     } else {
-      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
     }
   })
 
