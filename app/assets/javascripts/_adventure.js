@@ -2,6 +2,23 @@ $(document).on('turbolinks:load', function(){
   // $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
   // $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
 
+  $('#adventure_title').on('keyup', function () {
+    if($(this).val() && $('#adventure_story').val()){
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
+      console.log("LOG TYPING")
+    } else {
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+    }
+  })
+
+  $('#adventure_story').on('keyup', function () {
+    if($(this).val() && $('#adventure_title').val()){
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
+      console.log("LOG TYPING")
+    } else {
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+    }
+  })
 
   /* Instantiating iziModal */
   $("#modal-custom2").iziModal({
