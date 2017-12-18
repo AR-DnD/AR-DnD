@@ -12,7 +12,7 @@
                 <svg height="5" width="100%" class="tapered-rule">
                   <polyline points="0,0 400,2.5 0,5"></polyline>
                 </svg>
-                <h6><%= adventure.story %></h6>
+                  <h6><%= adventure.story %></h6>
 
               <svg height="5" width="100%" class="tapered-rule">
                 <polyline points="0,0 400,2.5 0,5"></polyline>
@@ -24,7 +24,6 @@
         <p>
 
           <% if current_user == @user %>
-
             <td>
               <div class="value-button-edit5">
                 <%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id) %>
