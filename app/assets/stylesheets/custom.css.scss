@@ -549,6 +549,18 @@ footer ul li {
   padding: 5px 10px 20px;
   box-shadow: 0 0 1.5em #867453;
 }
+.stat-block5 {
+  text-align: center;
+  margin: 20px;
+  display: inline-block;
+  vertical-align:middle;
+  // background: #FDF1DC;
+  background-image: image-url('blank-paper.jpg');
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+  min-width: 95%;
+  background: #FDF1DC;
+}
 .stat-block2.wide{
   width: 60%;
   // min-width: 560px;
@@ -566,6 +578,12 @@ footer ul li {
   // min-width: 1000px;
   // max-width: 1400px;
   text-align: left;
+}
+.stat-block5.wide{
+  width: 95%;
+  // min-width: 1000px;
+  // max-width: 1400px;
+  text-align: center;
 }
 
 // .stat-block.wide .section-left,
@@ -640,7 +658,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 .creature-heading sm{
   font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
   color: #922610;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.2em;
   margin: 10px 0 0;
   letter-spacing: 1px;
