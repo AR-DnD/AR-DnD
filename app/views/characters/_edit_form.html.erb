@@ -24,15 +24,20 @@
 
         <div class="row">
           <div class="col-md-12">
-            <div class="stat-block wide2">
+            <div class="stat-block wide3">
              <hr class="orange-border" />
+             <br>
              <div class="col-md-8 col-md-offset-2">
-               <div class = "row">
+               <div class="row">
 
-                 <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                 <div class = "col-md-6">
                    <div class = "row">
                      <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
-                       <div class="creature-heading"><sm><%= form.label :name, "Character Name" %></sm></div>
+                       <div class="creature-heading"><h1><%= form.label :name, "Character Name" %></h1></div>
+                       <svg height="5" width="100%" class="tapered-rule">
+                          <polyline points="0,0 300,2.5 0,5"></polyline>
+                       </svg>
+                       <br>
                        <%= form.text_field :name, id: :character_name, class:"form-control" %>
                      </div>
                    </div>
@@ -68,16 +73,24 @@
 
                  <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :name, "Character Backstory" %></sm></div>
+                     <div class="creature-heading"><h1><%= form.label :name, "Character Backstory" %></h1></div>
+                     <svg height="5" width="100%" class="tapered-rule">
+                        <polyline points="0,0 350,2.5 0,5"></polyline>
+                     </svg>
+                     <br>
                      <%= form.text_area :backstory, id: :character_backstory, class:"form-control", rows: 7 %>
                    </div>
                  </div>
 
                </div>
-
+               <br>
+               <svg height="5" width="100%" class="tapered-rule">
+                  <polyline points="0,0 800,2.5 0,5"></polyline>
+               </svg>
+               <br>
                <div class = "row" style = "margin-left: -30px;">
 
-                 <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
+                 <div class = "col-md-2" style="padding-right: 10px; padding-left: 40px;">
                        <div class="field">
                          <div class="creature-heading"><sm><%= form.label :strength, "Strength" %></sm></div>
                          <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
@@ -131,7 +144,7 @@
                <% if @character.user == current_user%>
                 <center>
                  <td>
-                   <div class="value-button-save">
+                   <div class="value-button-save-big">
                      <div class="actions">
                        <%= form.submit "SAVE CHANGES" %>
                      </div>
@@ -141,7 +154,7 @@
                  <br>
                  <center>
                  <td>
-                   <div class="value-button-back">
+                   <div class="value-button-back-big">
                      <%= link_to 'BACK', user_path(@character.user.id) %>
                    </div>
                  </td>
