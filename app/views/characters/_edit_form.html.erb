@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 
-<%= form_with(model: @character, url: user_character_path(current_user), local: true) do |form| %>
+<%= form_with(model: @character, url: user_characters_path(current_user), local: true) do |form| %>
   <% if character.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -42,14 +42,14 @@
                      <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                        <div class="field">
                          <div class="creature-heading"><sm><%= form.label :race, "Race" %></sm></div>
-                         <%= form.select :race, ['Dwarf', 'Elf', 'Gnome', 'Half-orc', 'Human'], id: :character_race, class:"form-control" %>
+                         <%= form.select :race, ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-Orc'], id: :character_race, class:"form-control" %>
                        </div>
                      </div>
 
                      <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                        <div class="field">
                          <div class="creature-heading"><sm><%= form.label :profession, "Profession" %></sm></div>
-                         <%= form.select :profession, ['Ranger', 'Rogue', 'Warrior', 'Wizard'], id: :character_profession, class:"form-control" %>
+                         <%= form.select :profession, ['Warrior', 'Cleric', 'Rogue', 'Mage'], id: :character_profession, class:"form-control" %>
                        </div>
                      </div>
 

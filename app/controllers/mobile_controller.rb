@@ -4,18 +4,16 @@ class MobileController < ApplicationController
 
     end
 
-    def test
-      render html: 'success'
-    end
-
     def adventures
-      user = User.find_by(email: params[:email].downcase)
-      @adventures = user.adventures
-    end
-
-    def maps
-      adventure = User.find(params[:user_id].to_i)
-        .adventures[params[:adventure_id].to_i - 1]
-      @maps = adventure.maps
+      if params[:email] and params[:password]
+        user = User.find_by(email: params[:email].downcase)
+        if user && user.authenticate(params[:password])
+          @adventures = user.adventures
+        else
+          render html: 'invalid'
+        end
+      else
+        render html: 'invalid'
+      end
     end
 end
