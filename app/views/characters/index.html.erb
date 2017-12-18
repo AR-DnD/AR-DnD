@@ -8,6 +8,10 @@
       <br>
       <ul><%= render 'characters/modal', character: @character, user: current_user %></ul>
 
+      <div id = 'character-showings'>
+        <%= render 'users/character_showings'%>
+      </div>
+<!--
       <% @characters.each do |character| %>
         <div class="row">
           <div class="col-md-4">
@@ -80,7 +84,7 @@
             <br>
             <td>
               <div class="value-button-delete">
-                <%= link_to 'DELETE', user_character_path(id: character.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'DELETE', user_character_path(id: character.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
               </div>
             </td>
           </p>
@@ -104,8 +108,5 @@
 
       <% end %>
     </div>
-
-
-
   </div>
 </div>

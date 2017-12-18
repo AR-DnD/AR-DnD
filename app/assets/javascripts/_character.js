@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function(){
   $('#character_name').on('keyup', function () {
     if($(this).val()){
       $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop('disabled', false)
-      console.log("LOG TYPING")
     } else {
       $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop('disabled', true)
     }

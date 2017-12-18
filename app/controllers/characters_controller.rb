@@ -6,6 +6,7 @@ class CharactersController < ApplicationController
   def index
     # @characters = current_user.characters
     @characters = Character.where('user_id = ?', current_user.id)
+    @user = current_user
     @character = Character.new
 
   end
