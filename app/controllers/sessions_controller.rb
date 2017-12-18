@@ -11,11 +11,10 @@ class SessionsController < ApplicationController
             flash[:success] = "You have successfully logged in."
             redirect_to user_path(user.id)
         else
-          respond_to do |format|
-            format.js
-          end
-            # redirect_to root_path
+            flash.now[:notice] = "There was something wrong with your login information."
+            redirect_to root_path
         end
+
     end
 
     def destroy

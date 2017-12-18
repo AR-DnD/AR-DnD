@@ -1,18 +1,26 @@
 $(document).on('turbolinks:load', function(){
-  // $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
-  // $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
 
+  $('#adventure_title').on('keyup', function () {
+    if($(this).val() && $('#adventure_story').val()){
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
+    } else {
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+    }
+  })
+
+  $('#adventure_story').on('keyup', function () {
+    if($(this).val() && $('#adventure_title').val()){
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', false)
+    } else {
+      $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop('disabled', true)
+    }
+  })
 
   /* Instantiating iziModal */
   $("#modal-custom2").iziModal({
       overlayClose: false,
       overlayColor: 'rgba(0, 0, 0, 0.6)'
   });
-
-  /*$(document).on('click', '.trigger-custom', function (event) {
-      event.preventDefault();
-      $('#modal-custom2').iziModal('open');
-  });*/
 
   /* JS inside the modal */
 
@@ -44,64 +52,6 @@ $(document).on('turbolinks:load', function(){
           }, 1500);
       }
   });
-
-  // $("#adventure_title").on("keyup", function(){
-  //   if(!$(this).val() || !$("#adventure_story").val()){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",false);
-  //   }
-  // })
-  //
-  // $("#adventure_story").on("keyup", function(){
-  //   if(!$("#adventure_title").val() || !$(this).val()){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE ADVENTURE']").prop("disabled",false);
-  //   }
-  // })
-  //
-  //
-  // $("#signup_name").on("keyup", function(){
-  //   if(!$(this).val() || !$("#signup_email").val() || !$("#signup_password").val() || !$("#signup_confirmation").val()){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",false);
-  //   }
-  // })
-  //
-  // $("#signup_email").on("keyup", function(){
-  //   if(!$("#signup_name").val() || !$(this).val() || !$("#signup_password").val() || !$("#signup_confirmation").val()){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",false);
-  //   }
-  // })
-  //
-  // $("#signup_password").on("keyup", function(){
-  //   if(!$("#signup_name").val() || !$("#signup_email").val() || !$(this).val() || !$("#signup_confirmation").val()){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",false);
-  //   }
-  // })
-  //
-  // $("#signup_confirmation").on("keyup", function(){
-  //   if(!$("#signup_name").val() || !$("#signup_email").val() || !$("#signup_password").val() || !$(this).val() ){
-  //     console.log("Do NOT Submit");
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",true);
-  //   } else {
-  //     $("input[type='submit'][name='commit'][value='CREATE MY ACCOUNT']").prop("disabled",false);
-  //   }
-  // })
-
-
-
 
 })
 
