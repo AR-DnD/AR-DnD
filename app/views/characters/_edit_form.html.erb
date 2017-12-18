@@ -33,7 +33,7 @@
                  <div class = "col-md-6">
                    <div class = "row">
                      <div class="field" style="padding-right: 0px; padding-left: 0px; max-width: 250px;">
-                       <div class="creature-heading"><h1><%= form.label :name, "Character Name" %></h1></div>
+                       <div class="creature-heading"><h10><%= form.label :name, "Character Name" %></h10></div>
                        <svg height="5" width="100%" class="tapered-rule">
                           <polyline points="0,0 300,2.5 0,5"></polyline>
                        </svg>
@@ -46,21 +46,21 @@
 
                      <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                        <div class="field">
-                         <div class="creature-heading"><sm><%= form.label :race, "Race" %></sm></div>
+                         <div class="creature-heading"><sm1><%= form.label :race, "Race" %></sm1></div>
                          <%= form.select :race, ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-Orc'], id: :character_race, class:"form-control" %>
                        </div>
                      </div>
 
                      <div class = "col-md-4" style="padding-right: 0px; padding-left: 0px;">
                        <div class="field">
-                         <div class="creature-heading"><sm><%= form.label :profession, "Profession" %></sm></div>
+                         <div class="creature-heading"><sm1><%= form.label :profession, "Profession" %></sm1></div>
                          <%= form.select :profession, ['Warrior', 'Cleric', 'Rogue', 'Mage'], id: :character_profession, class:"form-control" %>
                        </div>
                      </div>
 
                      <div class = "col-md-3" style="padding-right: 0px; padding-left: 0px;">
                        <div class="field" >
-                         <div class="creature-heading"><sm><%= form.label :level, "Level" %></sm></div>
+                         <div class="creature-heading"><sm1><%= form.label :level, "Level" %></sm1></div>
                          <%= form.number_field :level, id: :character_level, min: 0, max: 20, class:"form-control" %>
                        </div>
                      </div>
@@ -73,7 +73,7 @@
 
                  <div class = "col-md-6" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><h1><%= form.label :name, "Character Backstory" %></h1></div>
+                     <div class="creature-heading"><h10><%= form.label :name, "Character Backstory" %></h10></div>
                      <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 350,2.5 0,5"></polyline>
                      </svg>
@@ -92,42 +92,42 @@
 
                  <div class = "col-md-2" style="padding-right: 10px; padding-left: 40px;">
                        <div class="field">
-                         <div class="creature-heading"><sm><%= form.label :strength, "Strength" %></sm></div>
+                         <div class="creature-heading"><sm1><%= form.label :strength, "Strength" %></sm1></div>
                          <%= form.number_field :strength, id: :character_strength, min: 0, max: 20, class:"form-control" %>
                        </div>
                      </div>
 
                  <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :dexterity, "Dexterity" %></sm></div>
+                     <div class="creature-heading"><sm1><%= form.label :dexterity, "Dexterity" %></sm1></div>
                      <%= form.number_field :dexterity, id: :character_dexterity, min: 0, max: 20, class:"form-control" %>
                    </div>
                  </div>
 
                  <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :constitution, "Constitution" %></sm></div>
+                     <div class="creature-heading"><sm1><%= form.label :constitution, "Constitution" %></sm1></div>
                      <%= form.number_field :constitution, id: :character_constitution, min: 0, max: 20, class:"form-control" %>
                    </div>
                  </div>
 
                  <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :intelligence, "Intelligence" %></sm></div>
+                     <div class="creature-heading"><sm1><%= form.label :intelligence, "Intelligence" %></sm1></div>
                      <%= form.number_field :intelligence, id: :character_intelligence, min: 0, max: 20, class:"form-control" %>
                    </div>
                  </div>
 
                  <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :wisdom, "Wisdom" %></sm></div>
+                     <div class="creature-heading"><sm1><%= form.label :wisdom, "Wisdom" %></sm1></div>
                      <%= form.number_field :wisdom, id: :character_wisdom, min: 0, max: 20, class:"form-control" %>
                    </div>
                  </div>
 
                  <div class = "col-md-2" style="padding-right: 0px; padding-left: 0px;">
                    <div class="field">
-                     <div class="creature-heading"><sm><%= form.label :charisma, "Charisma" %></sm></div>
+                     <div class="creature-heading"><sm1><%= form.label :charisma, "Charisma" %></sm1></div>
                      <%= form.number_field :charisma, id: :character_charisma, min: 0, max: 20, class:"form-control" %>
                    </div>
                  </div>

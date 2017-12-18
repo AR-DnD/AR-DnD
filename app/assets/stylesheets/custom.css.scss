@@ -554,7 +554,7 @@ footer ul li {
   margin: 20px;
   display: inline-block;
   vertical-align:middle;
-  background: #FDF1DC;
+  // background: #FDF1DC;
   // background-image: image-url('blank-paper.jpg');
   padding: 5px 10px 20px;
   box-shadow: 0 0 1.5em #867453;
@@ -665,6 +665,16 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   font-variant: small-caps;
   font-weight: bold;
 }
+.creature-heading sm1{
+  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  color: #922610;
+  font-size: 13px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
 .creature-heading h2{
   font-weight: normal;
   font-style: italic;
@@ -741,6 +751,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
     color: #922610;
     font-size: 16px;
+    font-variant: small-caps;
+    font-weight: bold;
+
+}
+.creature-heading h10{
+    padding: 30px;
+    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', 'Bookman', 'Goudy Old Style', 'Garamond', 'Hoefler Text', 'Bitstream Charter', 'Georgia', serif;
+    color: #ffffff;
+    font-size: 20px;
     font-variant: small-caps;
     font-weight: bold;
 
