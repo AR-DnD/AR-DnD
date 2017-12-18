@@ -55,9 +55,6 @@ $(document).on('turbolinks:load', function(){
 
 
 
-
-
-
 /*
 * iziModal | v1.5.0
 * http://izimodal.marcelodolce.com
