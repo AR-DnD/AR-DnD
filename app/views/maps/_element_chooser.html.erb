@@ -4,6 +4,7 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Tree">
+<<<<<<< HEAD
         <input type="radio" class="mapElement" name="options" value="Tree" autocomplete="off" checked> Tree
       </label>
       <label class="btn mapElement" id="obj-Rock">
@@ -14,6 +15,9 @@
       </label>
       <label class="btn mapElement" id="obj-Chest">
         <input type="radio" class="mapElement" name="options" value="Chest" autocomplete="off"> Chest
+=======
+        <input type="radio" class="mapElement" name="options" id="option1" autocomplete="off" checked> Tree
+>>>>>>> b7d8450bf0ebc718662732b4a85ff3b67d3cb371
       </label>
     </div>
   </div>
@@ -23,6 +27,7 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Monsters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Orc">
+<<<<<<< HEAD
         <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"> Orc
       </label>
       <label class="btn mapElement" id="obj-Skeleton">
@@ -36,6 +41,9 @@
       </label>
       <label class="btn mapElement" id="obj-EvilMage">
         <input type="radio" class="mapElement" name="options" value="EvilMage" autocomplete="off"> Evil Mage
+=======
+        <input type="radio" class="mapElement" name="options" id="option2" autocomplete="off"> Orc
+>>>>>>> b7d8450bf0ebc718662732b4a85ff3b67d3cb371
       </label>
     </div>
   </div>
@@ -45,12 +53,18 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Characters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
+<<<<<<< HEAD
         <label class="btn mapElement" id="char-<%= character.profession %>-<%= character.name %>">
           <input type="radio" class="mapElement" name="options" value="Character" autocomplete="off"><%= character.name %>
+=======
+        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>-<%=character.id%>">
+          <input type="radio" class="mapElement" name="options" autocomplete="off"><%= character.name %>
+>>>>>>> b7d8450bf0ebc718662732b4a85ff3b67d3cb371
         </label>
         <br>
 
       <% end %>
+      
     </div>
   </div>
 </div>

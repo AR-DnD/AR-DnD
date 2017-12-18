@@ -1,55 +1,66 @@
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-<div class="tutorial">
-          <p>To create a map, select which elements you want to place from the dropdown menus and click on the tiles to place them</p>
-        </div>
-      </div>
-    </div>
-  </div>
-<span id="new_map-flag" style="display: none"></span>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-<br>
-<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box-border">
+      <div class="font-title"><font color="white"><td>CREATE A MAP</td></font></div>
+      <br>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-offset-0.5">
-      <div class="stat-block-2 wide">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <br>
-              <br>
-              <%= render "element_chooser" %>
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="stat-block4 wide">
+           <hr class="orange-border" />
+            <div class="row">
 
-            <br>
-            <div class="col-md-4 col-md-offset-1">
-              <%= render 'selected' %>
-            </div>
-          </div>
 
-          <div class="row">
+              <div class="col-md-7">
 
-            <div class="col-md-7">
-              <br>
-              <br>
-              <div class="jumbotron"><%= render "mapgrid" %></div>
-            </div>
-            <div class="jumbotron">
-              <div class="col-md-3" style="text-align: center;">
+                <span id="new_map-flag" style="display: none"></span>
                 <br>
+                <br>
+                <%= render "element_chooser" %>
+                <br>
+
+                <svg height="5" width="100%" class="tapered-rule">
+                  <polyline points="0,0 800,2.5 0,5"></polyline>
+                </svg>
+                <br>
+                <div class="col-md-5">
+                  <label class="value-button-edit-2" id="rm-Nil">
+                    <input type="radio" class="mapElement" name="options" value="Remove" id="rm-Nil" autocomplete="off" style="display:none"><div class="creature-heading"><sm>REMOVE ELEMENT</sm></div>
+                  </label>
+                </div>
+                <br>
+                <br>
+                <div class="col-md-offset-1">
+                  <%= render "mapgrid" %>
+                </div>
+
+              </div>
+
+              <div class="col-md-5">
+                <br>
+                <br>
+                <%= render 'selected' %>
+                <br>
+                <br>
+
                 <%= render 'new_map_form', map: @map %>
-                <div class="creature-heading"><h1><%= link_to 'Cancel', user_adventures_path, class:"value-button-edi-2" %></h1></div>
+
+              </div>
+
+
+
               </div>
             </div>
+            </hr>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <%= javascript_include_tag "_map_maker" %>

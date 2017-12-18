@@ -48,11 +48,4 @@ class CharactersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_character_url(user_id: @user.id, id: @character.id)
   end
 
-  test "should destroy character" do
-    assert_difference('Character.count', -1) do
-      delete user_character_url(user_id: @user.id, id: @character.id)
-    end
-
-    assert_redirected_to user_url(@user)
-  end
 end

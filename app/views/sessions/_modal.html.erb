@@ -24,7 +24,7 @@
         </div>
         <div class="modal-body">
           <div id="modal_trigger" title="Login">
-            <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+            <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path), , remote: true do |f| %>
               <div class="field">
                 <%= f.label :email %>
                 <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true %>

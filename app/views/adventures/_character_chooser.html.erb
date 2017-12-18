@@ -1,0 +1,18 @@
+<%= form_for switch_characters_path, url: switch_characters_url, remote: true, id: "switch_form" do |f|%>
+  <div class="character-dropdown">
+    <button class="character-button dropdown-toggle active" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      CHARACTERS
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <% current_user.characters.each do |character| %>
+       <div class="checkbox">
+         <%= f.check_box character.id, {onclick: "$('#submit_switch').click();", checked: character.adventures.exists?(@adventure.id)} %>
+         <%= character.name %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+  <%= hidden_field_tag 'adventure id', @adventure.id %>
+  <%= f.submit "Submit", id: 'submit_switch', style: 'display:none' %>
+<% end %>

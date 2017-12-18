@@ -4,7 +4,7 @@ one:
   name: MyString
   data: MyString
   story: hi
-  adventure: one
+  adventure: one 
 
 two:
   name: MyString

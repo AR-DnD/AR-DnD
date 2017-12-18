@@ -6,19 +6,24 @@ class AdventuresController < ApplicationController
     params["/switch_characters"].each do |character,selected|
       character = Character.find(character)
       if character.adventures.exists?(adventure.id) && selected == "0"
+        adventure.remove_character(character)
         character.adventures.delete(adventure)
       elsif !character.adventures.exists?(adventure.id) && selected == "1"
         character.adventures << adventure
       end
+    end
 
+    @adventure  = adventure
+    respond_to do |format|
+      format.js
     end
   end
 
   def copy
     @copy = @adventure.make_copy current_user
-    current_user.adventures << @copy
     @copy.copy_maps @adventure
-    redirect_to edit_user_adventure_path(@copy, user_id: @adventure.user.id), notice: 'Adventure was successfully saved.'
+    @copy.copy_characters @adventure
+    redirect_to edit_user_adventure_path(@copy, user_id: @copy.user.id), notice: 'Adventure was successfully saved.'
   end
 
   def index
@@ -71,7 +76,7 @@ class AdventuresController < ApplicationController
   end
 
   def destroy
-    user = @adventure.user
+    @user = @adventure.user
 
     @adventure.maps.each do |map|
       map.destroy
@@ -79,9 +84,12 @@ class AdventuresController < ApplicationController
 
     @adventure.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user.id), notice: 'Adventure was successfully destroyed.' }
+      # format.json { head :no_content }
+      format.js
       format.json { head :no_content }
+
     end
+
   end
 
   private

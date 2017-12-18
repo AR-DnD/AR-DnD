@@ -1,7 +1,3 @@
-
-
-<br>
-<br>
 <div class="container-fluid">
 
   <div class="row">
@@ -74,135 +70,26 @@
 
         <% if current_user == @user %>
           <div class="font-title"><font color="white"><td>YOUR ADVENTURES</td></font></div>
-          <br>
-          <% else %>
+        <% else %>
           <div class="font-title"><font color="white"><td> VIEW <%=  %> 'S ADVENTURES</td></div>
-          <% end %>
-          <br>
+        <% end %>
 
-
-
-          <% @user.adventures.each do |adventure| %>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="stat-block2 wide">
-                  <hr class="orange-border" />
-                    <div class="section-left">
-                      <div class="creature-heading">
-
-
-                          <h1><%= adventure.title %></h1>
-                          <br>
-                          <svg height="5" width="100%" class="tapered-rule">
-                            <polyline points="0,0 400,2.5 0,5"></polyline>
-                          </svg>
-                          <h6><%= adventure.story %></h6>
-
-                        <svg height="5" width="100%" class="tapered-rule">
-                          <polyline points="0,0 400,2.5 0,5"></polyline>
-                        </svg>
-                      </div>
-
-                    </div>
-                  </hr>
-                  <p>
-
-                    <% if current_user == @user %>
-
-                      <td>
-                        <div class="value-button-edit5">
-                          <%= link_to 'EDIT INFO/ADD MAPS', edit_user_adventure_path(id: adventure.id, user_id: adventure.user.id) %>
-                        </div>
-                      </td>
-                      <br>
-                      <td>
-                        <div class="value-button-delete5">
-                          <%= link_to 'DELETE', user_adventure_path(id: adventure.id, user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                        </div>
-                      </td>
-                     <% end %>
-                  </p>
-
-
-            </div>
-            <br>
-          </div>
-
-          <% end %>
+        <div id= 'adventure-showings'>
+          <%= render 'adventure_showings'%>
         </div>
 
-
-
-         <br>
-         <br>
-
-
+        </div>
          <% if current_user == @user %>
-         <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
-         <br>
+           <div class="font-title"><font color="white"><td>YOUR CHARACTERS</td></font></div>
          <% else %>
-         <div class="font-title"><font color="white"><td> VIEW <%=  %> 's CHARACTERS </td></div>
+           <div class="font-title"><font color="white"><td> VIEW <%=  %> 's CHARACTERS </td></div>
          <% end %>
-
-
-                <br>
-
-                <% @user.characters.each do |character| %>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="stat-block2 wide">
-                      	<hr class="orange-border" />
-                        	<div class="section-left">
-                        		<div class="creature-heading">
-                        			<h1><%= character.name %></h1>
-                        			<h2><%= character.backstory %></h2>
-                        		</div> <!-- creature heading -->
-                        		<svg height="5" width="100%" class="tapered-rule">
-                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
-                        	  </svg>
-                        		<div class="top-stats">
-                        			<div class="property-line first">
-                        				<h4>Profession</h4>
-                        				<p><%= character.profession %></p>
-                        			</div> <!-- property line -->
-                        			<div class="property-line">
-                        				<h4>Race</h4>
-                        				<p><%= character.race %></p>
-                        			</div> <!-- property line -->
-                        			<div class="property-line last">
-                        				<h4>Level</h4>
-                        				<p><%= character.level %></p>
-                        			</div> <!-- property line -->
-                        			<svg height="5" width="100%" class="tapered-rule">
-                        	    <polyline points="0,0 400,2.5 0,5"></polyline>
-                        	  </svg>
-
-                          </div>
-                        </hr>
-                      </div>
-                    <p>
-                      <td>
-                        <div class="value-button-edit">
-                          <%= link_to 'EDIT CHARACTER', edit_user_character_path(id: character.id, user_id: character.user_id) %>
-                        </div>
-                      </td>
-                      <br>
-                      <td>
-                        <div class="value-button-delete">
-                          <%= link_to 'DELETE', user_character_path(id: character.id, user_id: character.user_id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                        </div>
-                      </td>
-                    </p>
-                  </div>
-                  <br>
-                  </div>
-                <% end %>
-              </div>
-
-          <br>
+         <div id = 'character-showings'>
+           <%= render 'character_showings'%>
+         </div>
         </div>
+          <br>
       </div>
-
-        <!-- <p><%= link_to 'NEW CHARACTER', new_user_character_path(current_user), class:"btn btn-success btn-lg btn-block active" %></p> -->
+    </div>
  </div>
 </div>

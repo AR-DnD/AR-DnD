@@ -1,5 +1,6 @@
 /* globals $ */
 
+
 $(document).on('turbolinks:load', function () {
   var gridDimension = 6;
   var grid = new Array(gridDimension)
@@ -102,3 +103,4 @@ $(document).on('turbolinks:load', function () {
     }
   })
 })
+;
