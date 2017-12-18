@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
     if($(this).val()){
       $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop('disabled', false)
     } else {
-      $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='CREATE CHARACTER']").prop('disabled', false)
     }
   })
 
