@@ -1,20 +1,41 @@
 
 <div class="col-md-2">
   <div class="dropdown">
-    <button class="value-button-edit-2"><div class="creature-heading"><sm>Terrain</sm></div></button>
+    <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Tree">
-        <input type="radio" class="mapElement" name="options" id="option1" autocomplete="off" checked> Tree
+        <input type="radio" class="mapElement" name="options" value="Tree" autocomplete="off" checked> Tree
+      </label>
+      <label class="btn mapElement" id="obj-Rock">
+        <input type="radio" class="mapElement" name="options" value="Rock" autocomplete="off"> Rock
+      </label>
+      <label class="btn mapElement" id="obj-Fort">
+        <input type="radio" class="mapElement" name="options" value="Fort" autocomplete="off"> Fort
+      </label>
+      <label class="btn mapElement" id="obj-Chest">
+        <input type="radio" class="mapElement" name="options" value="Chest" autocomplete="off"> Chest
       </label>
     </div>
   </div>
 </div>
 <div class="col-md-2">
   <div class="dropdown" display = "block">
-    <button class="value-button-edit-2"><div class="creature-heading"><sm>Objects</sm></div></button>
+    <button class="value-button-edit-2"><div class="creature-heading"><sm>Monsters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <label class="btn mapElement" id="obj-Orc">
-        <input type="radio" class="mapElement" name="options" id="option2" autocomplete="off"> Orc
+        <input type="radio" class="mapElement" name="options" value="Orc" autocomplete="off"> Orc
+      </label>
+      <label class="btn mapElement" id="obj-Skeleton">
+        <input type="radio" class="mapElement" name="options" value="Skeleton" autocomplete="off"> Skeleton
+      </label>
+      <label class="btn mapElement" id="obj-Wolf">
+        <input type="radio" class="mapElement" name="options" value="Wolf" autocomplete="off"> Wolf
+      </label>
+      <label class="btn mapElement" id="obj-EvilKnight">
+        <input type="radio" class="mapElement" name="options" value="EvilKnight" autocomplete="off"> Black Knight
+      </label>
+      <label class="btn mapElement" id="obj-EvilMage">
+        <input type="radio" class="mapElement" name="options" value="EvilMage" autocomplete="off"> Evil Mage
       </label>
     </div>
   </div>
@@ -24,13 +45,13 @@
     <button class="value-button-edit-2"><div class="creature-heading"><sm>Characters</sm></div></button>
     <div class="dropdown-content" style="left:0;">
       <% @adventure.characters.each do |character| %>
-        <label class="btn mapElement" id="char-<%= character.race %>-<%= character.name %>-<%=character.id%>">
-          <input type="radio" class="mapElement" name="options" autocomplete="off"><%= character.name %>
+        <label class="btn mapElement" id="char-<%= character.profession %>-<%= character.name %>-<%= character.id.to_s %>">
+          <input type="radio" class="mapElement" name="options" value="Character" autocomplete="off"><%= character.name %>
         </label>
         <br>
 
       <% end %>
-      
+
     </div>
   </div>
 </div>
