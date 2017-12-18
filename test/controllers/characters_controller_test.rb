@@ -32,20 +32,11 @@ class CharactersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(@user)
   end
 
-  # test "should show character" do
-  #   byebug
-  #   get user_character_url(user_id: @user.id, id: @character.id)
-  #   assert_response :success
-  # end
-  #
+
   test "should get edit" do
     get edit_user_character_url(user_id: @user.id, id: @character.id)
     assert_response :success
   end
 
-  test "should update character" do
-    patch user_character_url(user_id: @user.id, id: @character.id), params: { character: { charisma: @character.charisma, constitution: @character.constitution, dexterity: @character.dexterity, intelligence: @character.intelligence, level: @character.level, name: @character.name, profession: @character.profession, race: @character.race, strength: @character.strength, wisdom: @character.wisdom } }
-    assert_redirected_to user_character_url(user_id: @user.id, id: @character.id)
-  end
 
 end

@@ -40,22 +40,4 @@ class AdventuresControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should update adventure" do
-  #   byebug
-  #   patch user_adventure_url(user_id: @user.id, id: @adventure.id), params: {characters: @adventure.characters.to_ary.to_s, adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
-  #   assert_redirected_to user_url(@adventure.user_id)
-  # end
-
-  # test "should update adventure with correct redirect" do
-  #   patch adventure_url(@adventure), params: { adventure: { story: @adventure.story, title: @adventure.title, user_id: @adventure.user_id } }
-  #   assert_redirected_to user_url(@adventure.user_id)
-  # end
-  #
-  test "should destroy adventure" do
-    assert_difference('Adventure.count', -1) do
-      delete user_adventure_url(user_id: @user.id, id: @adventure.id)
-    end
-    assert_redirected_to user_url(@user)
-  end
-
 end
