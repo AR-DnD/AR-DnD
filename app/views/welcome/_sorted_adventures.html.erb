@@ -7,11 +7,16 @@
 <% if @sortby == :times_copied %>
   <% @adventures.order(times_copied: :desc).each do |adventure| %>
     <% @adventure = adventure%>
-    <%= render 'adventure_info'%>
+    <% if @adventure.user != current_user %>
+      <%= render 'adventure_info'%>
+    <% end %>
   <% end %>
 <% elsif @sortby == :created_at %>
   <% @adventures.order(created_at: :desc).each do |adventure| %>
     <% @adventure = adventure%>
-    <%= render 'adventure_info'%>
+    <% if @adventure.user != current_user %>
+      <%= render 'adventure_info'%>
+    <% end %>
+
   <% end %>
 <% end %>

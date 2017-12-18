@@ -17,7 +17,7 @@
 }
 
 .table-mapgrid-mini{
-  background-color: #E8E2D6;
+  background-color: #D4BF92;
   border-spacing: 0px 0px;
   //was
   width: 100px;
@@ -57,16 +57,16 @@ tr {
 
 .btn-mapgrid-mini {
   background-size: 100%;
-  background-color: #E8E2D6;
-  border-color: #E8E2D6;
+  background-color: #D4BF92;
+  border-color: gray;
+  border: 1px solid gray;
   color: #fff;
   //text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-  border-radius: 0px;
+  border-radius: 1px;
   //width:100%;
   //height:100%;
   width:25px;
   height:25px;
-  padding: 0px;
 }
 
 

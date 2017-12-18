@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
         else
             flash.now[:notice] = "There was something wrong with your login information."
             redirect_to root_path
-
         end
 
     end
