@@ -9,8 +9,16 @@ class MobileController < ApplicationController
     end
 
     def adventures
-      user = User.find_by(email: params[:email].downcase)
-      @adventures = user.adventures
+      if params[:email] and params[:password]
+        user = User.find_by(email: params[:email].downcase)
+        if user && user.authenticate(params[:password])
+          @adventures = user.adventures
+        else
+          render html: 'invalid'
+        end
+      else
+        render html: 'invalid'
+      end
     end
 
     def maps
