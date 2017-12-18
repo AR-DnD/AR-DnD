@@ -6,6 +6,7 @@ class CharactersController < ApplicationController
   def index
     # @characters = current_user.characters
     @characters = Character.where('user_id = ?', current_user.id)
+    @user = current_user
     @character = Character.new
 
   end
@@ -50,7 +51,7 @@ class CharactersController < ApplicationController
   def update
     respond_to do |format|
       if @character.update(character_params)
-        format.html { redirect_to user_character_path(id: @character.id, user_id: @character.user.id), notice: 'Character was successfully updated.' }
+        format.html { redirect_to user_characters_path(user_id: @character.user.id), notice: 'Character was successfully updated.' }
         format.json { render :show, status: :ok, location: @character }
       else
         format.html { render :edit }
