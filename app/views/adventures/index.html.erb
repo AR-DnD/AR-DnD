@@ -84,7 +84,7 @@
                        </td>
                        <td>
                          <div class="value-button-delete4">
-                           <%= link_to 'DELETE', user_path(user_id: adventure.user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                           <%= link_to 'DELETE', user_adventure_map_path(user_id: adventure.user.id, adventure_id: adventure.id, id: map.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                          </div>
                        </td>
                        <% else  %>
