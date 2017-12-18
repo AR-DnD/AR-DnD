@@ -1,8 +1,6 @@
 /* globals $ */
 
 $(document).on('turbolinks:load', function () {
-  $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', true)
-
   var gridDimension = 6;
   var grid = new Array(gridDimension)
   for (var i = 0; i < gridDimension; i++){
@@ -48,6 +46,7 @@ $(document).on('turbolinks:load', function () {
       return
     }
     var currData = currElement.split('-')
+    $(this).html('')
     if (currData[0] === 'char') {
       $(this).empty()
       $('<p>' + currData[2] + '</p>').appendTo($(this))
@@ -83,17 +82,23 @@ $(document).on('turbolinks:load', function () {
 
   $('#map_name').on('keyup', function () {
     if (!$(this).val() || !$('#map_story').val()) {
-      $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='CREATE MAP']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='UPDATE MAP']").prop('disabled', true)
+      console.log("DONT")
     } else {
-      $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', false)
+      $("input[type='submit'][name='commit'][value='CREATE MAP']").prop('disabled', false)
+      $("input[type='submit'][name='commit'][value='UPDATE MAP']").prop('disabled', false)
     }
   })
 
   $('#map_story').on('keyup', function () {
     if (!$('#map_name').val() || !$(this).val()) {
-      $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='CREATE MAP']").prop('disabled', true)
+      $("input[type='submit'][name='commit'][value='UPDATE MAP']").prop('disabled', true)
+      console.log("DONT")
     } else {
-      $("input[type='submit'][name='commit'][value='Create Map']").prop('disabled', false)
+      $("input[type='submit'][name='commit'][value='CREATE MAP']").prop('disabled', false)
+      $("input[type='submit'][name='commit'][value='UPDATE MAP']").prop('disabled', false)
     }
   })
 })
